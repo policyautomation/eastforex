@@ -1,0 +1,3 @@
+#list_subpanel_accounts_fp_event_locations_1 table:first-child .clickMenu li span {
+    display: none;
+}
