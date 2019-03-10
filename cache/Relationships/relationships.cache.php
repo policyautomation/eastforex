@@ -7892,27 +7892,27 @@
     'join_key_lhs' => 'surveyq72c7options_ida',
     'join_key_rhs' => 'surveyq10d4sponses_idb',
   ),
-  'tra_lockedrate_accounts' => 
+  'acc_identity_accounts' => 
   array (
-    'name' => 'tra_lockedrate_accounts',
+    'name' => 'acc_identity_accounts',
     'true_relationship_type' => 'one-to-many',
     'relationships' => 
     array (
-      'tra_lockedrate_accounts' => 
+      'acc_identity_accounts' => 
       array (
         'lhs_module' => 'Accounts',
         'lhs_table' => 'accounts',
         'lhs_key' => 'id',
-        'rhs_module' => 'tra_LockedRate',
-        'rhs_table' => 'tra_lockedrate',
+        'rhs_module' => 'acc_Identity',
+        'rhs_table' => 'acc_identity',
         'rhs_key' => 'id',
         'relationship_type' => 'many-to-many',
-        'join_table' => 'tra_lockedrate_accounts_c',
-        'join_key_lhs' => 'tra_lockedrate_accountsaccounts_ida',
-        'join_key_rhs' => 'tra_lockedrate_accountstra_lockedrate_idb',
+        'join_table' => 'acc_identity_accounts_c',
+        'join_key_lhs' => 'acc_identity_accountsaccounts_ida',
+        'join_key_rhs' => 'acc_identity_accountsacc_identity_idb',
       ),
     ),
-    'table' => 'tra_lockedrate_accounts_c',
+    'table' => 'acc_identity_accounts_c',
     'fields' => 
     array (
       0 => 
@@ -7936,13 +7936,13 @@
       ),
       3 => 
       array (
-        'name' => 'tra_lockedrate_accountsaccounts_ida',
+        'name' => 'acc_identity_accountsaccounts_ida',
         'type' => 'varchar',
         'len' => 36,
       ),
       4 => 
       array (
-        'name' => 'tra_lockedrate_accountstra_lockedrate_idb',
+        'name' => 'acc_identity_accountsacc_identity_idb',
         'type' => 'varchar',
         'len' => 36,
       ),
@@ -7951,7 +7951,7 @@
     array (
       0 => 
       array (
-        'name' => 'tra_lockedrate_accountsspk',
+        'name' => 'acc_identity_accountsspk',
         'type' => 'primary',
         'fields' => 
         array (
@@ -7960,55 +7960,55 @@
       ),
       1 => 
       array (
-        'name' => 'tra_lockedrate_accounts_ida1',
+        'name' => 'acc_identity_accounts_ida1',
         'type' => 'index',
         'fields' => 
         array (
-          0 => 'tra_lockedrate_accountsaccounts_ida',
+          0 => 'acc_identity_accountsaccounts_ida',
         ),
       ),
       2 => 
       array (
-        'name' => 'tra_lockedrate_accounts_alt',
+        'name' => 'acc_identity_accounts_alt',
         'type' => 'alternate_key',
         'fields' => 
         array (
-          0 => 'tra_lockedrate_accountstra_lockedrate_idb',
+          0 => 'acc_identity_accountsacc_identity_idb',
         ),
       ),
     ),
     'lhs_module' => 'Accounts',
     'lhs_table' => 'accounts',
     'lhs_key' => 'id',
-    'rhs_module' => 'tra_LockedRate',
-    'rhs_table' => 'tra_lockedrate',
+    'rhs_module' => 'acc_Identity',
+    'rhs_table' => 'acc_identity',
     'rhs_key' => 'id',
     'relationship_type' => 'many-to-many',
-    'join_table' => 'tra_lockedrate_accounts_c',
-    'join_key_lhs' => 'tra_lockedrate_accountsaccounts_ida',
-    'join_key_rhs' => 'tra_lockedrate_accountstra_lockedrate_idb',
+    'join_table' => 'acc_identity_accounts_c',
+    'join_key_lhs' => 'acc_identity_accountsaccounts_ida',
+    'join_key_rhs' => 'acc_identity_accountsacc_identity_idb',
   ),
-  'tra_eftransaction_acc_balance' => 
+  'acc_balance_accounts' => 
   array (
-    'name' => 'tra_eftransaction_acc_balance',
+    'name' => 'acc_balance_accounts',
     'true_relationship_type' => 'one-to-many',
     'relationships' => 
     array (
-      'tra_eftransaction_acc_balance' => 
+      'acc_balance_accounts' => 
       array (
-        'lhs_module' => 'acc_Balance',
-        'lhs_table' => 'acc_balance',
+        'lhs_module' => 'Accounts',
+        'lhs_table' => 'accounts',
         'lhs_key' => 'id',
-        'rhs_module' => 'tra_EFTransaction',
-        'rhs_table' => 'tra_eftransaction',
+        'rhs_module' => 'acc_Balance',
+        'rhs_table' => 'acc_balance',
         'rhs_key' => 'id',
         'relationship_type' => 'many-to-many',
-        'join_table' => 'tra_eftransaction_acc_balance_c',
-        'join_key_lhs' => 'tra_eftransaction_acc_balanceacc_balance_ida',
-        'join_key_rhs' => 'tra_eftransaction_acc_balancetra_eftransaction_idb',
+        'join_table' => 'acc_balance_accounts_c',
+        'join_key_lhs' => 'acc_balance_accountsaccounts_ida',
+        'join_key_rhs' => 'acc_balance_accountsacc_balance_idb',
       ),
     ),
-    'table' => 'tra_eftransaction_acc_balance_c',
+    'table' => 'acc_balance_accounts_c',
     'fields' => 
     array (
       0 => 
@@ -8032,13 +8032,13 @@
       ),
       3 => 
       array (
-        'name' => 'tra_eftransaction_acc_balanceacc_balance_ida',
+        'name' => 'acc_balance_accountsaccounts_ida',
         'type' => 'varchar',
         'len' => 36,
       ),
       4 => 
       array (
-        'name' => 'tra_eftransaction_acc_balancetra_eftransaction_idb',
+        'name' => 'acc_balance_accountsacc_balance_idb',
         'type' => 'varchar',
         'len' => 36,
       ),
@@ -8047,7 +8047,7 @@
     array (
       0 => 
       array (
-        'name' => 'tra_eftransaction_acc_balancespk',
+        'name' => 'acc_balance_accountsspk',
         'type' => 'primary',
         'fields' => 
         array (
@@ -8056,33 +8056,129 @@
       ),
       1 => 
       array (
-        'name' => 'tra_eftransaction_acc_balance_ida1',
+        'name' => 'acc_balance_accounts_ida1',
         'type' => 'index',
         'fields' => 
         array (
-          0 => 'tra_eftransaction_acc_balanceacc_balance_ida',
+          0 => 'acc_balance_accountsaccounts_ida',
         ),
       ),
       2 => 
       array (
-        'name' => 'tra_eftransaction_acc_balance_alt',
+        'name' => 'acc_balance_accounts_alt',
         'type' => 'alternate_key',
         'fields' => 
         array (
-          0 => 'tra_eftransaction_acc_balancetra_eftransaction_idb',
+          0 => 'acc_balance_accountsacc_balance_idb',
         ),
       ),
     ),
-    'lhs_module' => 'acc_Balance',
-    'lhs_table' => 'acc_balance',
+    'lhs_module' => 'Accounts',
+    'lhs_table' => 'accounts',
     'lhs_key' => 'id',
-    'rhs_module' => 'tra_EFTransaction',
-    'rhs_table' => 'tra_eftransaction',
+    'rhs_module' => 'acc_Balance',
+    'rhs_table' => 'acc_balance',
     'rhs_key' => 'id',
     'relationship_type' => 'many-to-many',
-    'join_table' => 'tra_eftransaction_acc_balance_c',
-    'join_key_lhs' => 'tra_eftransaction_acc_balanceacc_balance_ida',
-    'join_key_rhs' => 'tra_eftransaction_acc_balancetra_eftransaction_idb',
+    'join_table' => 'acc_balance_accounts_c',
+    'join_key_lhs' => 'acc_balance_accountsaccounts_ida',
+    'join_key_rhs' => 'acc_balance_accountsacc_balance_idb',
+  ),
+  'tra_customerfxrequest_tra_lockedrate' => 
+  array (
+    'name' => 'tra_customerfxrequest_tra_lockedrate',
+    'true_relationship_type' => 'one-to-many',
+    'relationships' => 
+    array (
+      'tra_customerfxrequest_tra_lockedrate' => 
+      array (
+        'lhs_module' => 'tra_LockedRate',
+        'lhs_table' => 'tra_lockedrate',
+        'lhs_key' => 'id',
+        'rhs_module' => 'tra_CustomerFXRequest',
+        'rhs_table' => 'tra_customerfxrequest',
+        'rhs_key' => 'id',
+        'relationship_type' => 'many-to-many',
+        'join_table' => 'tra_customerfxrequest_tra_lockedrate_c',
+        'join_key_lhs' => 'tra_customerfxrequest_tra_lockedratetra_lockedrate_ida',
+        'join_key_rhs' => 'tra_customerfxrequest_tra_lockedratetra_customerfxrequest_idb',
+      ),
+    ),
+    'table' => 'tra_customerfxrequest_tra_lockedrate_c',
+    'fields' => 
+    array (
+      0 => 
+      array (
+        'name' => 'id',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+      1 => 
+      array (
+        'name' => 'date_modified',
+        'type' => 'datetime',
+      ),
+      2 => 
+      array (
+        'name' => 'deleted',
+        'type' => 'bool',
+        'len' => '1',
+        'default' => '0',
+        'required' => true,
+      ),
+      3 => 
+      array (
+        'name' => 'tra_customerfxrequest_tra_lockedratetra_lockedrate_ida',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+      4 => 
+      array (
+        'name' => 'tra_customerfxrequest_tra_lockedratetra_customerfxrequest_idb',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+    ),
+    'indices' => 
+    array (
+      0 => 
+      array (
+        'name' => 'tra_customerfxrequest_tra_lockedratespk',
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      1 => 
+      array (
+        'name' => 'tra_customerfxrequest_tra_lockedrate_ida1',
+        'type' => 'index',
+        'fields' => 
+        array (
+          0 => 'tra_customerfxrequest_tra_lockedratetra_lockedrate_ida',
+        ),
+      ),
+      2 => 
+      array (
+        'name' => 'tra_customerfxrequest_tra_lockedrate_alt',
+        'type' => 'alternate_key',
+        'fields' => 
+        array (
+          0 => 'tra_customerfxrequest_tra_lockedratetra_customerfxrequest_idb',
+        ),
+      ),
+    ),
+    'lhs_module' => 'tra_LockedRate',
+    'lhs_table' => 'tra_lockedrate',
+    'lhs_key' => 'id',
+    'rhs_module' => 'tra_CustomerFXRequest',
+    'rhs_table' => 'tra_customerfxrequest',
+    'rhs_key' => 'id',
+    'relationship_type' => 'many-to-many',
+    'join_table' => 'tra_customerfxrequest_tra_lockedrate_c',
+    'join_key_lhs' => 'tra_customerfxrequest_tra_lockedratetra_lockedrate_ida',
+    'join_key_rhs' => 'tra_customerfxrequest_tra_lockedratetra_customerfxrequest_idb',
   ),
   'tra_effxrequest_tra_eftransaction' => 
   array (
@@ -8180,6 +8276,198 @@
     'join_key_lhs' => 'tra_effxrequest_tra_eftransactiontra_effxrequest_ida',
     'join_key_rhs' => 'tra_effxrequest_tra_eftransactiontra_eftransaction_idb',
   ),
+  'tra_lockedrate_accounts' => 
+  array (
+    'name' => 'tra_lockedrate_accounts',
+    'true_relationship_type' => 'one-to-many',
+    'relationships' => 
+    array (
+      'tra_lockedrate_accounts' => 
+      array (
+        'lhs_module' => 'Accounts',
+        'lhs_table' => 'accounts',
+        'lhs_key' => 'id',
+        'rhs_module' => 'tra_LockedRate',
+        'rhs_table' => 'tra_lockedrate',
+        'rhs_key' => 'id',
+        'relationship_type' => 'many-to-many',
+        'join_table' => 'tra_lockedrate_accounts_c',
+        'join_key_lhs' => 'tra_lockedrate_accountsaccounts_ida',
+        'join_key_rhs' => 'tra_lockedrate_accountstra_lockedrate_idb',
+      ),
+    ),
+    'table' => 'tra_lockedrate_accounts_c',
+    'fields' => 
+    array (
+      0 => 
+      array (
+        'name' => 'id',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+      1 => 
+      array (
+        'name' => 'date_modified',
+        'type' => 'datetime',
+      ),
+      2 => 
+      array (
+        'name' => 'deleted',
+        'type' => 'bool',
+        'len' => '1',
+        'default' => '0',
+        'required' => true,
+      ),
+      3 => 
+      array (
+        'name' => 'tra_lockedrate_accountsaccounts_ida',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+      4 => 
+      array (
+        'name' => 'tra_lockedrate_accountstra_lockedrate_idb',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+    ),
+    'indices' => 
+    array (
+      0 => 
+      array (
+        'name' => 'tra_lockedrate_accountsspk',
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      1 => 
+      array (
+        'name' => 'tra_lockedrate_accounts_ida1',
+        'type' => 'index',
+        'fields' => 
+        array (
+          0 => 'tra_lockedrate_accountsaccounts_ida',
+        ),
+      ),
+      2 => 
+      array (
+        'name' => 'tra_lockedrate_accounts_alt',
+        'type' => 'alternate_key',
+        'fields' => 
+        array (
+          0 => 'tra_lockedrate_accountstra_lockedrate_idb',
+        ),
+      ),
+    ),
+    'lhs_module' => 'Accounts',
+    'lhs_table' => 'accounts',
+    'lhs_key' => 'id',
+    'rhs_module' => 'tra_LockedRate',
+    'rhs_table' => 'tra_lockedrate',
+    'rhs_key' => 'id',
+    'relationship_type' => 'many-to-many',
+    'join_table' => 'tra_lockedrate_accounts_c',
+    'join_key_lhs' => 'tra_lockedrate_accountsaccounts_ida',
+    'join_key_rhs' => 'tra_lockedrate_accountstra_lockedrate_idb',
+  ),
+  'acc_customerbankaccount_accounts' => 
+  array (
+    'name' => 'acc_customerbankaccount_accounts',
+    'true_relationship_type' => 'one-to-many',
+    'relationships' => 
+    array (
+      'acc_customerbankaccount_accounts' => 
+      array (
+        'lhs_module' => 'Accounts',
+        'lhs_table' => 'accounts',
+        'lhs_key' => 'id',
+        'rhs_module' => 'acc_CustomerBankAccount',
+        'rhs_table' => 'acc_customerbankaccount',
+        'rhs_key' => 'id',
+        'relationship_type' => 'many-to-many',
+        'join_table' => 'acc_customerbankaccount_accounts_c',
+        'join_key_lhs' => 'acc_customerbankaccount_accountsaccounts_ida',
+        'join_key_rhs' => 'acc_customerbankaccount_accountsacc_customerbankaccount_idb',
+      ),
+    ),
+    'table' => 'acc_customerbankaccount_accounts_c',
+    'fields' => 
+    array (
+      0 => 
+      array (
+        'name' => 'id',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+      1 => 
+      array (
+        'name' => 'date_modified',
+        'type' => 'datetime',
+      ),
+      2 => 
+      array (
+        'name' => 'deleted',
+        'type' => 'bool',
+        'len' => '1',
+        'default' => '0',
+        'required' => true,
+      ),
+      3 => 
+      array (
+        'name' => 'acc_customerbankaccount_accountsaccounts_ida',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+      4 => 
+      array (
+        'name' => 'acc_customerbankaccount_accountsacc_customerbankaccount_idb',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+    ),
+    'indices' => 
+    array (
+      0 => 
+      array (
+        'name' => 'acc_customerbankaccount_accountsspk',
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      1 => 
+      array (
+        'name' => 'acc_customerbankaccount_accounts_ida1',
+        'type' => 'index',
+        'fields' => 
+        array (
+          0 => 'acc_customerbankaccount_accountsaccounts_ida',
+        ),
+      ),
+      2 => 
+      array (
+        'name' => 'acc_customerbankaccount_accounts_alt',
+        'type' => 'alternate_key',
+        'fields' => 
+        array (
+          0 => 'acc_customerbankaccount_accountsacc_customerbankaccount_idb',
+        ),
+      ),
+    ),
+    'lhs_module' => 'Accounts',
+    'lhs_table' => 'accounts',
+    'lhs_key' => 'id',
+    'rhs_module' => 'acc_CustomerBankAccount',
+    'rhs_table' => 'acc_customerbankaccount',
+    'rhs_key' => 'id',
+    'relationship_type' => 'many-to-many',
+    'join_table' => 'acc_customerbankaccount_accounts_c',
+    'join_key_lhs' => 'acc_customerbankaccount_accountsaccounts_ida',
+    'join_key_rhs' => 'acc_customerbankaccount_accountsacc_customerbankaccount_idb',
+  ),
   'tra_customertransaction_accounts' => 
   array (
     'name' => 'tra_customertransaction_accounts',
@@ -8276,27 +8564,27 @@
     'join_key_lhs' => 'tra_customertransaction_accountsaccounts_ida',
     'join_key_rhs' => 'tra_customertransaction_accountstra_customertransaction_idb',
   ),
-  'acc_identity_accounts' => 
+  'tra_customerfxrequest_tra_customertransaction' => 
   array (
-    'name' => 'acc_identity_accounts',
+    'name' => 'tra_customerfxrequest_tra_customertransaction',
     'true_relationship_type' => 'one-to-many',
     'relationships' => 
     array (
-      'acc_identity_accounts' => 
+      'tra_customerfxrequest_tra_customertransaction' => 
       array (
-        'lhs_module' => 'Accounts',
-        'lhs_table' => 'accounts',
+        'lhs_module' => 'tra_CustomerFXRequest',
+        'lhs_table' => 'tra_customerfxrequest',
         'lhs_key' => 'id',
-        'rhs_module' => 'acc_Identity',
-        'rhs_table' => 'acc_identity',
+        'rhs_module' => 'tra_CustomerTransaction',
+        'rhs_table' => 'tra_customertransaction',
         'rhs_key' => 'id',
         'relationship_type' => 'many-to-many',
-        'join_table' => 'acc_identity_accounts_c',
-        'join_key_lhs' => 'acc_identity_accountsaccounts_ida',
-        'join_key_rhs' => 'acc_identity_accountsacc_identity_idb',
+        'join_table' => 'tra_customerfxrequest_tra_customertransaction_c',
+        'join_key_lhs' => 'tra_customc9d6request_ida',
+        'join_key_rhs' => 'tra_custom41c1saction_idb',
       ),
     ),
-    'table' => 'acc_identity_accounts_c',
+    'table' => 'tra_customerfxrequest_tra_customertransaction_c',
     'fields' => 
     array (
       0 => 
@@ -8320,13 +8608,13 @@
       ),
       3 => 
       array (
-        'name' => 'acc_identity_accountsaccounts_ida',
+        'name' => 'tra_customc9d6request_ida',
         'type' => 'varchar',
         'len' => 36,
       ),
       4 => 
       array (
-        'name' => 'acc_identity_accountsacc_identity_idb',
+        'name' => 'tra_custom41c1saction_idb',
         'type' => 'varchar',
         'len' => 36,
       ),
@@ -8335,7 +8623,7 @@
     array (
       0 => 
       array (
-        'name' => 'acc_identity_accountsspk',
+        'name' => 'tra_customerfxrequest_tra_customertransactionspk',
         'type' => 'primary',
         'fields' => 
         array (
@@ -8344,33 +8632,129 @@
       ),
       1 => 
       array (
-        'name' => 'acc_identity_accounts_ida1',
+        'name' => 'tra_customerfxrequest_tra_customertransaction_ida1',
         'type' => 'index',
         'fields' => 
         array (
-          0 => 'acc_identity_accountsaccounts_ida',
+          0 => 'tra_customc9d6request_ida',
         ),
       ),
       2 => 
       array (
-        'name' => 'acc_identity_accounts_alt',
+        'name' => 'tra_customerfxrequest_tra_customertransaction_alt',
         'type' => 'alternate_key',
         'fields' => 
         array (
-          0 => 'acc_identity_accountsacc_identity_idb',
+          0 => 'tra_custom41c1saction_idb',
         ),
       ),
     ),
-    'lhs_module' => 'Accounts',
-    'lhs_table' => 'accounts',
+    'lhs_module' => 'tra_CustomerFXRequest',
+    'lhs_table' => 'tra_customerfxrequest',
     'lhs_key' => 'id',
-    'rhs_module' => 'acc_Identity',
-    'rhs_table' => 'acc_identity',
+    'rhs_module' => 'tra_CustomerTransaction',
+    'rhs_table' => 'tra_customertransaction',
     'rhs_key' => 'id',
     'relationship_type' => 'many-to-many',
-    'join_table' => 'acc_identity_accounts_c',
-    'join_key_lhs' => 'acc_identity_accountsaccounts_ida',
-    'join_key_rhs' => 'acc_identity_accountsacc_identity_idb',
+    'join_table' => 'tra_customerfxrequest_tra_customertransaction_c',
+    'join_key_lhs' => 'tra_customc9d6request_ida',
+    'join_key_rhs' => 'tra_custom41c1saction_idb',
+  ),
+  'acc_efbankaccount_acc_balance' => 
+  array (
+    'name' => 'acc_efbankaccount_acc_balance',
+    'true_relationship_type' => 'one-to-one',
+    'relationships' => 
+    array (
+      'acc_efbankaccount_acc_balance' => 
+      array (
+        'lhs_module' => 'acc_EFBankAccount',
+        'lhs_table' => 'acc_efbankaccount',
+        'lhs_key' => 'id',
+        'rhs_module' => 'acc_Balance',
+        'rhs_table' => 'acc_balance',
+        'rhs_key' => 'id',
+        'relationship_type' => 'many-to-many',
+        'join_table' => 'acc_efbankaccount_acc_balance_c',
+        'join_key_lhs' => 'acc_efbankaccount_acc_balanceacc_efbankaccount_ida',
+        'join_key_rhs' => 'acc_efbankaccount_acc_balanceacc_balance_idb',
+      ),
+    ),
+    'table' => 'acc_efbankaccount_acc_balance_c',
+    'fields' => 
+    array (
+      0 => 
+      array (
+        'name' => 'id',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+      1 => 
+      array (
+        'name' => 'date_modified',
+        'type' => 'datetime',
+      ),
+      2 => 
+      array (
+        'name' => 'deleted',
+        'type' => 'bool',
+        'len' => '1',
+        'default' => '0',
+        'required' => true,
+      ),
+      3 => 
+      array (
+        'name' => 'acc_efbankaccount_acc_balanceacc_efbankaccount_ida',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+      4 => 
+      array (
+        'name' => 'acc_efbankaccount_acc_balanceacc_balance_idb',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+    ),
+    'indices' => 
+    array (
+      0 => 
+      array (
+        'name' => 'acc_efbankaccount_acc_balancespk',
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      1 => 
+      array (
+        'name' => 'acc_efbankaccount_acc_balance_ida1',
+        'type' => 'index',
+        'fields' => 
+        array (
+          0 => 'acc_efbankaccount_acc_balanceacc_efbankaccount_ida',
+        ),
+      ),
+      2 => 
+      array (
+        'name' => 'acc_efbankaccount_acc_balance_idb2',
+        'type' => 'index',
+        'fields' => 
+        array (
+          0 => 'acc_efbankaccount_acc_balanceacc_balance_idb',
+        ),
+      ),
+    ),
+    'lhs_module' => 'acc_EFBankAccount',
+    'lhs_table' => 'acc_efbankaccount',
+    'lhs_key' => 'id',
+    'rhs_module' => 'acc_Balance',
+    'rhs_table' => 'acc_balance',
+    'rhs_key' => 'id',
+    'relationship_type' => 'many-to-many',
+    'join_table' => 'acc_efbankaccount_acc_balance_c',
+    'join_key_lhs' => 'acc_efbankaccount_acc_balanceacc_efbankaccount_ida',
+    'join_key_rhs' => 'acc_efbankaccount_acc_balanceacc_balance_idb',
   ),
   'tra_efdailytransaction_acc_efbankaccount' => 
   array (
@@ -8467,6 +8851,198 @@
     'join_table' => 'tra_efdailytransaction_acc_efbankaccount_c',
     'join_key_lhs' => 'tra_efdailytransaction_acc_efbankaccountacc_efbankaccount_ida',
     'join_key_rhs' => 'tra_efdailytransaction_acc_efbankaccounttra_eftransaction_idb',
+  ),
+  'tra_customertransaction_acc_efbankaccount' => 
+  array (
+    'name' => 'tra_customertransaction_acc_efbankaccount',
+    'true_relationship_type' => 'one-to-many',
+    'relationships' => 
+    array (
+      'tra_customertransaction_acc_efbankaccount' => 
+      array (
+        'lhs_module' => 'acc_EFBankAccount',
+        'lhs_table' => 'acc_efbankaccount',
+        'lhs_key' => 'id',
+        'rhs_module' => 'tra_CustomerTransaction',
+        'rhs_table' => 'tra_customertransaction',
+        'rhs_key' => 'id',
+        'relationship_type' => 'many-to-many',
+        'join_table' => 'tra_customertransaction_acc_efbankaccount_c',
+        'join_key_lhs' => 'tra_customertransaction_acc_efbankaccountacc_efbankaccount_ida',
+        'join_key_rhs' => 'tra_custom7282saction_idb',
+      ),
+    ),
+    'table' => 'tra_customertransaction_acc_efbankaccount_c',
+    'fields' => 
+    array (
+      0 => 
+      array (
+        'name' => 'id',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+      1 => 
+      array (
+        'name' => 'date_modified',
+        'type' => 'datetime',
+      ),
+      2 => 
+      array (
+        'name' => 'deleted',
+        'type' => 'bool',
+        'len' => '1',
+        'default' => '0',
+        'required' => true,
+      ),
+      3 => 
+      array (
+        'name' => 'tra_customertransaction_acc_efbankaccountacc_efbankaccount_ida',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+      4 => 
+      array (
+        'name' => 'tra_custom7282saction_idb',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+    ),
+    'indices' => 
+    array (
+      0 => 
+      array (
+        'name' => 'tra_customertransaction_acc_efbankaccountspk',
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      1 => 
+      array (
+        'name' => 'tra_customertransaction_acc_efbankaccount_ida1',
+        'type' => 'index',
+        'fields' => 
+        array (
+          0 => 'tra_customertransaction_acc_efbankaccountacc_efbankaccount_ida',
+        ),
+      ),
+      2 => 
+      array (
+        'name' => 'tra_customertransaction_acc_efbankaccount_alt',
+        'type' => 'alternate_key',
+        'fields' => 
+        array (
+          0 => 'tra_custom7282saction_idb',
+        ),
+      ),
+    ),
+    'lhs_module' => 'acc_EFBankAccount',
+    'lhs_table' => 'acc_efbankaccount',
+    'lhs_key' => 'id',
+    'rhs_module' => 'tra_CustomerTransaction',
+    'rhs_table' => 'tra_customertransaction',
+    'rhs_key' => 'id',
+    'relationship_type' => 'many-to-many',
+    'join_table' => 'tra_customertransaction_acc_efbankaccount_c',
+    'join_key_lhs' => 'tra_customertransaction_acc_efbankaccountacc_efbankaccount_ida',
+    'join_key_rhs' => 'tra_custom7282saction_idb',
+  ),
+  'tra_eftransaction_acc_balance' => 
+  array (
+    'name' => 'tra_eftransaction_acc_balance',
+    'true_relationship_type' => 'one-to-many',
+    'relationships' => 
+    array (
+      'tra_eftransaction_acc_balance' => 
+      array (
+        'lhs_module' => 'acc_Balance',
+        'lhs_table' => 'acc_balance',
+        'lhs_key' => 'id',
+        'rhs_module' => 'tra_EFTransaction',
+        'rhs_table' => 'tra_eftransaction',
+        'rhs_key' => 'id',
+        'relationship_type' => 'many-to-many',
+        'join_table' => 'tra_eftransaction_acc_balance_c',
+        'join_key_lhs' => 'tra_eftransaction_acc_balanceacc_balance_ida',
+        'join_key_rhs' => 'tra_eftransaction_acc_balancetra_eftransaction_idb',
+      ),
+    ),
+    'table' => 'tra_eftransaction_acc_balance_c',
+    'fields' => 
+    array (
+      0 => 
+      array (
+        'name' => 'id',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+      1 => 
+      array (
+        'name' => 'date_modified',
+        'type' => 'datetime',
+      ),
+      2 => 
+      array (
+        'name' => 'deleted',
+        'type' => 'bool',
+        'len' => '1',
+        'default' => '0',
+        'required' => true,
+      ),
+      3 => 
+      array (
+        'name' => 'tra_eftransaction_acc_balanceacc_balance_ida',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+      4 => 
+      array (
+        'name' => 'tra_eftransaction_acc_balancetra_eftransaction_idb',
+        'type' => 'varchar',
+        'len' => 36,
+      ),
+    ),
+    'indices' => 
+    array (
+      0 => 
+      array (
+        'name' => 'tra_eftransaction_acc_balancespk',
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      1 => 
+      array (
+        'name' => 'tra_eftransaction_acc_balance_ida1',
+        'type' => 'index',
+        'fields' => 
+        array (
+          0 => 'tra_eftransaction_acc_balanceacc_balance_ida',
+        ),
+      ),
+      2 => 
+      array (
+        'name' => 'tra_eftransaction_acc_balance_alt',
+        'type' => 'alternate_key',
+        'fields' => 
+        array (
+          0 => 'tra_eftransaction_acc_balancetra_eftransaction_idb',
+        ),
+      ),
+    ),
+    'lhs_module' => 'acc_Balance',
+    'lhs_table' => 'acc_balance',
+    'lhs_key' => 'id',
+    'rhs_module' => 'tra_EFTransaction',
+    'rhs_table' => 'tra_eftransaction',
+    'rhs_key' => 'id',
+    'relationship_type' => 'many-to-many',
+    'join_table' => 'tra_eftransaction_acc_balance_c',
+    'join_key_lhs' => 'tra_eftransaction_acc_balanceacc_balance_ida',
+    'join_key_rhs' => 'tra_eftransaction_acc_balancetra_eftransaction_idb',
   ),
   'accounts_fp_event_locations_1' => 
   array (
@@ -8565,27 +9141,27 @@
     'join_key_lhs' => 'accounts_fp_event_locations_1accounts_ida',
     'join_key_rhs' => 'accounts_fp_event_locations_1fp_event_locations_idb',
   ),
-  'acc_customerbankaccount_accounts' => 
+  'tra_customertransaction_acc_customerbankaccount' => 
   array (
-    'name' => 'acc_customerbankaccount_accounts',
+    'name' => 'tra_customertransaction_acc_customerbankaccount',
     'true_relationship_type' => 'one-to-many',
     'relationships' => 
     array (
-      'acc_customerbankaccount_accounts' => 
+      'tra_customertransaction_acc_customerbankaccount' => 
       array (
-        'lhs_module' => 'Accounts',
-        'lhs_table' => 'accounts',
+        'lhs_module' => 'acc_CustomerBankAccount',
+        'lhs_table' => 'acc_customerbankaccount',
         'lhs_key' => 'id',
-        'rhs_module' => 'acc_CustomerBankAccount',
-        'rhs_table' => 'acc_customerbankaccount',
+        'rhs_module' => 'tra_CustomerTransaction',
+        'rhs_table' => 'tra_customertransaction',
         'rhs_key' => 'id',
         'relationship_type' => 'many-to-many',
-        'join_table' => 'acc_customerbankaccount_accounts_c',
-        'join_key_lhs' => 'acc_customerbankaccount_accountsaccounts_ida',
-        'join_key_rhs' => 'acc_customerbankaccount_accountsacc_customerbankaccount_idb',
+        'join_table' => 'tra_customertransaction_acc_customerbankaccount_c',
+        'join_key_lhs' => 'tra_custom1e70account_ida',
+        'join_key_rhs' => 'tra_custom2946saction_idb',
       ),
     ),
-    'table' => 'acc_customerbankaccount_accounts_c',
+    'table' => 'tra_customertransaction_acc_customerbankaccount_c',
     'fields' => 
     array (
       0 => 
@@ -8609,13 +9185,13 @@
       ),
       3 => 
       array (
-        'name' => 'acc_customerbankaccount_accountsaccounts_ida',
+        'name' => 'tra_custom1e70account_ida',
         'type' => 'varchar',
         'len' => 36,
       ),
       4 => 
       array (
-        'name' => 'acc_customerbankaccount_accountsacc_customerbankaccount_idb',
+        'name' => 'tra_custom2946saction_idb',
         'type' => 'varchar',
         'len' => 36,
       ),
@@ -8624,7 +9200,7 @@
     array (
       0 => 
       array (
-        'name' => 'acc_customerbankaccount_accountsspk',
+        'name' => 'tra_customertransaction_acc_customerbankaccountspk',
         'type' => 'primary',
         'fields' => 
         array (
@@ -8633,33 +9209,33 @@
       ),
       1 => 
       array (
-        'name' => 'acc_customerbankaccount_accounts_ida1',
+        'name' => 'tra_customertransaction_acc_customerbankaccount_ida1',
         'type' => 'index',
         'fields' => 
         array (
-          0 => 'acc_customerbankaccount_accountsaccounts_ida',
+          0 => 'tra_custom1e70account_ida',
         ),
       ),
       2 => 
       array (
-        'name' => 'acc_customerbankaccount_accounts_alt',
+        'name' => 'tra_customertransaction_acc_customerbankaccount_alt',
         'type' => 'alternate_key',
         'fields' => 
         array (
-          0 => 'acc_customerbankaccount_accountsacc_customerbankaccount_idb',
+          0 => 'tra_custom2946saction_idb',
         ),
       ),
     ),
-    'lhs_module' => 'Accounts',
-    'lhs_table' => 'accounts',
+    'lhs_module' => 'acc_CustomerBankAccount',
+    'lhs_table' => 'acc_customerbankaccount',
     'lhs_key' => 'id',
-    'rhs_module' => 'acc_CustomerBankAccount',
-    'rhs_table' => 'acc_customerbankaccount',
+    'rhs_module' => 'tra_CustomerTransaction',
+    'rhs_table' => 'tra_customertransaction',
     'rhs_key' => 'id',
     'relationship_type' => 'many-to-many',
-    'join_table' => 'acc_customerbankaccount_accounts_c',
-    'join_key_lhs' => 'acc_customerbankaccount_accountsaccounts_ida',
-    'join_key_rhs' => 'acc_customerbankaccount_accountsacc_customerbankaccount_idb',
+    'join_table' => 'tra_customertransaction_acc_customerbankaccount_c',
+    'join_key_lhs' => 'tra_custom1e70account_ida',
+    'join_key_rhs' => 'tra_custom2946saction_idb',
   ),
   'tra_customertransaction_acc_balance' => 
   array (
@@ -8757,390 +9333,6 @@
     'join_key_lhs' => 'tra_customertransaction_acc_balanceacc_balance_ida',
     'join_key_rhs' => 'tra_customertransaction_acc_balancetra_customertransaction_idb',
   ),
-  'tra_customertransaction_acc_efbankaccount' => 
-  array (
-    'name' => 'tra_customertransaction_acc_efbankaccount',
-    'true_relationship_type' => 'one-to-many',
-    'relationships' => 
-    array (
-      'tra_customertransaction_acc_efbankaccount' => 
-      array (
-        'lhs_module' => 'acc_EFBankAccount',
-        'lhs_table' => 'acc_efbankaccount',
-        'lhs_key' => 'id',
-        'rhs_module' => 'tra_CustomerTransaction',
-        'rhs_table' => 'tra_customertransaction',
-        'rhs_key' => 'id',
-        'relationship_type' => 'many-to-many',
-        'join_table' => 'tra_customertransaction_acc_efbankaccount_c',
-        'join_key_lhs' => 'tra_customertransaction_acc_efbankaccountacc_efbankaccount_ida',
-        'join_key_rhs' => 'tra_custom7282saction_idb',
-      ),
-    ),
-    'table' => 'tra_customertransaction_acc_efbankaccount_c',
-    'fields' => 
-    array (
-      0 => 
-      array (
-        'name' => 'id',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-      1 => 
-      array (
-        'name' => 'date_modified',
-        'type' => 'datetime',
-      ),
-      2 => 
-      array (
-        'name' => 'deleted',
-        'type' => 'bool',
-        'len' => '1',
-        'default' => '0',
-        'required' => true,
-      ),
-      3 => 
-      array (
-        'name' => 'tra_customertransaction_acc_efbankaccountacc_efbankaccount_ida',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-      4 => 
-      array (
-        'name' => 'tra_custom7282saction_idb',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-    ),
-    'indices' => 
-    array (
-      0 => 
-      array (
-        'name' => 'tra_customertransaction_acc_efbankaccountspk',
-        'type' => 'primary',
-        'fields' => 
-        array (
-          0 => 'id',
-        ),
-      ),
-      1 => 
-      array (
-        'name' => 'tra_customertransaction_acc_efbankaccount_ida1',
-        'type' => 'index',
-        'fields' => 
-        array (
-          0 => 'tra_customertransaction_acc_efbankaccountacc_efbankaccount_ida',
-        ),
-      ),
-      2 => 
-      array (
-        'name' => 'tra_customertransaction_acc_efbankaccount_alt',
-        'type' => 'alternate_key',
-        'fields' => 
-        array (
-          0 => 'tra_custom7282saction_idb',
-        ),
-      ),
-    ),
-    'lhs_module' => 'acc_EFBankAccount',
-    'lhs_table' => 'acc_efbankaccount',
-    'lhs_key' => 'id',
-    'rhs_module' => 'tra_CustomerTransaction',
-    'rhs_table' => 'tra_customertransaction',
-    'rhs_key' => 'id',
-    'relationship_type' => 'many-to-many',
-    'join_table' => 'tra_customertransaction_acc_efbankaccount_c',
-    'join_key_lhs' => 'tra_customertransaction_acc_efbankaccountacc_efbankaccount_ida',
-    'join_key_rhs' => 'tra_custom7282saction_idb',
-  ),
-  'tra_customerfxrequest_tra_lockedrate' => 
-  array (
-    'name' => 'tra_customerfxrequest_tra_lockedrate',
-    'true_relationship_type' => 'one-to-many',
-    'relationships' => 
-    array (
-      'tra_customerfxrequest_tra_lockedrate' => 
-      array (
-        'lhs_module' => 'tra_LockedRate',
-        'lhs_table' => 'tra_lockedrate',
-        'lhs_key' => 'id',
-        'rhs_module' => 'tra_CustomerFXRequest',
-        'rhs_table' => 'tra_customerfxrequest',
-        'rhs_key' => 'id',
-        'relationship_type' => 'many-to-many',
-        'join_table' => 'tra_customerfxrequest_tra_lockedrate_c',
-        'join_key_lhs' => 'tra_customerfxrequest_tra_lockedratetra_lockedrate_ida',
-        'join_key_rhs' => 'tra_customerfxrequest_tra_lockedratetra_customerfxrequest_idb',
-      ),
-    ),
-    'table' => 'tra_customerfxrequest_tra_lockedrate_c',
-    'fields' => 
-    array (
-      0 => 
-      array (
-        'name' => 'id',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-      1 => 
-      array (
-        'name' => 'date_modified',
-        'type' => 'datetime',
-      ),
-      2 => 
-      array (
-        'name' => 'deleted',
-        'type' => 'bool',
-        'len' => '1',
-        'default' => '0',
-        'required' => true,
-      ),
-      3 => 
-      array (
-        'name' => 'tra_customerfxrequest_tra_lockedratetra_lockedrate_ida',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-      4 => 
-      array (
-        'name' => 'tra_customerfxrequest_tra_lockedratetra_customerfxrequest_idb',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-    ),
-    'indices' => 
-    array (
-      0 => 
-      array (
-        'name' => 'tra_customerfxrequest_tra_lockedratespk',
-        'type' => 'primary',
-        'fields' => 
-        array (
-          0 => 'id',
-        ),
-      ),
-      1 => 
-      array (
-        'name' => 'tra_customerfxrequest_tra_lockedrate_ida1',
-        'type' => 'index',
-        'fields' => 
-        array (
-          0 => 'tra_customerfxrequest_tra_lockedratetra_lockedrate_ida',
-        ),
-      ),
-      2 => 
-      array (
-        'name' => 'tra_customerfxrequest_tra_lockedrate_alt',
-        'type' => 'alternate_key',
-        'fields' => 
-        array (
-          0 => 'tra_customerfxrequest_tra_lockedratetra_customerfxrequest_idb',
-        ),
-      ),
-    ),
-    'lhs_module' => 'tra_LockedRate',
-    'lhs_table' => 'tra_lockedrate',
-    'lhs_key' => 'id',
-    'rhs_module' => 'tra_CustomerFXRequest',
-    'rhs_table' => 'tra_customerfxrequest',
-    'rhs_key' => 'id',
-    'relationship_type' => 'many-to-many',
-    'join_table' => 'tra_customerfxrequest_tra_lockedrate_c',
-    'join_key_lhs' => 'tra_customerfxrequest_tra_lockedratetra_lockedrate_ida',
-    'join_key_rhs' => 'tra_customerfxrequest_tra_lockedratetra_customerfxrequest_idb',
-  ),
-  'acc_balance_accounts' => 
-  array (
-    'name' => 'acc_balance_accounts',
-    'true_relationship_type' => 'one-to-many',
-    'relationships' => 
-    array (
-      'acc_balance_accounts' => 
-      array (
-        'lhs_module' => 'Accounts',
-        'lhs_table' => 'accounts',
-        'lhs_key' => 'id',
-        'rhs_module' => 'acc_Balance',
-        'rhs_table' => 'acc_balance',
-        'rhs_key' => 'id',
-        'relationship_type' => 'many-to-many',
-        'join_table' => 'acc_balance_accounts_c',
-        'join_key_lhs' => 'acc_balance_accountsaccounts_ida',
-        'join_key_rhs' => 'acc_balance_accountsacc_balance_idb',
-      ),
-    ),
-    'table' => 'acc_balance_accounts_c',
-    'fields' => 
-    array (
-      0 => 
-      array (
-        'name' => 'id',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-      1 => 
-      array (
-        'name' => 'date_modified',
-        'type' => 'datetime',
-      ),
-      2 => 
-      array (
-        'name' => 'deleted',
-        'type' => 'bool',
-        'len' => '1',
-        'default' => '0',
-        'required' => true,
-      ),
-      3 => 
-      array (
-        'name' => 'acc_balance_accountsaccounts_ida',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-      4 => 
-      array (
-        'name' => 'acc_balance_accountsacc_balance_idb',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-    ),
-    'indices' => 
-    array (
-      0 => 
-      array (
-        'name' => 'acc_balance_accountsspk',
-        'type' => 'primary',
-        'fields' => 
-        array (
-          0 => 'id',
-        ),
-      ),
-      1 => 
-      array (
-        'name' => 'acc_balance_accounts_ida1',
-        'type' => 'index',
-        'fields' => 
-        array (
-          0 => 'acc_balance_accountsaccounts_ida',
-        ),
-      ),
-      2 => 
-      array (
-        'name' => 'acc_balance_accounts_alt',
-        'type' => 'alternate_key',
-        'fields' => 
-        array (
-          0 => 'acc_balance_accountsacc_balance_idb',
-        ),
-      ),
-    ),
-    'lhs_module' => 'Accounts',
-    'lhs_table' => 'accounts',
-    'lhs_key' => 'id',
-    'rhs_module' => 'acc_Balance',
-    'rhs_table' => 'acc_balance',
-    'rhs_key' => 'id',
-    'relationship_type' => 'many-to-many',
-    'join_table' => 'acc_balance_accounts_c',
-    'join_key_lhs' => 'acc_balance_accountsaccounts_ida',
-    'join_key_rhs' => 'acc_balance_accountsacc_balance_idb',
-  ),
-  'tra_customerfxrequest_tra_customertransaction' => 
-  array (
-    'name' => 'tra_customerfxrequest_tra_customertransaction',
-    'true_relationship_type' => 'one-to-many',
-    'relationships' => 
-    array (
-      'tra_customerfxrequest_tra_customertransaction' => 
-      array (
-        'lhs_module' => 'tra_CustomerFXRequest',
-        'lhs_table' => 'tra_customerfxrequest',
-        'lhs_key' => 'id',
-        'rhs_module' => 'tra_CustomerTransaction',
-        'rhs_table' => 'tra_customertransaction',
-        'rhs_key' => 'id',
-        'relationship_type' => 'many-to-many',
-        'join_table' => 'tra_customerfxrequest_tra_customertransaction_c',
-        'join_key_lhs' => 'tra_customc9d6request_ida',
-        'join_key_rhs' => 'tra_custom41c1saction_idb',
-      ),
-    ),
-    'table' => 'tra_customerfxrequest_tra_customertransaction_c',
-    'fields' => 
-    array (
-      0 => 
-      array (
-        'name' => 'id',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-      1 => 
-      array (
-        'name' => 'date_modified',
-        'type' => 'datetime',
-      ),
-      2 => 
-      array (
-        'name' => 'deleted',
-        'type' => 'bool',
-        'len' => '1',
-        'default' => '0',
-        'required' => true,
-      ),
-      3 => 
-      array (
-        'name' => 'tra_customc9d6request_ida',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-      4 => 
-      array (
-        'name' => 'tra_custom41c1saction_idb',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-    ),
-    'indices' => 
-    array (
-      0 => 
-      array (
-        'name' => 'tra_customerfxrequest_tra_customertransactionspk',
-        'type' => 'primary',
-        'fields' => 
-        array (
-          0 => 'id',
-        ),
-      ),
-      1 => 
-      array (
-        'name' => 'tra_customerfxrequest_tra_customertransaction_ida1',
-        'type' => 'index',
-        'fields' => 
-        array (
-          0 => 'tra_customc9d6request_ida',
-        ),
-      ),
-      2 => 
-      array (
-        'name' => 'tra_customerfxrequest_tra_customertransaction_alt',
-        'type' => 'alternate_key',
-        'fields' => 
-        array (
-          0 => 'tra_custom41c1saction_idb',
-        ),
-      ),
-    ),
-    'lhs_module' => 'tra_CustomerFXRequest',
-    'lhs_table' => 'tra_customerfxrequest',
-    'lhs_key' => 'id',
-    'rhs_module' => 'tra_CustomerTransaction',
-    'rhs_table' => 'tra_customertransaction',
-    'rhs_key' => 'id',
-    'relationship_type' => 'many-to-many',
-    'join_table' => 'tra_customerfxrequest_tra_customertransaction_c',
-    'join_key_lhs' => 'tra_customc9d6request_ida',
-    'join_key_rhs' => 'tra_custom41c1saction_idb',
-  ),
   'tra_customerfxrequest_accounts' => 
   array (
     'name' => 'tra_customerfxrequest_accounts',
@@ -9236,198 +9428,6 @@
     'join_table' => 'tra_customerfxrequest_accounts_c',
     'join_key_lhs' => 'tra_customerfxrequest_accountsaccounts_ida',
     'join_key_rhs' => 'tra_customerfxrequest_accountstra_customerfxrequest_idb',
-  ),
-  'tra_customertransaction_acc_customerbankaccount' => 
-  array (
-    'name' => 'tra_customertransaction_acc_customerbankaccount',
-    'true_relationship_type' => 'one-to-many',
-    'relationships' => 
-    array (
-      'tra_customertransaction_acc_customerbankaccount' => 
-      array (
-        'lhs_module' => 'acc_CustomerBankAccount',
-        'lhs_table' => 'acc_customerbankaccount',
-        'lhs_key' => 'id',
-        'rhs_module' => 'tra_CustomerTransaction',
-        'rhs_table' => 'tra_customertransaction',
-        'rhs_key' => 'id',
-        'relationship_type' => 'many-to-many',
-        'join_table' => 'tra_customertransaction_acc_customerbankaccount_c',
-        'join_key_lhs' => 'tra_custom1e70account_ida',
-        'join_key_rhs' => 'tra_custom2946saction_idb',
-      ),
-    ),
-    'table' => 'tra_customertransaction_acc_customerbankaccount_c',
-    'fields' => 
-    array (
-      0 => 
-      array (
-        'name' => 'id',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-      1 => 
-      array (
-        'name' => 'date_modified',
-        'type' => 'datetime',
-      ),
-      2 => 
-      array (
-        'name' => 'deleted',
-        'type' => 'bool',
-        'len' => '1',
-        'default' => '0',
-        'required' => true,
-      ),
-      3 => 
-      array (
-        'name' => 'tra_custom1e70account_ida',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-      4 => 
-      array (
-        'name' => 'tra_custom2946saction_idb',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-    ),
-    'indices' => 
-    array (
-      0 => 
-      array (
-        'name' => 'tra_customertransaction_acc_customerbankaccountspk',
-        'type' => 'primary',
-        'fields' => 
-        array (
-          0 => 'id',
-        ),
-      ),
-      1 => 
-      array (
-        'name' => 'tra_customertransaction_acc_customerbankaccount_ida1',
-        'type' => 'index',
-        'fields' => 
-        array (
-          0 => 'tra_custom1e70account_ida',
-        ),
-      ),
-      2 => 
-      array (
-        'name' => 'tra_customertransaction_acc_customerbankaccount_alt',
-        'type' => 'alternate_key',
-        'fields' => 
-        array (
-          0 => 'tra_custom2946saction_idb',
-        ),
-      ),
-    ),
-    'lhs_module' => 'acc_CustomerBankAccount',
-    'lhs_table' => 'acc_customerbankaccount',
-    'lhs_key' => 'id',
-    'rhs_module' => 'tra_CustomerTransaction',
-    'rhs_table' => 'tra_customertransaction',
-    'rhs_key' => 'id',
-    'relationship_type' => 'many-to-many',
-    'join_table' => 'tra_customertransaction_acc_customerbankaccount_c',
-    'join_key_lhs' => 'tra_custom1e70account_ida',
-    'join_key_rhs' => 'tra_custom2946saction_idb',
-  ),
-  'acc_efbankaccount_acc_balance' => 
-  array (
-    'name' => 'acc_efbankaccount_acc_balance',
-    'true_relationship_type' => 'one-to-one',
-    'relationships' => 
-    array (
-      'acc_efbankaccount_acc_balance' => 
-      array (
-        'lhs_module' => 'acc_EFBankAccount',
-        'lhs_table' => 'acc_efbankaccount',
-        'lhs_key' => 'id',
-        'rhs_module' => 'acc_Balance',
-        'rhs_table' => 'acc_balance',
-        'rhs_key' => 'id',
-        'relationship_type' => 'many-to-many',
-        'join_table' => 'acc_efbankaccount_acc_balance_c',
-        'join_key_lhs' => 'acc_efbankaccount_acc_balanceacc_efbankaccount_ida',
-        'join_key_rhs' => 'acc_efbankaccount_acc_balanceacc_balance_idb',
-      ),
-    ),
-    'table' => 'acc_efbankaccount_acc_balance_c',
-    'fields' => 
-    array (
-      0 => 
-      array (
-        'name' => 'id',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-      1 => 
-      array (
-        'name' => 'date_modified',
-        'type' => 'datetime',
-      ),
-      2 => 
-      array (
-        'name' => 'deleted',
-        'type' => 'bool',
-        'len' => '1',
-        'default' => '0',
-        'required' => true,
-      ),
-      3 => 
-      array (
-        'name' => 'acc_efbankaccount_acc_balanceacc_efbankaccount_ida',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-      4 => 
-      array (
-        'name' => 'acc_efbankaccount_acc_balanceacc_balance_idb',
-        'type' => 'varchar',
-        'len' => 36,
-      ),
-    ),
-    'indices' => 
-    array (
-      0 => 
-      array (
-        'name' => 'acc_efbankaccount_acc_balancespk',
-        'type' => 'primary',
-        'fields' => 
-        array (
-          0 => 'id',
-        ),
-      ),
-      1 => 
-      array (
-        'name' => 'acc_efbankaccount_acc_balance_ida1',
-        'type' => 'index',
-        'fields' => 
-        array (
-          0 => 'acc_efbankaccount_acc_balanceacc_efbankaccount_ida',
-        ),
-      ),
-      2 => 
-      array (
-        'name' => 'acc_efbankaccount_acc_balance_idb2',
-        'type' => 'index',
-        'fields' => 
-        array (
-          0 => 'acc_efbankaccount_acc_balanceacc_balance_idb',
-        ),
-      ),
-    ),
-    'lhs_module' => 'acc_EFBankAccount',
-    'lhs_table' => 'acc_efbankaccount',
-    'lhs_key' => 'id',
-    'rhs_module' => 'acc_Balance',
-    'rhs_table' => 'acc_balance',
-    'rhs_key' => 'id',
-    'relationship_type' => 'many-to-many',
-    'join_table' => 'acc_efbankaccount_acc_balance_c',
-    'join_key_lhs' => 'acc_efbankaccount_acc_balanceacc_efbankaccount_ida',
-    'join_key_rhs' => 'acc_efbankaccount_acc_balanceacc_balance_idb',
   ),
   'user_direct_reports' => 
   array (

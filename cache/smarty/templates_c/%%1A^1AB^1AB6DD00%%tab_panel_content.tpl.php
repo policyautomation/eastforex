@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.31, created on 2019-03-07 06:36:17
+<?php /* Smarty version 2.6.31, created on 2019-03-07 07:51:05
          compiled from themes/SuiteP/include/EditView/tab_panel_content.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'counter', 'themes/SuiteP/include/EditView/tab_panel_content.tpl', 5, false),array('function', 'sugar_field', 'themes/SuiteP/include/EditView/tab_panel_content.tpl', 101, false),array('function', 'sugar_evalcolumn', 'themes/SuiteP/include/EditView/tab_panel_content.tpl', 106, false),)), $this); ?>
