@@ -1,10 +1,13 @@
 (function () {
 
     $(document).ready(function () {
+        statusMenuListFilter();
         toggleOccupationOther();
         toggleCustomerViewByType();
 
         $('#type_c').change(function () {
+            statusMenuListFilter();
+
             toggleCustomerViewByType();
         });
 
@@ -15,12 +18,12 @@
 
     function toggleCustomerViewByType() {
 
-        let panels = $('.panel').children();
+        const panels = $('.panel').children();
 
-        let information = panels.filter('[data-id="LBL_EDITVIEW_PANEL1"]').parent();
-        let company = panels.filter('[data-id="LBL_EDITVIEW_PANEL2"]').parent();
+        const information = panels.filter('[data-id="LBL_EDITVIEW_PANEL1"]').parent();
+        const company = panels.filter('[data-id="LBL_EDITVIEW_PANEL2"]').parent();
 
-        let type = $('#type_c').val();
+        const type = $('#type_c').val();
 
         if (type === 'individual') {
             information.show();
@@ -33,13 +36,26 @@
 
     function toggleOccupationOther() {
 
-        let occupation = $('#occupation_c').val();
+        const occupation = $('#occupation_c').val();
 
         if (occupation !== 'other') {
             $('#occupation_other_c').parent().parent().hide();
         } else {
             $('#occupation_other_c').parent().parent().show();
         }
+    }
+
+
+    function statusMenuListFilter() {
+
+        const type = $('#type_c').val();
+
+        if (type === 'company') {
+            $('#status_c option[value="annual_review"]').show();
+        } else {
+            $('#status_c option[value="annual_review"]').hide();
+        }
+
     }
 
 })();
