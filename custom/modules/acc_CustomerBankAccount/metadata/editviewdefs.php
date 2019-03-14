@@ -20,6 +20,13 @@ array (
           'field' => '30',
         ),
       ),
+      'includes' =>
+      array (
+        0 =>
+        array (
+          'file' => 'custom/modules/acc_CustomerBankAccount/CustomerBankAccountCustom.js'
+        ),
+      ),
       'useTabs' => false,
       'tabDefs' => 
       array (
