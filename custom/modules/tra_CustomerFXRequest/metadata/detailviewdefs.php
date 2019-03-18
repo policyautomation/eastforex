@@ -30,6 +30,13 @@ array (
           'field' => '30',
         ),
       ),
+      'includes' =>
+      array (
+        0 =>
+        array (
+          'file' => 'custom/modules/tra_CustomerFXRequest/CustomerFXRequestCustom.js'
+        ),
+      ),
       'useTabs' => false,
       'tabDefs' => 
       array (
