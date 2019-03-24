@@ -105,4 +105,5 @@ $GLOBALS['app_list_strings']['pdf_template_type_dom']=array (
   'Leads' => 'Leads',
   'tra_LockedRate' => 'LockedRate',
   'tra_CustomerFXRequest' => 'Customer FX Request',
+  'tra_CustomerTransaction' => 'Customer Transaction',
 );
