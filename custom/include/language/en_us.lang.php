@@ -104,4 +104,5 @@ $GLOBALS['app_list_strings']['pdf_template_type_dom']=array (
   'Contacts' => 'Contacts',
   'Leads' => 'Leads',
   'tra_LockedRate' => 'LockedRate',
+  'tra_CustomerFXRequest' => 'Customer FX Request',
 );
