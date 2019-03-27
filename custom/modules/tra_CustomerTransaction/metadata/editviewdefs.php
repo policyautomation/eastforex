@@ -79,18 +79,19 @@ array (
           ),
           1 => 
           array (
-            'name' => 'term',
-            'studio' => 'visible',
-            'label' => 'LBL_TERM',
+            'name' => 'tra_customertransaction_acc_customerbankaccount_name',
+            'label' => 'LBL_TRA_CUSTOMERTRANSACTION_ACC_CUSTOMERBANKACCOUNT_FROM_ACC_CUSTOMERBANKACCOUNT_TITLE',
           ),
         ),
         3 => 
         array (
           0 => 
           array (
-            'name' => 'tra_customertransaction_acc_customerbankaccount_name',
-            'label' => 'LBL_TRA_CUSTOMERTRANSACTION_ACC_CUSTOMERBANKACCOUNT_FROM_ACC_CUSTOMERBANKACCOUNT_TITLE',
+            'name' => 'term',
+            'studio' => 'visible',
+            'label' => 'LBL_TERM',
           ),
+
           1 => 
           array (
             'name' => 'currency',

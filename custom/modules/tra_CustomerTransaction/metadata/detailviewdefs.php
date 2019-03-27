@@ -112,18 +112,19 @@ array (
           ),
           1 => 
           array (
-            'name' => 'currency',
-            'studio' => 'visible',
-            'label' => 'LBL_CURRENCY',
+            'name' => 'tra_customertransaction_acc_customerbankaccount_name',
+            'label' => 'LBL_TRA_CUSTOMERTRANSACTION_ACC_CUSTOMERBANKACCOUNT_FROM_ACC_CUSTOMERBANKACCOUNT_TITLE',
           ),
         ),
         4 => 
         array (
           0 => 
           array (
-            'name' => 'tra_customertransaction_acc_customerbankaccount_name',
-            'label' => 'LBL_TRA_CUSTOMERTRANSACTION_ACC_CUSTOMERBANKACCOUNT_FROM_ACC_CUSTOMERBANKACCOUNT_TITLE',
+            'name' => 'currency',
+            'studio' => 'visible',
+            'label' => 'LBL_CURRENCY',
           ),
+
           1 => 
           array (
             'name' => 'remittance_purpose',
