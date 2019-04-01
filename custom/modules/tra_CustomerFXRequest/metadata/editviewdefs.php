@@ -26,6 +26,14 @@ array (
         array (
           'file' => 'custom/modules/tra_CustomerFXRequest/CustomerFXRequestCustom.js'
         ),
+        1 =>
+        array (
+            'file' => 'custom/modules/tra_CustomerFXRequest/js/editview.js',
+        ),
+        2 =>
+        array (
+            'file' => 'https://unpkg.com/sweetalert/dist/sweetalert.min.js',
+        ),
       ),
       'useTabs' => false,
       'tabDefs' => 
@@ -56,6 +64,15 @@ array (
         array (
           0 => 
           array (
+            'name' => 'direction',
+            'studio' => 'visible',
+            'label' => 'LBL_DIRECTION',
+          ),
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
             'name' => 'fx_request_date',
             'label' => 'LBL_FX_REQUEST_DATE',
           ),
@@ -65,26 +82,12 @@ array (
             'label' => 'LBL_RATE_DATE',
           ),
         ),
-        1 => 
+        2 => 
         array (
           0 => 
           array (
             'name' => 'fx_rate',
             'label' => 'LBL_FX_RATE',
-          ),
-          1 => 
-          array (
-            'name' => 'direction',
-            'studio' => 'visible',
-            'label' => 'LBL_DIRECTION',
-          ),
-        ),
-        2 => 
-        array (
-          0 => 
-          array (
-            'name' => 'api_rate',
-            'label' => 'LBL_API_RATE',
           ),
           1 => 
           array (
@@ -106,6 +109,19 @@ array (
           ),
         ),
         4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'api_rate',
+            'label' => 'LBL_API_RATE',
+          ),
+          1 => 
+          array (
+            'name' => 'update_api_rate_c',
+            'label' => 'LBL_UPDATE_API_RATE',
+          ),
+        ),
+        5 => 
         array (
           0 => 
           array (
