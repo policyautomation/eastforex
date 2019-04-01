@@ -23,4 +23,6 @@ $sugar_config['hide_history_contacts_emails']['Opportunities'] = true;
 $sugar_config['list_max_entries_per_page'] = '50';
 $sugar_config['list_max_entries_per_subpanel'] = '20';
 $sugar_config['currency'] = 'aud';
+$sugar_config['relationship_tree_limit'] = '8';
+$sugar_config['developerMode'] = true;
 /***CONFIGURATOR***/

@@ -58,6 +58,10 @@ array (
           'file' => 'modules/Accounts/Account.js',
           'file' => 'custom/modules/Accounts/AccountCustom.js'
         ),
+        1 =>
+        array (
+          'file' => 'custom/modules/Accounts/js/detailview.js'
+        ),
       ),
       'useTabs' => false,
       'tabDefs' =>
