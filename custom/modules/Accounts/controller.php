@@ -45,6 +45,27 @@ class AccountsController extends SugarController
 
             array_push($data_arr,$Customer_arr);
 
+            //get related customer data
+            $getrelatedCustomerDataSQL = "SELECT
+                                               a.id as name
+                                             ,a.name as label
+                                             ,CONCAT(\"?module=Accounts&action=DetailView&record=\", a.id) as redirect_url
+                                            FROM
+                                            accounts_accounts_1_c aa
+                                            INNER JOIN accounts a on aa.accounts_accounts_1accounts_idb = a.id and a.deleted = 0
+                                            WHERE
+                                              aa.deleted = 0 and
+                                              aa.accounts_accounts_1accounts_ida = '$ParentModuleID'";
+            $result = $GLOBALS["db"]->query($getrelatedCustomerDataSQL);
+            while($row = $GLOBALS["db"]->fetchByAssoc($result)) {
+                $row_arr['name'] = $row['name'];
+                $row_arr['label'] = $row['label'];
+                $row_arr['parent'] = $ParentModuleID;
+                $row_arr['redirect_url'] = $row['redirect_url'];
+                $row_arr['image_path'] = 'themes/default/images/Accounts.gif';
+
+                array_push($data_arr, $row_arr);
+            }
 
             //get customer bank accounts
             $CustomerBankAccountsSQL = "SELECT
