@@ -113,13 +113,13 @@ array (
         array (
           0 => 
           array (
-            'name' => 'beneficiary_street_address_c',
-            'label' => 'LBL_BENEFICIARY_STREET_ADDRESS',
+            'name' => 'beneficiary_bank_street_c',
+            'label' => 'LBL_BENEFICIARY_BANK_STREET',
           ),
           1 => 
           array (
-            'name' => 'beneficiary_bank_street_c',
-            'label' => 'LBL_BENEFICIARY_BANK_STREET',
+            'name' => 'beneficiary_street_address_c',
+            'label' => 'LBL_BENEFICIARY_STREET_ADDRESS',
           ),
         ),
         6 => 
