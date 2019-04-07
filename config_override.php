@@ -25,5 +25,5 @@ $sugar_config['list_max_entries_per_subpanel'] = '20';
 $sugar_config['currency'] = 'aud';
 /* FR Rate Calculation URL and KEY*/
 $sugar_config['live_rate_api_url'] = 'https://www.live-rates.com';
-$sugar_config['live_rate_api_key'] = '2faa757375';
+$sugar_config['live_rate_api_key'] = '47fb221be2';
 /***CONFIGURATOR***/
