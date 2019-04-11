@@ -222,15 +222,6 @@ array (
             'label' => 'LBL_OCCUPATION_OTHER',
           ),
         ),
-        4 =>
-        array (
-          0 =>
-          array (
-            'name' => 'linked_company_c',
-            'studio' => 'visible',
-            'label' => 'LBL_LINKED_COMPANY',
-          ),
-        ),
       ),
       'lbl_editview_panel2' =>
       array (
