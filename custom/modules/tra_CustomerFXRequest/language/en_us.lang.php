@@ -76,4 +76,5 @@ $mod_strings = array (
   'LBL_PRINT_AS_PDF' => 'Print as PDF',
   'LBL_SELECT_TEMPLATE' => 'Selet the PDF Template',
   'LBL_NO_TEMPLATE' => 'No template found',
+  'LBL_UPDATE_API_RATE' => 'Update API Rate',
 );
