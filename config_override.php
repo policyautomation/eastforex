@@ -8,7 +8,7 @@ $sugar_config['dashlet_auto_refresh_min'] = '30';
 $sugar_config['stack_trace_errors'] = false;
 $sugar_config['search_wildcard_infront'] = true;
 $sugar_config['SweeterCalc']['GlobalCounterPerModule']['tra_CustomerTransaction']['myName'] = 4;
-$sugar_config['SweeterCalc']['GlobalCounterPerModule']['Accounts']['myName'] = 59;
+$sugar_config['SweeterCalc']['GlobalCounterPerModule']['Accounts']['myName'] = 62;
 $sugar_config['SweeterCalc']['DailyCounterPerUser']['tra_CustomerTransaction']['myName']['date'] = '2019-02-13';
 $sugar_config['SweeterCalc']['DailyCounterPerUser']['tra_CustomerTransaction']['myName']['value'] = 10;
 $sugar_config['SweeterCalc']['DailyCounterPerUser']['tra_LockedRate']['myName']['date'] = '2018-11-17';
@@ -26,4 +26,6 @@ $sugar_config['currency'] = 'aud';
 /* FR Rate Calculation URL and KEY*/
 $sugar_config['live_rate_api_url'] = 'https://www.live-rates.com';
 $sugar_config['live_rate_api_key'] = '47fb221be2';
+$sugar_config['relationship_tree_limit'] = '8';
+$sugar_config['developerMode'] = true;
 /***CONFIGURATOR***/
