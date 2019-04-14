@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-07 07:50:40
+// created: 2019-04-10 13:37:42
 $mod_strings = array (
   'LBL_ID' => 'ID',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -56,6 +56,9 @@ $mod_strings = array (
   'LBL_CACHED_BALANCE' => 'cached balance',
   'LBL_DETAILVIEW_PANEL1' => 'Other',
   'LBL_BALANCE_UPDATED' => 'Balance Updated',
+  'LBL_PRINT_AS_PDF' => 'Print as PDF',
+  'LBL_SELECT_TEMPLATE' => 'Selet the PDF Template',
+  'LBL_NO_TEMPLATE' => 'No template found',
   'LBL_TRA_CUSTOMERTRANSACTION_ACC_BALANCE_FROM_ACC_BALANCE_TITLE' => 'Balance',
   'LBL_TRA_CUSTOMERFXREQUEST_TRA_CUSTOMERTRANSACTION_FROM_TRA_CUSTOMERFXREQUEST_TITLE' => 'Customer FX Request',
 );

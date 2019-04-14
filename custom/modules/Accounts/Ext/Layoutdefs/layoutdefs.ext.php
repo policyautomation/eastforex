@@ -2,6 +2,30 @@
  //WARNING: The contents of this file are auto-generated
 
 
+ // created: 2019-04-03 05:23:07
+$layout_defs["Accounts"]["subpanel_setup"]['accounts_accounts_1'] = array (
+  'order' => 100,
+  'module' => 'Accounts',
+  'subpanel_name' => 'default',
+  'sort_order' => 'asc',
+  'sort_by' => 'id',
+  'title_key' => 'LBL_ACCOUNTS_ACCOUNTS_1_FROM_ACCOUNTS_R_TITLE',
+  'get_subpanel_data' => 'accounts_accounts_1',
+  'top_buttons' => 
+  array (
+    0 => 
+    array (
+      'widget_class' => 'SubPanelTopButtonQuickCreate',
+    ),
+    1 => 
+    array (
+      'widget_class' => 'SubPanelTopSelectButton',
+      'mode' => 'MultiSelect',
+    ),
+  ),
+);
+
+
  // created: 2018-12-05 22:58:53
 $layout_defs["Accounts"]["subpanel_setup"]['acc_identity_accounts'] = array (
   'order' => 100,
@@ -26,15 +50,15 @@ $layout_defs["Accounts"]["subpanel_setup"]['acc_identity_accounts'] = array (
 );
 
 
- // created: 2018-12-05 22:58:53
-$layout_defs["Accounts"]["subpanel_setup"]['acc_customerbankaccount_accounts'] = array (
+ // created: 2019-02-11 22:25:16
+$layout_defs["Accounts"]["subpanel_setup"]['tra_customerfxrequest_accounts'] = array (
   'order' => 100,
-  'module' => 'acc_CustomerBankAccount',
+  'module' => 'tra_CustomerFXRequest',
   'subpanel_name' => 'default',
   'sort_order' => 'asc',
   'sort_by' => 'id',
-  'title_key' => 'LBL_ACC_CUSTOMERBANKACCOUNT_ACCOUNTS_FROM_ACC_CUSTOMERBANKACCOUNT_TITLE',
-  'get_subpanel_data' => 'acc_customerbankaccount_accounts',
+  'title_key' => 'LBL_TRA_CUSTOMERFXREQUEST_ACCOUNTS_FROM_TRA_CUSTOMERFXREQUEST_TITLE',
+  'get_subpanel_data' => 'tra_customerfxrequest_accounts',
   'top_buttons' => 
   array (
     0 => 
@@ -72,6 +96,30 @@ $layout_defs["Accounts"]["subpanel_setup"]['accounts_fp_event_locations_1'] = ar
     ),
   ),
 
+);
+
+
+ // created: 2018-12-05 22:58:52
+$layout_defs["Accounts"]["subpanel_setup"]['acc_balance_accounts'] = array (
+  'order' => 100,
+  'module' => 'acc_Balance',
+  'subpanel_name' => 'default',
+  'sort_order' => 'asc',
+  'sort_by' => 'id',
+  'title_key' => 'LBL_ACC_BALANCE_ACCOUNTS_FROM_ACC_BALANCE_TITLE',
+  'get_subpanel_data' => 'acc_balance_accounts',
+  'top_buttons' => 
+  array (
+    0 => 
+    array (
+      'widget_class' => 'SubPanelTopButtonQuickCreate',
+    ),
+    1 => 
+    array (
+      'widget_class' => 'SubPanelTopSelectButton',
+      'mode' => 'MultiSelect',
+    ),
+  ),
 );
 
 
@@ -131,39 +179,15 @@ $layout_defs["Accounts"]["subpanel_setup"]['tra_customertransaction_accounts'] =
 );
 
 
- // created: 2019-02-11 22:25:16
-$layout_defs["Accounts"]["subpanel_setup"]['tra_customerfxrequest_accounts'] = array (
+ // created: 2018-12-05 22:58:53
+$layout_defs["Accounts"]["subpanel_setup"]['acc_customerbankaccount_accounts'] = array (
   'order' => 100,
-  'module' => 'tra_CustomerFXRequest',
+  'module' => 'acc_CustomerBankAccount',
   'subpanel_name' => 'default',
   'sort_order' => 'asc',
   'sort_by' => 'id',
-  'title_key' => 'LBL_TRA_CUSTOMERFXREQUEST_ACCOUNTS_FROM_TRA_CUSTOMERFXREQUEST_TITLE',
-  'get_subpanel_data' => 'tra_customerfxrequest_accounts',
-  'top_buttons' => 
-  array (
-    0 => 
-    array (
-      'widget_class' => 'SubPanelTopButtonQuickCreate',
-    ),
-    1 => 
-    array (
-      'widget_class' => 'SubPanelTopSelectButton',
-      'mode' => 'MultiSelect',
-    ),
-  ),
-);
-
-
- // created: 2018-12-05 22:58:52
-$layout_defs["Accounts"]["subpanel_setup"]['acc_balance_accounts'] = array (
-  'order' => 100,
-  'module' => 'acc_Balance',
-  'subpanel_name' => 'default',
-  'sort_order' => 'asc',
-  'sort_by' => 'id',
-  'title_key' => 'LBL_ACC_BALANCE_ACCOUNTS_FROM_ACC_BALANCE_TITLE',
-  'get_subpanel_data' => 'acc_balance_accounts',
+  'title_key' => 'LBL_ACC_CUSTOMERBANKACCOUNT_ACCOUNTS_FROM_ACC_CUSTOMERBANKACCOUNT_TITLE',
+  'get_subpanel_data' => 'acc_customerbankaccount_accounts',
   'top_buttons' => 
   array (
     0 => 
@@ -184,15 +208,19 @@ $layout_defs['Accounts']['subpanel_setup']['tra_customerfxrequest_accounts']['ov
 
 
 //auto-generated file DO NOT EDIT
-$layout_defs['Accounts']['subpanel_setup']['acc_identity_accounts']['override_subpanel_name'] = 'Account_subpanel_acc_identity_accounts';
-
-
-//auto-generated file DO NOT EDIT
 $layout_defs['Accounts']['subpanel_setup']['documents']['override_subpanel_name'] = 'Account_subpanel_documents';
 
 
 //auto-generated file DO NOT EDIT
+$layout_defs['Accounts']['subpanel_setup']['acc_identity_accounts']['override_subpanel_name'] = 'Account_subpanel_acc_identity_accounts';
+
+
+//auto-generated file DO NOT EDIT
 $layout_defs['Accounts']['subpanel_setup']['tra_lockedrate_accounts']['override_subpanel_name'] = 'Account_subpanel_tra_lockedrate_accounts';
+
+
+//auto-generated file DO NOT EDIT
+$layout_defs['Accounts']['subpanel_setup']['tra_customertransaction_accounts']['override_subpanel_name'] = 'Account_subpanel_tra_customertransaction_accounts';
 
 
 //auto-generated file DO NOT EDIT
@@ -201,10 +229,6 @@ $layout_defs['Accounts']['subpanel_setup']['acc_balance_accounts']['override_sub
 
 //auto-generated file DO NOT EDIT
 $layout_defs['Accounts']['subpanel_setup']['accounts_fp_event_locations_1']['override_subpanel_name'] = 'Account_subpanel_accounts_fp_event_locations_1';
-
-
-//auto-generated file DO NOT EDIT
-$layout_defs['Accounts']['subpanel_setup']['tra_customertransaction_accounts']['override_subpanel_name'] = 'Account_subpanel_tra_customertransaction_accounts';
 
 
 //auto-generated file DO NOT EDIT

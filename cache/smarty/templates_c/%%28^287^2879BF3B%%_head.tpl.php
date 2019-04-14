@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.31, created on 2019-03-07 07:50:44
+<?php /* Smarty version 2.6.31, created on 2019-04-10 13:37:42
          compiled from themes/SuiteP/tpls/_head.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_getimagepath', 'themes/SuiteP/tpls/_head.tpl', 68, false),array('function', 'sugar_getjspath', 'themes/SuiteP/tpls/_head.tpl', 80, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_getimagepath', 'themes/SuiteP/tpls/_head.tpl', 68, false),array('function', 'sugar_getjspath', 'themes/SuiteP/tpls/_head.tpl', 79, false),)), $this); ?>
 <!DOCTYPE html>
 <html <?php echo $this->_tpl_vars['langHeader']; ?>
 >
@@ -47,7 +47,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_getim
         SUGAR.themes.loading_image = \''; ?>
 <?php echo smarty_function_sugar_getimagepath(array('file' => "img_loading.gif"), $this);?>
 <?php echo '\';
-
+        
         if (YAHOO.env.ua)
             UA = YAHOO.env.ua;
         -->
@@ -56,10 +56,11 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_getim
 
     <?php echo $this->_tpl_vars['SUGAR_CSS']; ?>
 
-    <link rel="stylesheet" type="text/css" href="themes/SuiteP/css/custom.css"/>
     <link rel="stylesheet" type="text/css" href="themes/SuiteP/css/colourSelector.php">
     <script type="text/javascript" src='<?php echo smarty_function_sugar_getjspath(array('file' => "themes/SuiteP/js/jscolor.js"), $this);?>
 '></script>
     <script type="text/javascript" src='<?php echo smarty_function_sugar_getjspath(array('file' => "cache/include/javascript/sugar_field_grp.js"), $this);?>
+'></script>
+    <script type="text/javascript" src='<?php echo smarty_function_sugar_getjspath(array('file' => "include/javascript/mozaik/vendor/tinymce/tinymce/tinymce.min.js"), $this);?>
 '></script>
 </head>

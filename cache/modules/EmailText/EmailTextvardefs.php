@@ -2,8 +2,6 @@
  $GLOBALS["dictionary"]["EmailText"]=array (
   'table' => 'emails_text',
   'comment' => 'Large email text fields',
-  'mysqlengine' => 'MyISAM',
-  'engine' => 'MyISAM',
   'fields' => 
   array (
     'email_id' => 

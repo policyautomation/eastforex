@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.31, created on 2019-03-07 07:51:11
+<?php /* Smarty version 2.6.31, created on 2019-04-10 13:38:17
          compiled from themes/SuiteP/include/DetailView/DetailView.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'themes/SuiteP/include/DetailView/DetailView.tpl', 42, false),array('function', 'counter', 'themes/SuiteP/include/DetailView/DetailView.tpl', 47, false),array('modifier', 'upper', 'themes/SuiteP/include/DetailView/DetailView.tpl', 52, false),)), $this); ?>
@@ -303,6 +303,8 @@ unset($_smarty_tpl_vars);
                 {*display panels*}
                 <div class="panel-content">
                     <div>&nbsp;</div>
+                    <?php echo smarty_function_counter(array('name' => 'tabCount','start' => -1,'print' => false,'assign' => 'tabCount'), $this);?>
+
                     <?php echo smarty_function_counter(array('name' => 'panelCount','start' => -1,'print' => false,'assign' => 'panelCount'), $this);?>
 
                     <?php $_from = $this->_tpl_vars['sectionPanels']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }$this->_foreach['section'] = array('total' => count($_from), 'iteration' => 0);
@@ -315,6 +317,8 @@ if ($this->_foreach['section']['total'] > 0):
 <?php $this->_smarty_vars['capture']['label_upper'] = ob_get_contents();  $this->assign('label_upper', ob_get_contents());ob_end_clean(); ?>
                     {* if tab *}
                     <?php if (( isset ( $this->_tpl_vars['tabDefs'][$this->_tpl_vars['label_upper']]['newTab'] ) && $this->_tpl_vars['tabDefs'][$this->_tpl_vars['label_upper']]['newTab'] == true && $this->_tpl_vars['useTabs'] )): ?>
+                    <?php echo smarty_function_counter(array('name' => 'tabCount','print' => false), $this);?>
+
                     {*if tab skip*}
                     <?php else: ?>
                     {* if panel display*}
@@ -348,7 +352,17 @@ if ($this->_foreach['section']['total'] > 0):
                         {* skip panel as it has been converted to a tab*}
                         <?php else: ?>
                         {* display panels as they have always been displayed *}
-                        <div class="panel panel-default">
+                        <?php if ($this->_tpl_vars['useTabs']): ?>
+                            <?php if ($this->_tpl_vars['tabCount'] == 0): ?>
+                                <div class="panel panel-default tab-panel-<?php echo $this->_tpl_vars['tabCount']; ?>
+" style="display: block;">
+                            <?php else: ?>
+                                <div class="panel panel-default tab-panel-<?php echo $this->_tpl_vars['tabCount']; ?>
+" style="display: none;">
+                            <?php endif; ?>
+                        <?php else: ?>
+                            <div class="panel panel-default">
+                        <?php endif; ?>
                             <div class="panel-heading <?php echo $this->_tpl_vars['panelHeadingCollapse']; ?>
 ">
                                 <a class="<?php echo $this->_tpl_vars['collapsed']; ?>
@@ -378,7 +392,17 @@ unset($_smarty_tpl_vars);
                         <?php endif; ?>
                     {else}
                     {* display panels as they have always been displayed *}
-                    <div class="panel panel-default">
+                    <?php if ($this->_tpl_vars['useTabs']): ?>
+                            <?php if ($this->_tpl_vars['tabCount'] == 0): ?>
+                                <div class="panel panel-default tab-panel-<?php echo $this->_tpl_vars['tabCount']; ?>
+" style="display: block;">
+                            <?php else: ?>
+                                <div class="panel panel-default tab-panel-<?php echo $this->_tpl_vars['tabCount']; ?>
+" style="display: none;">
+                            <?php endif; ?>
+                        <?php else: ?>
+                            <div class="panel panel-default">
+                        <?php endif; ?>
                         <div class="panel-heading <?php echo $this->_tpl_vars['panelHeadingCollapse']; ?>
 ">
                             <a class="<?php echo $this->_tpl_vars['collapsed']; ?>
@@ -428,12 +452,14 @@ unset($_smarty_tpl_vars);
 
                 <script type="text/javascript">
 
-                    var selectTabDetailView = function(tab) {
+                    let selectTabDetailView = function(tab) {
                         $('#content div.tab-content div.tab-pane-NOBOOTSTRAPTOGGLER').hide();
                         $('#content div.tab-content div.tab-pane-NOBOOTSTRAPTOGGLER').eq(tab).show().addClass('active').addClass('in');
+                        $('#content div.detail-view div.panel-content div.panel.panel').hide();
+                        $('#content div.panel-content div.panel.tab-panel-' + tab).show();
                     };
 
-                    var selectTabOnError = function(tab) {
+                    let selectTabOnError = function(tab) {
                         selectTabDetailView(tab);
                         $('#content ul.nav.nav-tabs > li').removeClass('active');
                         $('#content ul.nav.nav-tabs > li a').css('color', '');

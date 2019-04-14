@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-07 07:50:40
+// created: 2019-04-10 13:37:50
 $mod_strings = array (
   'LBL_ID' => 'ID',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -82,4 +82,5 @@ $mod_strings = array (
   'LBL_INBOUND_EMAIL' => 'Inbound email account',
   'LBL_INBOUND_EMAIL_DESC' => 'Only allow access to an email account if user belongs to a group that is assigned to the mail account.',
   'LBL_PRIMARY_GROUP' => 'Primary Group',
+  'LBL_CHECKMARK' => 'Checkmark',
 );

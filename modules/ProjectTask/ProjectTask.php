@@ -255,14 +255,14 @@ class ProjectTask extends SugarBean
         return $return_value;
     }
 
-	/*
-	 *
-	 */
-	public function build_generic_where_clause ($the_query_string)
-	{
-		$where_clauses = array();
-		$the_query_string = DBManagerFactory::getInstance()->quote($the_query_string);
-		array_push($where_clauses, "project_task.name like '$the_query_string%'");
+    /*
+     *
+     */
+    public function build_generic_where_clause($the_query_string)
+    {
+        $where_clauses = array();
+        $the_query_string = DBManagerFactory::getInstance()->quote($the_query_string);
+        array_push($where_clauses, "project_task.name like '$the_query_string%'");
 
         $the_where = "";
         foreach ($where_clauses as $clause) {
@@ -333,11 +333,13 @@ class ProjectTask extends SugarBean
             }
             /* BEGIN - SECURITY GROUPS */
             //parent_name_owner not being set for whatever reason so we need to figure this out
-            elseif (!empty($this->parent_type) && !empty($this->parent_id)) {
-                global $current_user;
-                $parent_bean = BeanFactory::getBean($this->parent_type, $this->parent_id);
-                if ($parent_bean !== false) {
-                    $is_owner = $current_user->id == $parent_bean->assigned_user_id;
+            else {
+                if (!empty($this->parent_type) && !empty($this->parent_id)) {
+                    global $current_user;
+                    $parent_bean = BeanFactory::getBean($this->parent_type, $this->parent_id);
+                    if ($parent_bean !== false) {
+                        $is_owner = $current_user->id == $parent_bean->assigned_user_id;
+                    }
                 }
             }
             require_once("modules/SecurityGroups/SecurityGroup.php");

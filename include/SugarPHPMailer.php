@@ -38,12 +38,13 @@
  * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
  */
 
+
 if (!defined('sugarEntry') || !sugarEntry) {
     die('Not A Valid Entry Point');
 }
 
-require_once 'include/phpmailer/class.phpmailer.php';
-require_once 'include/phpmailer/class.smtp.php';
+use PHPMailer\PHPMailer\PHPMailer;
+
 require_once 'include/OutboundEmail/OutboundEmail.php';
 
 /**
@@ -96,8 +97,7 @@ class SugarPHPMailer extends PHPMailer
         $this->oe = new OutboundEmail();
         $this->oe->getUserMailerSettings($current_user);
 
-        $this->setLanguage('en', 'include/phpmailer/language/');
-        $this->PluginDir = 'include/phpmailer/';
+        $this->setLanguage('en', 'vendor/phpmailer/phpmailer/language/');
         $this->Mailer = 'smtp';
         // cn: i18n
         $this->CharSet = $locale->getPrecedentPreference('default_email_charset');
@@ -455,7 +455,8 @@ eoq;
         //$this->Sender   = 'me@here.com';
         //$this->Password = 'wrong';
         //$GLOBALS['log']->debug("PHPMailer Send Function: { FromName: $this->FromName From: $this->From Host: $this->Host UserName: $this->Username }");
-
+       
+        
         $ret = null;
         
         $this->fullSmtpLog='';

@@ -181,14 +181,16 @@ class ViewList extends SugarView
                     //Reset the current display columns to default.
                     $current_user->setPreference('ListViewDisplayColumns', array(), 0, $mod);
                 }
-            } elseif (empty($_REQUEST['button']) && (empty($_REQUEST['clear_query']) || $_REQUEST['clear_query'] != 'true')) {
-                $this->saved_search = loadBean('SavedSearch');
-                $this->saved_search->retrieveSavedSearch($_REQUEST['saved_search_select']);
-                $this->saved_search->populateRequest();
-            } elseif (!empty($_REQUEST['button'])) { // click the search button, after retrieving from saved_search
-                $_SESSION['LastSavedView'][$_REQUEST['module']] = '';
-                unset($_REQUEST['saved_search_select']);
-                unset($_REQUEST['saved_search_select_name']);
+            } else {
+                if (empty($_REQUEST['button']) && (empty($_REQUEST['clear_query']) || $_REQUEST['clear_query'] != 'true')) {
+                    $this->saved_search = loadBean('SavedSearch');
+                    $this->saved_search->retrieveSavedSearch($_REQUEST['saved_search_select']);
+                    $this->saved_search->populateRequest();
+                } elseif (!empty($_REQUEST['button'])) { // click the search button, after retrieving from saved_search
+                    $_SESSION['LastSavedView'][$_REQUEST['module']] = '';
+                    unset($_REQUEST['saved_search_select']);
+                    unset($_REQUEST['saved_search_select_name']);
+                }
             }
         }
         $this->storeQuery = new StoreQuery();
@@ -264,7 +266,6 @@ class ViewList extends SugarView
         $this->prepareSearchForm();
 
         if (isset($this->options['show_title']) && $this->options['show_title']) {
-
             $modStrings = null;
             if (isset($GLOBALS['mod_strings'])) {
                 $modStrings = $GLOBALS['mod_strings'];

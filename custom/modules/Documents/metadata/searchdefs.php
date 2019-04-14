@@ -1,17 +1,17 @@
 <?php
-$searchdefs ['Documents'] = 
-array (
+// created: 2019-04-10 13:34:27
+$searchdefs['Documents'] = array (
   'layout' => 
   array (
     'basic_search' => 
     array (
-      'document_name' => 
+      0 => 
       array (
         'name' => 'document_name',
         'default' => true,
         'width' => '10%',
       ),
-      'filename' => 
+      1 => 
       array (
         'type' => 'file',
         'label' => 'LBL_FILENAME',
@@ -22,13 +22,13 @@ array (
     ),
     'advanced_search' => 
     array (
-      'document_name' => 
+      0 => 
       array (
         'name' => 'document_name',
         'default' => true,
         'width' => '10%',
       ),
-      'filename' => 
+      1 => 
       array (
         'type' => 'file',
         'label' => 'LBL_FILENAME',
@@ -36,7 +36,7 @@ array (
         'default' => true,
         'name' => 'filename',
       ),
-      'status' => 
+      2 => 
       array (
         'type' => 'varchar',
         'label' => 'LBL_DOC_STATUS',
@@ -44,7 +44,7 @@ array (
         'default' => true,
         'name' => 'status',
       ),
-      'template_type' => 
+      3 => 
       array (
         'type' => 'enum',
         'label' => 'LBL_TEMPLATE_TYPE',
@@ -65,5 +65,3 @@ array (
     ),
   ),
 );
-;
-?>

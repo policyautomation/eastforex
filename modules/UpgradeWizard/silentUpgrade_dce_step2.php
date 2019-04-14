@@ -214,8 +214,9 @@ function merge_passwordsetting($sugar_config, $sugar_version)
 
     if (write_array_to_file("sugar_config", $sugar_config, "config.php")) {
         return true;
+    } else {
+        return false;
     }
-    return false;
 }
 
 function addDefaultModuleRoles($defaultRoles = array())
@@ -274,10 +275,11 @@ function verifyArguments($argv, $usage_dce, $usage_regular)
             echo "FAILURE\n";
             exit(1);
         }
-    } elseif (is_file("{$cwd}/include/entryPoint.php")) {
-        //this should be a regular sugar install
-        $upgradeType = constant('SUGARCRM_INSTALL');
-        //check if this is a valid zip file
+    } else {
+        if (is_file("{$cwd}/include/entryPoint.php")) {
+            //this should be a regular sugar install
+            $upgradeType = constant('SUGARCRM_INSTALL');
+            //check if this is a valid zip file
         if (!is_file($argv[1])) { // valid zip?
             echo "*******************************************************************************\n";
             echo "*** ERROR: First argument must be a full path to the patch file. Got [ {$argv[1]} ].\n";
@@ -285,18 +287,19 @@ function verifyArguments($argv, $usage_dce, $usage_regular)
             echo "FAILURE\n";
             exit(1);
         }
-        if (count($argv) < 5) {
+            if (count($argv) < 5) {
+                echo "*******************************************************************************\n";
+                echo "*** ERROR: Missing required parameters.  Received ".count($argv)." argument(s), require 5.\n";
+                echo $usage_regular;
+                echo "FAILURE\n";
+                exit(1);
+            }
+        } else {
+            //this should be a regular sugar install
             echo "*******************************************************************************\n";
-            echo "*** ERROR: Missing required parameters.  Received ".count($argv)." argument(s), require 5.\n";
-            echo $usage_regular;
-            echo "FAILURE\n";
+            echo "*** ERROR: Tried to execute in a non-SugarCRM root directory.\n";
             exit(1);
         }
-    } else {
-        //this should be a regular sugar install
-        echo "*******************************************************************************\n";
-        echo "*** ERROR: Tried to execute in a non-SugarCRM root directory.\n";
-        exit(1);
     }
 
     if (isset($argv[7]) && file_exists($argv[7].'SugarTemplateUtilties.php')) {
@@ -425,7 +428,7 @@ $upgradeType = verifyArguments($argv, $usage_dce, $usage_regular);
 
 ///////////////////////////////////////////////////////////////////////////////
 ////	PREP LOCALLY USED PASSED-IN VARS & CONSTANTS
-//$GLOBALS['log']	= LoggerManager::getLogger('SugarCRM');
+//$GLOBALS['log']	= LoggerManager::getLogger();
 //require_once('/var/www/html/eddy/sugarnode/SugarTemplateUtilities.php');
 
 $path			= $argv[2]; // custom log file, if blank will use ./upgradeWizard.log
@@ -503,7 +506,7 @@ if ($upgradeType == constant('DCE_INSTANCE')) {
     $isDCEInstance = true;
     $configOptions = $sugar_config['dbconfig'];
 
-    $GLOBALS['log']	= LoggerManager::getLogger('SugarCRM');
+    $GLOBALS['log']	= LoggerManager::getLogger();
     $db				= &DBManagerFactory::getInstance();
     ///////////////////////////////////////////////////////////////////////////////
     ////	MAKE SURE PATCH IS COMPATIBLE
@@ -730,11 +733,10 @@ if ($upgradeType == constant('DCE_INSTANCE')) {
                 include($newtemplate_path.'/modules/Administration/upgradeTeams.php');
                 logThis(" Finish {$newtemplate_path}/modules/Administration/upgradeTeams.php", $path);
 
-				//update the users records to have default team
-				logThis('running query to populate default_team on users table',$path);
-				DBManagerFactory::getInstance()->query("update users set default_team = (select teams.id from teams where teams.name = concat('(',users.user_name, ')') or team.associated_user_id = users.id)");
-
-			}
+                //update the users records to have default team
+                logThis('running query to populate default_team on users table', $path);
+                DBManagerFactory::getInstance()->query("update users set default_team = (select teams.id from teams where teams.name = concat('(',users.user_name, ')') or team.associated_user_id = users.id)");
+            }
 
             //run upgrade script for dashlets to include sales/marketing
             if (function_exists('upgradeDashletsForSalesAndMarketing')) {
@@ -823,7 +825,7 @@ if (file_exists($newtemplate_path . '/include/SugarLogger/LoggerManager.php')) {
     }
     if (class_exists('LoggerManager')) {
         unset($GLOBALS['log']);
-        $GLOBALS['log'] = LoggerManager::getLogger('SugarCRM');
+        $GLOBALS['log'] = LoggerManager::getLogger();
     }
     set_upgrade_progress('logger', 'done');
 }

@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-07 07:50:39
+// created: 2019-04-10 13:38:18
 $mod_strings = array (
   'LBL_ID' => 'ID',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -86,4 +86,6 @@ $mod_strings = array (
   'LBL_LIST_ACCEPT_STATUS_EVENT' => 'Status',
   'LBL_ACTIVITY_STATUS' => 'Activity Status',
   'LBL_FP_EVENT_LOCATIONS_FP_EVENTS_1_FROM_FP_EVENTS_TITLE' => 'Event Address from Events Title',
+  'LBL_ACCEPT_LINK' => 'Accept',
+  'LBL_DECLINE_LINK' => 'Decline',
 );

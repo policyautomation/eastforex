@@ -556,6 +556,17 @@
       'enable_range_search' => false,
       'precision' => 6,
     ),
+    'tra_customerfxrequest_tra_lockedrate' => 
+    array (
+      'name' => 'tra_customerfxrequest_tra_lockedrate',
+      'type' => 'link',
+      'relationship' => 'tra_customerfxrequest_tra_lockedrate',
+      'source' => 'non-db',
+      'module' => 'tra_CustomerFXRequest',
+      'bean_name' => 'tra_CustomerFXRequest',
+      'side' => 'right',
+      'vname' => 'LBL_TRA_CUSTOMERFXREQUEST_TRA_LOCKEDRATE_FROM_TRA_CUSTOMERFXREQUEST_TITLE',
+    ),
     'tra_lockedrate_accounts' => 
     array (
       'name' => 'tra_lockedrate_accounts',
@@ -589,17 +600,6 @@
       'reportable' => false,
       'side' => 'right',
       'vname' => 'LBL_TRA_LOCKEDRATE_ACCOUNTS_FROM_TRA_LOCKEDRATE_TITLE',
-    ),
-    'tra_customerfxrequest_tra_lockedrate' => 
-    array (
-      'name' => 'tra_customerfxrequest_tra_lockedrate',
-      'type' => 'link',
-      'relationship' => 'tra_customerfxrequest_tra_lockedrate',
-      'source' => 'non-db',
-      'module' => 'tra_CustomerFXRequest',
-      'bean_name' => 'tra_CustomerFXRequest',
-      'side' => 'right',
-      'vname' => 'LBL_TRA_CUSTOMERFXREQUEST_TRA_LOCKEDRATE_FROM_TRA_CUSTOMERFXREQUEST_TITLE',
     ),
   ),
   'relationships' => 

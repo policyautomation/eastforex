@@ -116,7 +116,7 @@ class One2MBeanRelationship extends One2MRelationship
         if (empty($GLOBALS['resavingRelatedBeans'])) {
             SugarRelationship::resaveRelatedBeans();
         }
-
+        
         return true;
     }
 
@@ -195,8 +195,7 @@ class One2MBeanRelationship extends One2MRelationship
                 LoggerManager::getLogger()->warn('Incorrect linked relationship rhs ID: ' . get_class($link->getFocus()) . '::$' . $rhsID . ' is undefined');
             }
 
-            if (!empty($id))
-            {
+            if (!empty($id)) {
                 $rows[$id] = array('id' => $id);
             }
         } else { //If the link is LHS, we need to query to get the full list and load all the beans.
@@ -275,13 +274,14 @@ class One2MBeanRelationship extends One2MRelationship
                 $query = DBManagerFactory::getInstance()->limitQuery($query, $offset, $params['limit'], false, "", false);
             }
             return $query;
-        }
-        return array(
+        } else {
+            return array(
                     'select' => "SELECT {$this->def['rhs_table']}.id",
                     'from' => "FROM {$this->def['rhs_table']}",
                     'where' => $where,
                     'order_by' => $order_by
                 );
+        }
     }
 
     public function getJoin($link, $params = array(), $return_array = false)
@@ -405,7 +405,8 @@ class One2MBeanRelationship extends One2MRelationship
     {
         if (isset($this->def['table'])) {
             return $this->def['table'];
+        } else {
+            return $this->def['rhs_table'];
         }
-        return $this->def['rhs_table'];
     }
 }

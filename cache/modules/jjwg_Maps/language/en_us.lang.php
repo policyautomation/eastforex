@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-07 07:50:40
+// created: 2019-04-10 13:38:18
 $mod_strings = array (
   'LBL_ID' => 'ID',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -57,6 +57,12 @@ $mod_strings = array (
   'LBL_GEOCODED_COUNTS' => 'Module Geocoded Counts',
   'LBL_CRON_URL' => 'Cron URL:',
   'LBL_MODULE_HEADING' => 'Module',
+  'LBL_N/A' => 'N/A',
+  'LBL_ZERO_RESULTS' => 'Zero Results',
+  'LBL_OK' => 'Ok',
+  'LBL_INVALID_REQUEST' => 'Invalid Request',
+  'LBL_APPROXIMATE' => 'Approximate',
+  'LBL_EMPTY' => 'Empty',
   'LBL_MODULE_TOTAL_HEADING' => 'Total',
   'LBL_MODULE_RESET_HEADING' => 'Reset',
   'LBL_GEOCODED_COUNTS_DESCRIPTION' => 'The table shown belown shows the number of module objects geocoded, grouped by geocoding response. Keep in mind that the standard Google Maps usage limit is 2500 requests per day . This module will cache the addresses geocoding information during processing to reduce the overall number of requests needed.',

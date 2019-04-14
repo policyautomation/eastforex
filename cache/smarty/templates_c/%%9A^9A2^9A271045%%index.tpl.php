@@ -1,22 +1,11 @@
-<?php /* Smarty version 2.6.31, created on 2019-03-07 07:50:44
+<?php /* Smarty version 2.6.31, created on 2019-04-10 13:45:52
          compiled from modules/Administration/index.tpl */ ?>
-<?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'log', 'modules/Administration/index.tpl', 53, false),)), $this); ?>
 
 
 <div class="dashletPanelMenu wizard">
 <div class="bd">
 
 		<div class="screen admin-panel">
-
-<?php if (isset ( $this->_tpl_vars['MY_FRAME'] )): ?>
-    <?php echo $this->_tpl_vars['MY_FRAME']; ?>
-
-<?php else: ?>
-    <?php echo smarty_function_log(array('msg' => 'MY_FRAME is not set'), $this);?>
-
-<?php endif; ?>
-
 <?php $_from = $this->_tpl_vars['ADMIN_GROUP_HEADER']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['j'] => $this->_tpl_vars['val1']):
 ?>

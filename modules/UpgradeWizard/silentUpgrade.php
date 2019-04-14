@@ -51,9 +51,11 @@ function build_argument_string($arguments=array())
             //If current directory or parent directory is specified, substitute with full path
             if ($arg == '.') {
                 $arg = getcwd();
-            } elseif ($arg == '..') {
-                $dir = getcwd();
-                $arg = substr($dir, 0, strrpos($dir, DIRECTORY_SEPARATOR));
+            } else {
+                if ($arg == '..') {
+                    $dir = getcwd();
+                    $arg = substr($dir, 0, strrpos($dir, DIRECTORY_SEPARATOR));
+                }
             }
             $argument_string .= ' ' . escapeshellarg($arg);
         }

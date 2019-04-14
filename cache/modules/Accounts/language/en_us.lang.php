@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-07 07:50:39
+// created: 2019-04-10 13:37:42
 $mod_strings = array (
   'LBL_ID' => 'ID',
   'LBL_DATE_ENTERED' => 'Date Created:',
@@ -164,4 +164,6 @@ $mod_strings = array (
   'LBL_TRA_CUSTOMERTRANSACTION_ACCOUNTS_FROM_TRA_CUSTOMERTRANSACTION_TITLE' => 'Customer Transaction',
   'LBL_ACC_BALANCE_ACCOUNTS_FROM_ACC_BALANCE_TITLE' => 'Balance',
   'LBL_TRA_CUSTOMERFXREQUEST_ACCOUNTS_FROM_TRA_CUSTOMERFXREQUEST_TITLE' => 'Customer FX Request',
+  'LBL_ACCOUNTS_ACCOUNTS_1_FROM_ACCOUNTS_L_TITLE' => 'Customers',
+  'LBL_ACCOUNTS_ACCOUNTS_1_FROM_ACCOUNTS_R_TITLE' => 'Customers',
 );

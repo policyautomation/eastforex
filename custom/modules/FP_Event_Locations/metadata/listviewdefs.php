@@ -1,7 +1,6 @@
 <?php
-$module_name = 'FP_Event_Locations';
-$listViewDefs [$module_name] = 
-array (
+// created: 2019-04-10 13:34:27
+$listViewDefs['FP_Event_Locations'] = array (
   'NAME' => 
   array (
     'width' => '32%',
@@ -84,5 +83,3 @@ array (
     'default' => false,
   ),
 );
-;
-?>

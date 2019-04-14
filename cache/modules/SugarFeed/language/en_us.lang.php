@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-07 07:50:39
+// created: 2019-04-10 13:38:18
 $mod_strings = array (
   'LBL_ID' => 'ID',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -52,7 +52,6 @@ $mod_strings = array (
   'LBL_CATEGORIES' => 'Modules',
   'LBL_TIME_LAST_WEEK' => 'Last Week',
   'LBL_TIME_WEEKS' => 'weeks',
-  'LBL_TIME_DAY' => 'day',
   'LBL_TIME_DAYS' => 'days',
   'LBL_TIME_YESTERDAY' => 'Yesterday',
   'LBL_TIME_HOURS' => 'Hours',
@@ -68,6 +67,7 @@ $mod_strings = array (
   'CREATED_CASE' => 'created a <b>NEW</b> {0}',
   'CREATED_LEAD' => 'created a <b>NEW</b> {0}',
   'FOR' => 'for',
+  'FOR_AMOUNT' => 'for amount',
   'CLOSED_CASE' => '<b>CLOSED</b> a {0} ',
   'CONVERTED_LEAD' => '<b>CONVERTED</b> a {0}',
   'WON_OPPORTUNITY' => 'has <b>WON</b> an {0}',

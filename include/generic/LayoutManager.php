@@ -58,12 +58,12 @@ class LayoutManager
     public $default_widget_name = 'Field';
     public $DBHelper;
 
-	function __construct()
-	{
-		// set a sane default for context
-		$this->defs['context'] = 'Detail';
-		$this->DBHelper = DBManagerFactory::getInstance();
-	}
+    public function __construct()
+    {
+        // set a sane default for context
+        $this->defs['context'] = 'Detail';
+        $this->DBHelper = DBManagerFactory::getInstance();
+    }
 
     /**
      * @deprecated deprecated since version 7.6, PHP4 Style Constructors are deprecated and will be remove in 7.8, please update your code, use __construct instead
@@ -94,8 +94,9 @@ class LayoutManager
     {
         if (isset($this->defs[$key])) {
             return $this->defs[$key];
+        } else {
+            return null;
         }
-        return null;
     }
 
     // Take the class name from the widget definition and use the class to look it up
@@ -308,8 +309,10 @@ class LayoutManager
             // The class does not exist.  Try including it.
             if (file_exists('custom/include/generic/SugarWidgets/'.$class_name.'.php')) {
                 require_once('custom/include/generic/SugarWidgets/'.$class_name.'.php');
-            } elseif (file_exists('include/generic/SugarWidgets/'.$class_name.'.php')) {
-                require_once('include/generic/SugarWidgets/'.$class_name.'.php');
+            } else {
+                if (file_exists('include/generic/SugarWidgets/'.$class_name.'.php')) {
+                    require_once('include/generic/SugarWidgets/'.$class_name.'.php');
+                }
             }
 
             if (!class_exists($class_name)) {

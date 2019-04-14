@@ -251,11 +251,17 @@ class ACLAction extends SugarBean
         if (!$refresh && !empty($_SESSION['ACL'][$user_id])) {
             if (empty($category) && empty($action)) {
                 return $_SESSION['ACL'][$user_id];
-            }
-            if (!empty($category) && isset($_SESSION['ACL'][$user_id][$category])) {
-                if (empty($action)) {
-                    if (empty($type)) {
-                        return $_SESSION['ACL'][$user_id][$category];
+            } else {
+                if (!empty($category) && isset($_SESSION['ACL'][$user_id][$category])) {
+                    if (empty($action)) {
+                        if (empty($type)) {
+                            return $_SESSION['ACL'][$user_id][$category];
+                        }
+                        return isset($_SESSION['ACL'][$user_id][$category][$type]) ? $_SESSION['ACL'][$user_id][$category][$type] : null;
+                    } else {
+                        if (!empty($type) && isset($_SESSION['ACL'][$user_id][$category][$type][$action])) {
+                            return $_SESSION['ACL'][$user_id][$category][$type][$action];
+                        }
                     }
 
                     $aclCatType = null;
@@ -595,20 +601,18 @@ class ACLAction extends SugarBean
                     }
 
                     $categories[$cat_name][$type_name][$act_name]['accessColor'] = ACLAction::AccessColor($actionAclAccess);
-                    if($type_name== 'module'){
-
+                    if ($type_name== 'module') {
                         $catModAccACL = null;
                         if (isset($categories[$cat_name]['module']['access']['aclaccess'])) {
                             $catModAccACL = $categories[$cat_name]['module']['access']['aclaccess'];
                         } else {
-                            LoggerManager::getLogger()->warn('Categories / category name: [' . $cat_name . '] / module / access / aclaccess is not set for ACLAction::setupCategoriesMatrix()' );
+                            LoggerManager::getLogger()->warn('Categories / category name: [' . $cat_name . '] / module / access / aclaccess is not set for ACLAction::setupCategoriesMatrix()');
                         }
 
-                        if($act_name != 'aclaccess' && $catModAccACL == ACL_ALLOW_DISABLED){
+                        if ($act_name != 'aclaccess' && $catModAccACL == ACL_ALLOW_DISABLED) {
                             $categories[$cat_name][$type_name][$act_name]['accessColor'] = 'darkgray';
                             $disabled[] = $cat_name;
                         }
-
                     }
 
                     $actionAclAccess = null;
@@ -653,8 +657,7 @@ class ACLAction extends SugarBean
     {
         $array_fields = array('id', 'aclaccess');
         $arr = array();
-        foreach($array_fields as $field){
-
+        foreach ($array_fields as $field) {
             $thisField = null;
             if (isset($this->$field)) {
                 $thisField = $this->$field;
@@ -685,7 +688,8 @@ class ACLAction extends SugarBean
     * clears the session variable storing the cache information for acls
     *
     */
-    public function clearSessionCache(){
+    public function clearSessionCache()
+    {
         if (isset($_SESSION['ACL'])) {
             unset($_SESSION['ACL']);
         }

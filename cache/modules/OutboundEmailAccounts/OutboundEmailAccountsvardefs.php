@@ -97,7 +97,7 @@
     array (
       'name' => 'mail_smtpport',
       'vname' => 'LBL_MAIL_SMTPPORT',
-      'type' => 'int',
+      'type' => 'varchar',
       'len' => 5,
       'default' => 0,
       'reportable' => false,

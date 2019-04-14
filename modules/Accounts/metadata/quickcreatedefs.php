@@ -1,231 +1,155 @@
 <?php
+if (!defined('sugarEntry') || !sugarEntry) {
+    die('Not A Valid Entry Point');
+}
+/**
+ *
+ * SugarCRM Community Edition is a customer relationship management program developed by
+ * SugarCRM, Inc. Copyright (C) 2004-2013 SugarCRM Inc.
+ *
+ * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
+ * Copyright (C) 2011 - 2018 SalesAgility Ltd.
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License version 3 as published by the
+ * Free Software Foundation with the addition of the following permission added
+ * to Section 15 as permitted in Section 7(a): FOR ANY PART OF THE COVERED WORK
+ * IN WHICH THE COPYRIGHT IS OWNED BY SUGARCRM, SUGARCRM DISCLAIMS THE WARRANTY
+ * OF NON INFRINGEMENT OF THIRD PARTY RIGHTS.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along with
+ * this program; if not, see http://www.gnu.org/licenses or write to the Free
+ * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ * 02110-1301 USA.
+ *
+ * You can contact SugarCRM, Inc. headquarters at 10050 North Wolfe Road,
+ * SW2-130, Cupertino, CA 95014, USA. or at email address contact@sugarcrm.com.
+ *
+ * The interactive user interfaces in modified source and object code versions
+ * of this program must display Appropriate Legal Notices, as required under
+ * Section 5 of the GNU Affero General Public License version 3.
+ *
+ * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
+ * these Appropriate Legal Notices must retain the display of the "Powered by
+ * SugarCRM" logo and "Supercharged by SuiteCRM" logo. If the display of the logos is not
+ * reasonably feasible for technical reasons, the Appropriate Legal Notices must
+ * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
+ */
+
+/*********************************************************************************
+
+ * Portions created by SugarCRM are Copyright (C) SugarCRM, Inc.
+ * All Rights Reserved.
+ * Contributor(s): ______________________________________..
+ ********************************************************************************/
+
+
 $viewdefs ['Accounts'] =
-array (
+array(
   'QuickCreate' =>
-  array (
+  array(
     'templateMeta' =>
-    array (
+    array(
       'form' =>
-      array (
+      array(
         'buttons' =>
-        array (
+        array(
           0 => 'SAVE',
           1 => 'CANCEL',
         ),
       ),
       'maxColumns' => '2',
       'widths' =>
-      array (
+      array(
         0 =>
-        array (
+        array(
           'label' => '10',
           'field' => '30',
         ),
         1 =>
-        array (
+        array(
           'label' => '10',
           'field' => '30',
         ),
       ),
       'includes' =>
-      array (
+      array(
         0 =>
-        array (
+        array(
           'file' => 'modules/Accounts/Account.js',
-          'file' => 'custom/modules/Accounts/AccountCustom.js'
         ),
       ),
       'useTabs' => false,
       'tabDefs' =>
-      array (
-        'LBL_ACCOUNT_INFORMATION' =>
-        array (
-          'newTab' => false,
-          'panelDefault' => 'expanded',
-        ),
-        'LBL_EDITVIEW_PANEL1' =>
-        array (
-          'newTab' => false,
-          'panelDefault' => 'expanded',
-        ),
-        'LBL_EDITVIEW_PANEL2' =>
-        array (
+      array(
+        'DEFAULT' =>
+        array(
           'newTab' => false,
           'panelDefault' => 'expanded',
         ),
       ),
     ),
     'panels' =>
-    array (
-      'lbl_account_information' =>
-      array (
+    array(
+      'default' =>
+      array(
         0 =>
-        array (
+        array(
           0 =>
-          array (
-            'name' => 'type_c',
-            'studio' => 'visible',
-            'label' => 'LBL_TYPE',
-          ),
-          1 =>
-          array (
-            'name' => 'level_c',
-            'studio' => 'visible',
-            'label' => 'LBL_LEVEL',
+          array(
+            'name' => 'name',
+            'displayParams' =>
+            array(
+              'required' => true,
+            ),
           ),
         ),
         1 =>
-        array (
+        array(
           0 =>
-          array (
-            'name' => 'phone_office',
+          array(
+            'name' => 'website',
           ),
           1 =>
-          array (
-            'name' => 'status_c',
-            'studio' => 'visible',
-            'label' => 'LBL_STATUS',
+          array(
+            'name' => 'phone_office',
           ),
         ),
         2 =>
-        array (
+        array(
           0 =>
-          array (
-            'name' => 'phone_alternate',
-            'comment' => 'An alternate phone number',
-            'label' => 'LBL_PHONE_ALT',
+          array(
+            'name' => 'email1',
           ),
           1 =>
-          array (
+          array(
             'name' => 'phone_fax',
           ),
         ),
         3 =>
-        array (
+        array(
           0 =>
-          array (
-            'name' => 'mobile_number_alt_c',
-            'label' => 'LBL_MOBILE_NUMBER_ALT',
+          array(
+            'name' => 'industry',
           ),
           1 =>
-          array (
-            'name' => 'referrer_c',
-            'label' => 'LBL_REFERRER',
+          array(
+            'name' => 'account_type',
           ),
         ),
         4 =>
-        array (
+        array(
           0 =>
-          array (
-            'name' => 'email1',
-          ),
-        ),
-        5 =>
-        array (
-          0 =>
-          array (
-            'name' => 'description',
-            'comment' => 'Full text of the note',
-            'label' => 'LBL_DESCRIPTION',
-          ),
-        ),
-      ),
-      'lbl_editview_panel1' =>
-      array (
-        0 =>
-        array (
-          0 =>
-          array (
-            'name' => 'first_name_c',
-            'label' => 'LBL_FIRST_NAME',
-          ),
-          1 =>
-          array (
-            'name' => 'middle_name_c',
-            'label' => 'LBL_MIDDLE_NAME',
-          ),
-        ),
-        1 =>
-        array (
-          0 =>
-          array (
-            'name' => 'last_name_c',
-            'label' => 'LBL_LAST_NAME',
-          ),
-          1 =>
-          array (
-            'name' => 'gender_c',
-            'studio' => 'visible',
-            'label' => 'LBL_GENDER',
-          ),
-        ),
-        2 =>
-        array (
-          0 =>
-          array (
-            'name' => 'dob_c',
-            'label' => 'LBL_DOB',
-          ),
-          1 =>
-          array (
-            'name' => 'occupation_c',
-            'studio' => 'visible',
-            'label' => 'LBL_OCCUPATION',
-          ),
-        ),
-        3 =>
-        array (
-          0 =>
-          array (
-            'name' => 'wechat_id_c',
-            'label' => 'LBL_WECHAT_ID',
-          ),
-          1 =>
-          array (
-            'name' => 'occupation_other_c',
-            'label' => 'LBL_OCCUPATION_OTHER',
-          ),
-        ),
-      ),
-      'lbl_editview_panel2' =>
-      array (
-        0 =>
-        array (
-          0 =>
-          array (
-            'name' => 'company_name_c',
-            'label' => 'LBL_COMPANY_NAME',
-          ),
-          1 =>
-          array (
-            'name' => 'abn_c',
-            'label' => 'LBL_ABN',
-          ),
-        ),
-        1 =>
-        array (
-          0 =>
-          array (
-            'name' => 'regulated_authority_c',
-            'label' => 'LBL_REGULATED_AUTHORITY',
-          ),
-          1 =>
-          array (
-            'name' => 'structure_c',
-            'studio' => 'visible',
-            'label' => 'LBL_STRUCTURE',
-          ),
-        ),
-        2 =>
-        array (
-          0 =>
-          array (
-            'name' => 'website',
+          array(
+            'name' => 'assigned_user_name',
           ),
         ),
       ),
     ),
   ),
 );
-;
-?>

@@ -141,8 +141,10 @@ class ProspectList extends SugarBean
         $where_auto = '1=1';
         if ($show_deleted == 0) {
             $where_auto = "$this->table_name.deleted=0";
-        } elseif ($show_deleted == 1) {
-            $where_auto = "$this->table_name.deleted=1";
+        } else {
+            if ($show_deleted == 1) {
+                $where_auto = "$this->table_name.deleted=1";
+            }
         }
 
         if ($where != "") {
@@ -228,8 +230,10 @@ class ProspectList extends SugarBean
                     }
                 }
                 // else, only if for this module no entry exists for this field, query an empty string
-                elseif (!isset($memberarr['fields'][$val['name']])) {
-                    $memberarr['fields'][$fieldname] = "null AS " . $fieldname;
+                else {
+                    if (!isset($memberarr['fields'][$val['name']])) {
+                        $memberarr['fields'][$fieldname] = "null AS " . $fieldname;
+                    }
                 }
             }
         }
@@ -385,25 +389,35 @@ FROM prospect_lists_prospects plp
 
         if ($row) {
             return $row['num'];
+        } else {
+            return 0;
         }
-        return 0;
     }
 
 
-	public function get_list_view_data(){
-		$temp_array = $this->get_list_view_array();
-		$temp_array["ENTRY_COUNT"] = $this->get_entry_count();
-		return $temp_array;
-	}
-	/**
-		builds a generic search based on the query string using or
-		do not include any $this-> because this is called on without having the class instantiated
-	*/
-	function build_generic_where_clause ($the_query_string)
-	{
-		$where_clauses = Array();
-		$the_query_string = DBManagerFactory::getInstance()->quote($the_query_string);
-		array_push($where_clauses, "prospect_lists.name like '$the_query_string%'");
+    public function get_list_view_data()
+    {
+        $temp_array = $this->get_list_view_array();
+        $temp_array["ENTRY_COUNT"] = $this->get_entry_count();
+        return $temp_array;
+    }
+    /**
+        builds a generic search based on the query string using or
+        do not include any $this-> because this is called on without having the class instantiated
+    */
+    public function build_generic_where_clause($the_query_string)
+    {
+        $where_clauses = array();
+        $the_query_string = DBManagerFactory::getInstance()->quote($the_query_string);
+        array_push($where_clauses, "prospect_lists.name like '$the_query_string%'");
+
+        $the_where = "";
+        foreach ($where_clauses as $clause) {
+            if ($the_where != "") {
+                $the_where .= " or ";
+            }
+            $the_where .= $clause;
+        }
 
         $the_where = "";
         foreach ($where_clauses as $clause) {

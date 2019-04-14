@@ -1,6 +1,55 @@
 <?php
-// created: 2019-02-11 22:43:55
+// created: 2019-04-10 13:37:36
 $sugar_config = array (
+  'SweeterCalc' => 
+  array (
+    'GlobalCounterPerModule' => 
+    array (
+      'tra_CustomerTransaction' => 
+      array (
+        'myName' => 4,
+      ),
+      'Accounts' => 
+      array (
+        'myName' => 59,
+      ),
+    ),
+    'DailyCounterPerUser' => 
+    array (
+      'tra_CustomerTransaction' => 
+      array (
+        'myName' => 
+        array (
+          'date' => '2019-02-13',
+          'value' => 10,
+        ),
+      ),
+      'tra_LockedRate' => 
+      array (
+        'myName' => 
+        array (
+          'date' => '2018-11-17',
+          'value' => 1,
+        ),
+      ),
+      'tra_CustomerFXRequest' => 
+      array (
+        'myName' => 
+        array (
+          'date' => '2019-04-08',
+          'value' => 1,
+        ),
+      ),
+      'tra_EFTransaction' => 
+      array (
+        'myName' => 
+        array (
+          'date' => '2019-02-15',
+          'value' => 1,
+        ),
+      ),
+    ),
+  ),
   'addAjaxBannedModules' => 
   array (
     0 => 'SecurityGroups',
@@ -69,9 +118,11 @@ $sugar_config = array (
     'allowed_cron_users' => 
     array (
       0 => 'zln',
+      1 => 'apache',
     ),
   ),
   'currency' => 'aud',
+  'dashlet_auto_refresh_min' => '30',
   'dashlet_display_row_options' => 
   array (
     0 => '1',
@@ -94,11 +145,11 @@ $sugar_config = array (
   'datef' => 'm/d/Y',
   'dbconfig' => 
   array (
-    'db_host_name' => '127.0.0.1',
+    'db_host_name' => 'localhost',
     'db_host_instance' => 'SQLEXPRESS',
-    'db_user_name' => 'zln',
-    'db_password' => 'Melbourne2019',
-    'db_name' => 'zln',
+    'db_user_name' => 'root',
+    'db_password' => 'Melbourne2018',
+    'db_name' => 'zln_scrm',
     'db_type' => 'mysql',
     'db_port' => '',
     'db_manager' => 'MysqliManager',
@@ -219,6 +270,7 @@ $sugar_config = array (
   'default_locale_name_format' => 's f l',
   'default_max_tabs' => 10,
   'default_module' => 'Home',
+  'default_module_favicon' => true,
   'default_navigation_paradigm' => 'gm',
   'default_number_grouping_seperator' => ',',
   'default_password' => '',
@@ -246,12 +298,14 @@ $sugar_config = array (
   'display_inbound_email_buttons' => false,
   'dump_slow_queries' => false,
   'email_address_separator' => ',',
+  'email_allow_send_as_user' => false,
   'email_confirm_opt_in_email_template_id' => '4ef35589-0333-af1d-5e38-5ba8e0ec3581',
   'email_default_client' => 'sugar',
   'email_default_delete_attachments' => true,
   'email_default_editor' => 'html',
-  'email_enable_auto_send_opt_in' => false,
+  'email_enable_auto_send_opt_in' => true,
   'email_enable_confirm_opt_in' => 'not-opt-in',
+  'email_xss' => 'YToxMzp7czo2OiJhcHBsZXQiO3M6NjoiYXBwbGV0IjtzOjQ6ImJhc2UiO3M6NDoiYmFzZSI7czo1OiJlbWJlZCI7czo1OiJlbWJlZCI7czo0OiJmb3JtIjtzOjQ6ImZvcm0iO3M6NToiZnJhbWUiO3M6NToiZnJhbWUiO3M6ODoiZnJhbWVzZXQiO3M6ODoiZnJhbWVzZXQiO3M6NjoiaWZyYW1lIjtzOjY6ImlmcmFtZSI7czo2OiJpbXBvcnQiO3M6ODoiXD9pbXBvcnQiO3M6NToibGF5ZXIiO3M6NToibGF5ZXIiO3M6NDoibGluayI7czo0OiJsaW5rIjtzOjY6Im9iamVjdCI7czo2OiJvYmplY3QiO3M6MzoieG1wIjtzOjM6InhtcCI7czo2OiJzY3JpcHQiO3M6Njoic2NyaXB0Ijt9',
   'enable_action_menu' => true,
   'enable_line_editing_detail' => true,
   'enable_line_editing_list' => true,
@@ -294,9 +348,16 @@ $sugar_config = array (
       13 => 'oauth_tokens',
     ),
   ),
+  'hide_history_contacts_emails' => 
+  array (
+    'Cases' => true,
+    'Accounts' => true,
+    'Opportunities' => true,
+  ),
   'hide_subpanels' => true,
   'history_max_viewed' => 50,
   'host_name' => 'zln.com.au',
+  'imap_test' => false,
   'import_max_execution_time' => 3600,
   'import_max_records_per_file' => 100,
   'import_max_records_total_limit' => '',
@@ -308,7 +369,7 @@ $sugar_config = array (
     'timeout' => 86400,
   ),
   'js_custom_version' => 1,
-  'js_lang_version' => 8,
+  'js_lang_version' => 9,
   'languages' => 
   array (
     'en_us' => 'English (US)',
@@ -317,6 +378,8 @@ $sugar_config = array (
   'lead_conv_activity_opt' => 'donothing',
   'list_max_entries_per_page' => '50',
   'list_max_entries_per_subpanel' => '20',
+  'live_rate_api_key' => '47fb221be2',
+  'live_rate_api_url' => 'https://www.live-rates.com',
   'lock_default_user_name' => false,
   'lock_homepage' => false,
   'lock_subpanels' => false,
@@ -358,7 +421,7 @@ $sugar_config = array (
     'linkexpiration' => '1',
     'linkexpirationtime' => '30',
     'linkexpirationtype' => '1',
-    'systexpiration' => '1',
+    'systexpiration' => '',
     'systexpirationtime' => '7',
     'systexpirationtype' => '1',
     'systexpirationlogin' => '',
@@ -380,6 +443,11 @@ $sugar_config = array (
   ),
   'rss_cache_time' => '10800',
   'save_query' => 'all',
+  'search' => 
+  array (
+    'controller' => 'UnifiedSearch',
+    'defaultEngine' => 'BasicSearchEngine',
+  ),
   'search_wildcard_char' => '%',
   'search_wildcard_infront' => true,
   'securitysuite_additive' => true,
@@ -397,9 +465,10 @@ $sugar_config = array (
   'showThemePicker' => true,
   'site_url' => 'http://zln.com.au',
   'slow_query_time_msec' => '100',
+  'stack_trace_errors' => false,
   'sugar_version' => '6.5.25',
   'sugarbeet' => false,
-  'suitecrm_version' => '7.10.9',
+  'suitecrm_version' => '7.11.3',
   'system_email_templates' => 
   array (
     'confirm_opt_in_template_id' => '4ef35589-0333-af1d-5e38-5ba8e0ec3581',
@@ -445,64 +514,4 @@ $sugar_config = array (
   'use_real_names' => true,
   'vcal_time' => '2',
   'verify_client_ip' => true,
-  'email_allow_send_as_user' => false,
-  'email_xss' => 'YToxMzp7czo2OiJhcHBsZXQiO3M6NjoiYXBwbGV0IjtzOjQ6ImJhc2UiO3M6NDoiYmFzZSI7czo1OiJlbWJlZCI7czo1OiJlbWJlZCI7czo0OiJmb3JtIjtzOjQ6ImZvcm0iO3M6NToiZnJhbWUiO3M6NToiZnJhbWUiO3M6ODoiZnJhbWVzZXQiO3M6ODoiZnJhbWVzZXQiO3M6NjoiaWZyYW1lIjtzOjY6ImlmcmFtZSI7czo2OiJpbXBvcnQiO3M6ODoiXD9pbXBvcnQiO3M6NToibGF5ZXIiO3M6NToibGF5ZXIiO3M6NDoibGluayI7czo0OiJsaW5rIjtzOjY6Im9iamVjdCI7czo2OiJvYmplY3QiO3M6MzoieG1wIjtzOjM6InhtcCI7czo2OiJzY3JpcHQiO3M6Njoic2NyaXB0Ijt9',
-  'default_module_favicon' => true,
-  'dashlet_auto_refresh_min' => '30',
-  'stack_trace_errors' => false,
-  'SweeterCalc' => 
-  array (
-    'GlobalCounterPerModule' => 
-    array (
-      'tra_CustomerTransaction' => 
-      array (
-        'myName' => 4,
-      ),
-      'Accounts' => 
-      array (
-        'myName' => 58,
-      ),
-    ),
-    'DailyCounterPerUser' => 
-    array (
-      'tra_CustomerTransaction' => 
-      array (
-        'myName' => 
-        array (
-          'date' => '2019-02-11',
-          'value' => 18,
-        ),
-      ),
-      'tra_LockedRate' => 
-      array (
-        'myName' => 
-        array (
-          'date' => '2018-11-17',
-          'value' => 1,
-        ),
-      ),
-      'tra_CustomerFXRequest' => 
-      array (
-        'myName' => 
-        array (
-          'date' => '2019-02-11',
-          'value' => 9,
-        ),
-      ),
-      'tra_EFTransaction' => 
-      array (
-        'myName' => 
-        array (
-          'date' => '2018-11-17',
-          'value' => 19,
-        ),
-      ),
-    ),
-  ),
-  'hide_history_contacts_emails' => 
-  array (
-    'Cases' => true,
-    'Accounts' => true,
-    'Opportunities' => true,
-  ),
 );

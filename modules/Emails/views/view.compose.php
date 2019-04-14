@@ -104,14 +104,18 @@ class EmailsViewCompose extends ViewEdit
             $attachment = BeanFactory::getBean($_GET['return_module'], $_GET['return_id']);
             if (!$attachment) {
                 SugarApplication::appendErrorMessage($mod_strings['ERR_NO_RETURN_ID']);
-                $log->fatal('Attacment is not found. Requested return id is not related to an exists Bean.');
+                $log->fatal('Attachment not found. Requested return ID is not related to an existing Bean.');
             } else {
                 if (isset($attachment->name) && $attachment->name) {
                     $attachmentName = $attachment->name;
-                } elseif (isset($attachment->title) && $attachment->title) {
-                    $attachmentName = $attachment->title;
-                } elseif (isset($attachment->subject) && $attachment->subject) {
-                    $attachmentName = $attachment->subject;
+                } else {
+                    if (isset($attachment->title) && $attachment->title) {
+                        $attachmentName = $attachment->title;
+                    } else {
+                        if (isset($attachment->subject) && $attachment->subject) {
+                            $attachmentName = $attachment->subject;
+                        }
+                    }
                 }
             }
         }
@@ -164,11 +168,12 @@ class EmailsViewCompose extends ViewEdit
             $email->description .= $emailSignatures['signature'];
             $email->description_html .= html_entity_decode($emailSignatures['signature_html']);
             return $email;
-        }
-        $GLOBALS['log']->warn(
+        } else {
+            $GLOBALS['log']->warn(
                 'EmailsController::composeSignature() was unable to get the signature id for user: '.
                 $user->name
             );
-        return false;
+            return false;
+        }
     }
 }

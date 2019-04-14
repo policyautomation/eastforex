@@ -436,14 +436,11 @@ class ModuleScanner
         echo "'''Default Extensions'''<br>";
         foreach ($this->validExt as $b) {
             echo '#' . $b . '<br>';
-
         }
         echo "'''Default Black Listed Functions'''<br>";
         foreach ($this->blackList as $b) {
             echo '#' . $b . '<br>';
-
         }
-
     }
 
     /**
@@ -625,7 +622,7 @@ class ModuleScanner
             } else {
                 $token['_msi'] = token_name($token[0]);
                 switch ($token[0]) {
-                    case T_WHITESPACE: continue;
+                    case T_WHITESPACE: break;
                     case T_EVAL:
                         if (in_array('eval', $this->blackList) && !in_array('eval', $this->blackListExempt)) {
                             $issues[]= translate('ML_INVALID_FUNCTION') . ' eval()';
@@ -656,12 +653,13 @@ class ModuleScanner
                                     if ($this->methodsBlackList[$token[1]] == '*') {
                                         $issues[]= translate('ML_INVALID_METHOD') . ' ' .$token[1].  '()';
                                         break;
-                                    }
-                                    if ($lastToken[0] == T_DOUBLE_COLON && $index > 2 && $tokens[$index-2][0] == T_STRING) {
-                                        $classname = strtolower($tokens[$index-2][1]);
-                                        if (in_array($classname, $this->methodsBlackList[$token[1]])) {
-                                            $issues[]= translate('ML_INVALID_METHOD') . ' ' .$classname . '::' . $token[1]. '()';
-                                            break;
+                                    } else {
+                                        if ($lastToken[0] == T_DOUBLE_COLON && $index > 2 && $tokens[$index-2][0] == T_STRING) {
+                                            $classname = strtolower($tokens[$index-2][1]);
+                                            if (in_array($classname, $this->methodsBlackList[$token[1]])) {
+                                                $issues[]= translate('ML_INVALID_METHOD') . ' ' .$classname . '::' . $token[1]. '()';
+                                                break;
+                                            }
                                         }
                                     }
                                 }
@@ -850,7 +848,6 @@ class ModuleScanner
         }
     }
 
-
     /**
      *Main external function that takes in a path to a package and then scans
      *that package's manifest for disabled actions and then it scans the PHP files
@@ -872,8 +869,8 @@ class ModuleScanner
     public function displayIssues($package='Package')
     {
         echo '<h2>'.str_replace('{PACKAGE}', $package, translate('ML_PACKAGE_SCANNING')). '</h2><BR><h2 class="error">' . translate('ML_INSTALLATION_FAILED') . '</h2><br><p>' .str_replace('{PACKAGE}', $package, translate('ML_PACKAGE_NOT_CONFIRM')). '</p><ul><li>'. translate('ML_OBTAIN_NEW_PACKAGE') . '<li>' . translate('ML_RELAX_LOCAL').
-'</ul></p><br>' . translate('ML_SUGAR_LOADING_POLICY') .  ' <a href=" http://kb.sugarcrm.com/custom/module-loader-restrictions-for-sugar-open-cloud/">' . translate('ML_SUGAR_KB') . '</a>.'.
-'<br>' . translate('ML_AVAIL_RESTRICTION'). ' <a href=" http://developers.sugarcrm.com/wordpress/2009/08/14/module-loader-restrictions/">' . translate('ML_SUGAR_DZ') .  '</a>.<br><br>';
+'</ul></p><br>' . translate('ML_SUGAR_LOADING_POLICY') .  ' <a href=" http://kb.sugarcrm.com/custom/module-loader-restrictions-for-sugar-open-cloud/">' . translate('ML_SUITE_KB') . '</a>.'.
+'<br>' . translate('ML_AVAIL_RESTRICTION'). ' <a href=" http://developers.sugarcrm.com/wordpress/2009/08/14/module-loader-restrictions/">' . translate('ML_SUITE_DZ') .  '</a>.<br><br>';
 
 
         foreach ($this->issues as $type=>$issues) {

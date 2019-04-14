@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-07 07:50:39
+// created: 2019-04-10 13:37:42
 $mod_strings = array (
   'LBL_ID' => 'ID',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -50,7 +50,7 @@ $mod_strings = array (
   'LBL_TOTAL' => 'Total',
   'LBL_AOR_CHARTS_SUBPANEL_TITLE' => 'Charts',
   'LBL_ADD_CHART' => 'Add chart',
-  'LBL_INSERT_PARENTHESIS' => 'Insert parenthesis',
+  'LBL_ADD_PARENTHESIS' => 'Drop parenthesis',
   'LBL_CHART_TITLE' => 'Title',
   'LBL_CHART_TYPE' => 'Type',
   'LBL_CHART_X_FIELD' => 'X Axis',

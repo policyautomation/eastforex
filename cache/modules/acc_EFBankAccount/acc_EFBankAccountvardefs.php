@@ -389,16 +389,16 @@
       'studio' => 'visible',
       'dependency' => false,
     ),
-    'tra_customertransaction_acc_efbankaccount' => 
+    'tra_efdailytransaction_acc_efbankaccount' => 
     array (
-      'name' => 'tra_customertransaction_acc_efbankaccount',
+      'name' => 'tra_efdailytransaction_acc_efbankaccount',
       'type' => 'link',
-      'relationship' => 'tra_customertransaction_acc_efbankaccount',
+      'relationship' => 'tra_efdailytransaction_acc_efbankaccount',
       'source' => 'non-db',
-      'module' => 'tra_CustomerTransaction',
-      'bean_name' => 'tra_CustomerTransaction',
+      'module' => 'tra_EFTransaction',
+      'bean_name' => 'tra_EFTransaction',
       'side' => 'right',
-      'vname' => 'LBL_TRA_CUSTOMERTRANSACTION_ACC_EFBANKACCOUNT_FROM_TRA_CUSTOMERTRANSACTION_TITLE',
+      'vname' => 'LBL_TRA_EFDAILYTRANSACTION_ACC_EFBANKACCOUNT_FROM_TRA_EFTRANSACTION_TITLE',
     ),
     'acc_efbankaccount_acc_balance' => 
     array (
@@ -434,16 +434,16 @@
       'side' => 'left',
       'vname' => 'LBL_ACC_EFBANKACCOUNT_ACC_BALANCE_FROM_ACC_BALANCE_TITLE',
     ),
-    'tra_efdailytransaction_acc_efbankaccount' => 
+    'tra_customertransaction_acc_efbankaccount' => 
     array (
-      'name' => 'tra_efdailytransaction_acc_efbankaccount',
+      'name' => 'tra_customertransaction_acc_efbankaccount',
       'type' => 'link',
-      'relationship' => 'tra_efdailytransaction_acc_efbankaccount',
+      'relationship' => 'tra_customertransaction_acc_efbankaccount',
       'source' => 'non-db',
-      'module' => 'tra_EFTransaction',
-      'bean_name' => 'tra_EFTransaction',
+      'module' => 'tra_CustomerTransaction',
+      'bean_name' => 'tra_CustomerTransaction',
       'side' => 'right',
-      'vname' => 'LBL_TRA_EFDAILYTRANSACTION_ACC_EFBANKACCOUNT_FROM_TRA_EFTRANSACTION_TITLE',
+      'vname' => 'LBL_TRA_CUSTOMERTRANSACTION_ACC_EFBANKACCOUNT_FROM_TRA_CUSTOMERTRANSACTION_TITLE',
     ),
   ),
   'relationships' => 

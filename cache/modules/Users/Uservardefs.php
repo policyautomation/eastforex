@@ -96,7 +96,7 @@
     'sugar_login' => 
     array (
       'name' => 'sugar_login',
-      'vname' => 'LBL_SUGAR_LOGIN',
+      'vname' => 'LBL_SUITE_LOGIN',
       'type' => 'bool',
       'default' => '1',
       'reportable' => false,

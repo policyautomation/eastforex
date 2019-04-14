@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-07 07:50:39
+// created: 2019-04-10 13:38:18
 $mod_strings = array (
   'LBL_ID' => 'ID',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -78,7 +78,6 @@ $mod_strings = array (
   'LBL_SCHEDULING_FORM_TITLE' => 'Scheduling',
   'LBL_SEARCH_BUTTON' => 'Search',
   'LBL_SEARCH_FORM_TITLE' => 'Meeting Search',
-  'LBL_SEND_BUTTON_KEY' => 'I',
   'LBL_SEND_BUTTON_LABEL' => 'Save & Send Invites',
   'LBL_SEND_BUTTON_TITLE' => 'Save & Send Invites',
   'LBL_STATUS' => 'Status:',
@@ -130,5 +129,7 @@ $mod_strings = array (
   'LBL_REMINDERS_REMOVE_REMINDER' => 'Remove reminder',
   'LBL_REMINDERS_ADD_ALL_INVITEES' => 'Add All Invitees',
   'LBL_REMINDERS_ADD_REMINDER' => 'Add reminder',
+  'LBL_GSYNC_ID' => 'Google Event ID',
+  'LBL_GSYNC_LASTSYNC' => 'Last Google Sync Timestamp',
   'LBL_ACCOUNT' => 'Customer',
 );

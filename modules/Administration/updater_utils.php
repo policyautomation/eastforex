@@ -46,18 +46,18 @@ if (!defined('sugarEntry') || !sugarEntry) {
 ********************************************************************************/
 require_once('include/utils/encryption_utils.php');
 
-function getSystemInfo($send_usage_info=true){
-	global $sugar_config;
-	global $administration, $timedate;
-        $db = DBManagerFactory::getInstance();
-	$info=array();
-	$info = getBaseSystemInfo($send_usage_info);
-    if($send_usage_info){
-		$info['application_key']=$sugar_config['unique_key'];
-		$info['php_version']=phpversion();
-		if(isset($_SERVER['SERVER_SOFTWARE'])) {
-			$info['server_software'] = $_SERVER['SERVER_SOFTWARE'];
-		} // if
+function getSystemInfo($send_usage_info=true)
+{
+    global $sugar_config;
+    global $db, $administration, $timedate;
+    $info=array();
+    $info = getBaseSystemInfo($send_usage_info);
+    if ($send_usage_info) {
+        $info['application_key']=$sugar_config['unique_key'];
+        $info['php_version']=phpversion();
+        if (isset($_SERVER['SERVER_SOFTWARE'])) {
+            $info['server_software'] = $_SERVER['SERVER_SOFTWARE'];
+        } // if
 
         //get user count.
 
@@ -140,10 +140,11 @@ function getBaseSystemInfo($send_usage_info=true)
     return $info;
 }
 
-function check_now($send_usage_info=true, $get_request_data=false, $response_data = false, $from_install=false ) {
-	global $sugar_config, $timedate;
-	global $license;
-        $db = DBManagerFactory::getInstance();
+function check_now($send_usage_info=true, $get_request_data=false, $response_data = false, $from_install=false)
+{
+    global $sugar_config, $timedate;
+    global $license;
+    $db = DBManagerFactory::getInstance();
 
     include('sugar_version.php');
 
@@ -294,8 +295,9 @@ function get_last_check_version_config_setting()
     $admin=$admin->retrieveSettings('Update');
     if (empty($admin->settings) or empty($admin->settings['Update_last_check_version'])) {
         return null;
+    } else {
+        return $admin->settings['Update_last_check_version'];
     }
-    return $admin->settings['Update_last_check_version'];
 }
 
 
@@ -310,8 +312,9 @@ function get_last_check_date_config_setting()
     $admin=$admin->retrieveSettings('Update');
     if (empty($admin->settings) or empty($admin->settings['Update_last_check_date'])) {
         return 0;
+    } else {
+        return $admin->settings['Update_last_check_date'];
     }
-    return $admin->settings['Update_last_check_date'];
 }
 
 function set_sugarbeat($value)

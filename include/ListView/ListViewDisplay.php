@@ -190,18 +190,16 @@ class ListViewDisplay
         return true;
     }
 
-	public function setupFilterFields($filter_fields = array())
-	{
-		// create filter fields based off of display columns
-        if(empty($filter_fields) || $this->mergeDisplayColumns) {
-
+    public function setupFilterFields($filter_fields = array())
+    {
+        // create filter fields based off of display columns
+        if (empty($filter_fields) || $this->mergeDisplayColumns) {
             if (!is_array($this->displayColumns)) {
                 LoggerManager::getLogger()->warn('displayColumns is not an array');
             }
 
-            foreach((array)$this->displayColumns as $columnName => $def) {
-
-               $filter_fields[strtolower($columnName)] = true;
+            foreach ((array)$this->displayColumns as $columnName => $def) {
+                $filter_fields[strtolower($columnName)] = true;
 
                 if (isset($this->seed->field_defs[strtolower($columnName)]['type']) &&
                strtolower($this->seed->field_defs[strtolower($columnName)]['type']) == 'currency' &&
@@ -245,7 +243,10 @@ class ListViewDisplay
      */
     public function process($file, $data, $htmlVar)
     {
-        $this->rowCount = count($data['data']);
+        if (!is_array($data['data'])) {
+            LoggerManager::getLogger()->warn('Row data must be an array, ' . gettype($data['data']) . ' given and converting to an array.');
+        }
+        $this->rowCount = count((array)$data['data']);
         if (!isset($data['pageData']['bean'])) {
             $GLOBALS['log']->warn("List view process error: Invalid data, bean is not set");
             return false;
@@ -362,8 +363,8 @@ class ListViewDisplay
                 }
             }
 
-            // compose email
-            if (isset($this->email)) {
+            // Compose email
+            if (isset($this->email) && $this->email === true) {
                 $menuItems[] = $this->buildComposeEmailLink($this->data['pageData']['offsets']['total'], $location);
             }
 

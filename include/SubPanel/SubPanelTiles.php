@@ -144,33 +144,33 @@ class SubPanelTiles
             $tabs = $objSubPanelTilesTabs->getTabs($tabs, $showTabs, $selectedGroup);
             unset($objSubPanelTilesTabs);
             return $tabs;
-        }
-        // see if user current user has custom subpanel layout
-        $objSubPanelTilesTabs = new SubPanelTilesTabs($this->focus);
-        $tabs = $objSubPanelTilesTabs->applyUserCustomLayoutToTabs($tabs);
+        } else {
+            // see if user current user has custom subpanel layout
+            $objSubPanelTilesTabs = new SubPanelTilesTabs($this->focus);
+            $tabs = $objSubPanelTilesTabs->applyUserCustomLayoutToTabs($tabs);
 
-        /* Check if the preference is set now,
-         * because there's no point in executing this code if
-         * we aren't going to render anything.
-         */
-        $subpanelLinksPref = $current_user->getPreference('subpanel_links');
-        if (!isset($subpanelLinksPref)) {
-            $subpanelLinksPref = $GLOBALS['sugar_config']['default_subpanel_links'];
-        }
-
-        if ($showTabs && $subpanelLinksPref) {
-            require_once('include/SubPanel/SugarTab.php');
-            $sugarTab = new SugarTab();
-
-            $displayTabs = array();
-
-            foreach ($tabs as $tab) {
-                $displayTabs []= array('key'=>$tab, 'label'=>translate($this->subpanel_definitions->layout_defs['subpanel_setup'][$tab]['title_key']));
+            /* Check if the preference is set now,
+             * because there's no point in executing this code if
+             * we aren't going to render anything.
+             */
+            $subpanelLinksPref = $current_user->getPreference('subpanel_links');
+            if (!isset($subpanelLinksPref)) {
+                $subpanelLinksPref = $GLOBALS['sugar_config']['default_subpanel_links'];
             }
-            $sugarTab->setup(array(), array(), $displayTabs);
-            $sugarTab->display();
+
+            if ($showTabs && $subpanelLinksPref) {
+                require_once('include/SubPanel/SugarTab.php');
+                $sugarTab = new SugarTab();
+
+                $displayTabs = array();
+
+                foreach ($tabs as $tab) {
+                    $displayTabs []= array('key'=>$tab, 'label'=>translate($this->subpanel_definitions->layout_defs['subpanel_setup'][$tab]['title_key']));
+                }
+                $sugarTab->setup(array(), array(), $displayTabs);
+                $sugarTab->display();
+            }
         }
-        
         return $tabs;
     }
     public function display($showContainer = true, $forceTabless = false)
@@ -193,7 +193,7 @@ class SubPanelTiles
         $default_div_display = 'inline';
         if (!empty($sugar_config['hide_subpanels_on_login'])) {
             if (!isset($_SESSION['visited_details'][$this->focus->module_dir])) {
-                setcookie($this->focus->module_dir . '_divs', '', 0, null, null, false, true);
+                setcookie($this->focus->module_dir . '_divs', '', 0, null, null, isSSL(), true);
                 unset($_COOKIE[$this->focus->module_dir . '_divs']);
                 $_SESSION['visited_details'][$this->focus->module_dir] = true;
             }
@@ -361,15 +361,20 @@ class SubPanelTiles
                 $tabs_properties[$t]['buttons'] = $this->get_buttons($thisPanel, $subpanel_object->subpanel_query);
             } elseif ($current_user->getPreference('count_collapsed_subpanels')) {
                 $subPanelDef = $this->subpanel_definitions->layout_defs['subpanel_setup'][$tab];
-                $count = $this->rowCounter->getSubPanelRowCount($subPanelDef);
+                $count = (int)$this->rowCounter->getSubPanelRowCount($subPanelDef);
 
+                $extraClass = '';
                 if ($count === 0) {
-                    $tabs_properties[$t]['title'] .= ' (0)';
-                }
-                elseif ($count > 0) {
-                    $tabs_properties[$t]['title'] .= ' +';
+                    $countStr = $count.'';
+                } elseif ($count > 0) {
+                    $countStr = $count.'';
                     $tabs_properties[$t]['collapsed_override'] = 1;
+                } else {
+                    $countStr = '...';
+                    $extraClass = ' incomplete';
                 }
+                
+                $tabs_properties[$t]['title'] .= ' (<span class="subPanelCountHint' . $extraClass . '" data-subpanel="' . $tab . '" data-module="' . $layout_def_key . '" data-record="' . $_REQUEST['record'] . '">' . $countStr . '</span>)';
             }
 
 
@@ -435,10 +440,14 @@ class SubPanelTiles
             }
         }
         require_once('include/Smarty/plugins/function.sugar_action_menu.php');
-        $widget_contents = smarty_function_sugar_action_menu(array(
-            'buttons' => $buttons,
-            'class' => 'clickMenu fancymenu',
-        ), $this->xTemplate);
+        $widget_contents = smarty_function_sugar_action_menu(
+            [
+                'buttons' => $buttons,
+                'flat' => !empty($thisPanel->_instance_properties['flat']),
+                'class' => 'clickMenu fancymenu',
+            ],
+            $this->xTemplate
+        );
         return $widget_contents;
     }
 }

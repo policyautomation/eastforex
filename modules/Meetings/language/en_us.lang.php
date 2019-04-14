@@ -5,7 +5,7 @@
  * SugarCRM, Inc. Copyright (C) 2004-2013 SugarCRM Inc.
  *
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
- * Copyright (C) 2011 - 2018 SalesAgility Ltd.
+ * Copyright (C) 2011 - 2019 SalesAgility Ltd.
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -100,7 +100,6 @@ $mod_strings = array(
     'LBL_SCHEDULING_FORM_TITLE' => 'Scheduling',
     'LBL_SEARCH_BUTTON' => 'Search',
     'LBL_SEARCH_FORM_TITLE' => 'Meeting Search',
-    'LBL_SEND_BUTTON_KEY'=>'I',
     'LBL_SEND_BUTTON_LABEL' => 'Save & Send Invites',
     'LBL_SEND_BUTTON_TITLE' => 'Save & Send Invites',
     'LBL_STATUS' => 'Status:',
@@ -164,4 +163,8 @@ $mod_strings = array(
     'LBL_REMINDERS_REMOVE_REMINDER' => 'Remove reminder',
     'LBL_REMINDERS_ADD_ALL_INVITEES' => 'Add All Invitees',
     'LBL_REMINDERS_ADD_REMINDER' => 'Add reminder',
+
+    // for google sync
+    'LBL_GSYNC_ID' => 'Google Event ID',
+    'LBL_GSYNC_LASTSYNC' => 'Last Google Sync Timestamp',
 );

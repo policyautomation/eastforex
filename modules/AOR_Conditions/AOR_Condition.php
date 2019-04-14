@@ -102,7 +102,6 @@ class AOR_Condition extends Basic
 
         $j = 0;
         foreach ((array)$postData as $i => $field) {
-
             if (!isset($post_data[$key . 'deleted'][$i])) {
                 LoggerManager::getLogger()->warn('AOR Condition trying to save lines but POST data does not contains the key "' . $key . 'deleted' . '" at index: ' . $i);
             }
@@ -122,12 +121,18 @@ class AOR_Condition extends Basic
                                 default:
                                     $post_data[$key . $field_name][$i] = encodeMultienumValue($post_data[$key . $field_name][$i]);
                             }
-                        } elseif ($field_name == 'value' && $post_data[$key . 'value_type'][$i] === 'Value') {
-                            $post_data[$key . $field_name][$i] = fixUpFormatting($_REQUEST['report_module'], $condition->field, $post_data[$key . $field_name][$i]);
-                        } elseif ($field_name == 'parameter') {
-                            $post_data[$key . $field_name][$i] = isset($post_data[$key . $field_name][$i]);
-                        } elseif ($field_name == 'module_path') {
-                            $post_data[$key . $field_name][$i] = base64_encode(serialize(explode(":", $post_data[$key . $field_name][$i])));
+                        } else {
+                            if ($field_name == 'value' && $post_data[$key . 'value_type'][$i] === 'Value') {
+                                $post_data[$key . $field_name][$i] = fixUpFormatting($_REQUEST['report_module'], $condition->field, $post_data[$key . $field_name][$i]);
+                            } else {
+                                if ($field_name == 'parameter') {
+                                    $post_data[$key . $field_name][$i] = isset($post_data[$key . $field_name][$i]);
+                                } else {
+                                    if ($field_name == 'module_path') {
+                                        $post_data[$key . $field_name][$i] = base64_encode(serialize(explode(":", $post_data[$key . $field_name][$i])));
+                                    }
+                                }
+                            }
                         }
                         if ($field_name == 'parenthesis' && $post_data[$key . $field_name][$i] == 'END') {
                             if (!isset($lastParenthesisStartConditionId)) {
@@ -137,8 +142,10 @@ class AOR_Condition extends Basic
                         } else {
                             $condition->$field_name = $post_data[$key . $field_name][$i];
                         }
-                    } elseif ($field_name == 'parameter') {
-                        $condition->$field_name = 0;
+                    } else {
+                        if ($field_name == 'parameter') {
+                            $condition->$field_name = 0;
+                        }
                     }
                 }
                 // Period must be saved as a string instead of a base64 encoded datetime.

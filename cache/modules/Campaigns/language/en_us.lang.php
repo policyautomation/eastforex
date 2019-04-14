@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-07 07:50:39
+// created: 2019-04-10 13:38:11
 $mod_strings = array (
   'LBL_ID' => 'ID',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -365,7 +365,7 @@ $mod_strings = array (
   'LBL_UPDATE_TEMPLATE' => 'Update template',
   'LBL_ATTACHMENTS' => 'Attachments',
   'ERR_MISSING_REQUIRED_FIELDS' => 'Missing required field',
-  'LBL_SUGAR_DOCUMENT' => 'Document',
+  'LBL_SUITE_DOCUMENT' => 'Document',
   'LBL_EMAIL_ATTACHMENT' => 'Email Attachment',
   'LBL_PROCESS_BOUNCED_EMAILS' => 'Process Bounced Emails',
   'LBL_PROCESS_CAMPAIGN_EMAILS' => 'Process Campaign Emails',
@@ -411,7 +411,6 @@ $mod_strings = array (
   'LBL_SUMMARY' => 'Summary',
   'LBL_CAMPAIGN_CHECKLIST' => 'Campaign Checklist',
   'LBL_EMAIL_MARKETING' => 'Email Marketing',
-  'LBL_EMAIL_SUCCESS' => 'Success',
   'LBL_QUEUE_ITEMS' => 'Queue Items',
   'LBL_PROSPECT_LISTS' => 'Prospect Lists',
   'LBL_SURVEYRESPONSES_CAMPAIGNS_FROM_SURVEYRESPONSES_TITLE' => 'Survey Responses',

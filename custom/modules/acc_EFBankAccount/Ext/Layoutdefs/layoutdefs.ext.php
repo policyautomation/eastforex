@@ -3,14 +3,14 @@
 
 
  // created: 2019-02-11 22:25:17
-$layout_defs["acc_EFBankAccount"]["subpanel_setup"]['tra_customertransaction_acc_efbankaccount'] = array (
+$layout_defs["acc_EFBankAccount"]["subpanel_setup"]['tra_efdailytransaction_acc_efbankaccount'] = array (
   'order' => 100,
-  'module' => 'tra_CustomerTransaction',
+  'module' => 'tra_EFTransaction',
   'subpanel_name' => 'default',
   'sort_order' => 'asc',
   'sort_by' => 'id',
-  'title_key' => 'LBL_TRA_CUSTOMERTRANSACTION_ACC_EFBANKACCOUNT_FROM_TRA_CUSTOMERTRANSACTION_TITLE',
-  'get_subpanel_data' => 'tra_customertransaction_acc_efbankaccount',
+  'title_key' => 'LBL_TRA_EFDAILYTRANSACTION_ACC_EFBANKACCOUNT_FROM_TRA_EFTRANSACTION_TITLE',
+  'get_subpanel_data' => 'tra_efdailytransaction_acc_efbankaccount',
   'top_buttons' => 
   array (
     0 => 
@@ -27,14 +27,14 @@ $layout_defs["acc_EFBankAccount"]["subpanel_setup"]['tra_customertransaction_acc
 
 
  // created: 2019-02-11 22:25:17
-$layout_defs["acc_EFBankAccount"]["subpanel_setup"]['tra_efdailytransaction_acc_efbankaccount'] = array (
+$layout_defs["acc_EFBankAccount"]["subpanel_setup"]['tra_customertransaction_acc_efbankaccount'] = array (
   'order' => 100,
-  'module' => 'tra_EFTransaction',
+  'module' => 'tra_CustomerTransaction',
   'subpanel_name' => 'default',
   'sort_order' => 'asc',
   'sort_by' => 'id',
-  'title_key' => 'LBL_TRA_EFDAILYTRANSACTION_ACC_EFBANKACCOUNT_FROM_TRA_EFTRANSACTION_TITLE',
-  'get_subpanel_data' => 'tra_efdailytransaction_acc_efbankaccount',
+  'title_key' => 'LBL_TRA_CUSTOMERTRANSACTION_ACC_EFBANKACCOUNT_FROM_TRA_CUSTOMERTRANSACTION_TITLE',
+  'get_subpanel_data' => 'tra_customertransaction_acc_efbankaccount',
   'top_buttons' => 
   array (
     0 => 

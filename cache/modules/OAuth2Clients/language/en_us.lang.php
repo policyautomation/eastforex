@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-07 07:50:40
+// created: 2019-04-10 13:38:18
 $mod_strings = array (
   'LBL_ID' => 'ID',
   'LBL_DATE_ENTERED' => 'Date created',
@@ -36,8 +36,8 @@ $mod_strings = array (
   'LBL_USER' => 'Associated user',
   'LBL_OAUTHTOKENS_SUBPANEL_TITLE' => 'Active OAuth2 Tokens',
   'LBL_TOKEN_ID' => 'Token',
-  'LBL_ACCESS_TOKEN_EXPIRES' => 'Access token expiry',
-  'LBL_REFRESH_TOKEN_EXPIRES' => 'Refresh token expiry',
+  'LBL_ACCESS_TOKEN_EXPIRES' => 'Access token expires',
+  'LBL_REFRESH_TOKEN_EXPIRES' => 'Refresh token expires',
   'LNK_OAUTH2_TOKEN_LIST' => 'List OAuth2 Tokens',
   'LNK_OAUTH2_CLIENT_LIST' => 'List OAuth2 Clients',
   'LNK_NEW_OAUTH2_CLIENT' => 'Create OAuth2 Client',

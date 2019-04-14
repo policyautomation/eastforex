@@ -3311,3 +3311,183 @@ Fri Feb 15 16:10:17 2019 [3777449][1][FATAL] backtrace:
 Thu Mar  7 06:36:00 2019 [1638][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
 Thu Mar  7 06:36:16 2019 [1638][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
 Thu Mar  7 07:50:44 2019 [1621][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Tue Mar 26 10:53:34 2019 [9975][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Mar 27 11:14:00 2019 [5784][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Mar 27 11:20:47 2019 [16764][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Sun Mar 31 23:44:56 2019 [21679][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 00:05:02 2019 [21679][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 00:13:07 2019 [21611][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 00:13:18 2019 [21848][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 01:06:19 2019 [21900][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 01:57:39 2019 [21611][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 02:24:37 2019 [21999][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 02:33:38 2019 [21999][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 03:04:31 2019 [22468][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 03:56:26 2019 [22405][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 04:04:56 2019 [22781][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 04:05:04 2019 [22474][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 04:48:05 2019 [22468][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 05:02:26 2019 [22569][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 05:05:50 2019 [22297][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 05:17:32 2019 [22569][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 05:25:59 2019 [22720][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  1 09:52:35 2019 [22468][1][FATAL] Exception handling in /var/www/html/include/MVC/Controller/SugarController.php:400
+Mon Apr  1 09:52:35 2019 [22468][1][FATAL] Exception in Controller: Error retrieving record. This record may be deleted or you may not be authorized to view it.
+Mon Apr  1 09:52:35 2019 [22468][1][FATAL] backtrace:
+#0 /var/www/html/include/MVC/View/views/view.detail.php(102): sugar_die('Error retrievin...')
+#1 /var/www/html/custom/modules/tra_CustomerFXRequest/views/view.detail.php(34): ViewDetail->display()
+#2 /var/www/html/include/MVC/View/SugarView.php(211): tra_CustomerFXRequestViewDetail->display()
+#3 /var/www/html/include/MVC/Controller/SugarController.php(435): SugarView->process()
+#4 /var/www/html/include/MVC/Controller/SugarController.php(375): SugarController->processView()
+#5 /var/www/html/include/MVC/SugarApplication.php(113): SugarController->execute()
+#6 /var/www/html/index.php(52): SugarApplication->execute()
+#7 {main}
+Wed Apr  3 03:33:18 2019 [28475][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Apr  3 03:37:37 2019 [23081][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Apr  3 03:38:45 2019 [27259][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Apr  3 03:44:29 2019 [27259][1][FATAL] IP Address mismatch: SESSION IP: 147.76.180.152 CLIENT IP: 1.136.106.117
+Wed Apr  3 03:46:07 2019 [28475][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Apr  3 03:50:04 2019 [29238][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Apr  3 04:53:51 2019 [29381][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Apr  3 04:56:16 2019 [28493][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Apr  3 04:57:53 2019 [23081][-none-][FATAL] SECURITY: User authentication for root failed
+Wed Apr  3 04:57:53 2019 [23081][-none-][FATAL] FAILED LOGIN:attempts[1], ip[1.136.106.117], username[root]
+Wed Apr  3 04:57:59 2019 [29381][-none-][FATAL] SECURITY: User authentication for root failed
+Wed Apr  3 04:57:59 2019 [29381][-none-][FATAL] FAILED LOGIN:attempts[1], ip[1.136.106.117], username[root]
+Wed Apr  3 05:22:15 2019 [29633][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Apr  3 05:23:10 2019 [29704][1][FATAL] ERROR: rmdir_recursive(): argument cache/themes/SuiteP/modules is not a file or a dir.
+Wed Apr  3 23:04:01 2019 [29632][-none-][FATAL] SECURITY: User authentication for root failed
+Wed Apr  3 23:04:01 2019 [29632][-none-][FATAL] FAILED LOGIN:attempts[1], ip[220.239.36.10], username[root]
+Wed Apr  3 23:13:22 2019 [29703][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Thu Apr  4 10:40:40 2019 [1109][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Thu Apr  4 10:51:55 2019 [1216][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Thu Apr  4 22:22:13 2019 [1230][1][FATAL] IP Address mismatch: SESSION IP: 220.239.36.10 CLIENT IP: 147.76.180.151
+Mon Apr  8 06:28:29 2019 [10903][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  8 11:35:46 2019 [14045][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  8 11:50:25 2019 [14001][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  8 11:54:39 2019 [13955][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  8 11:57:13 2019 [13988][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Mon Apr  8 12:07:10 2019 [14648][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Apr 10 12:32:55 2019 [3181][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Apr 10 12:32:59 2019 [3069][1][FATAL] UpgradeWizard could not create the upgradeWizard.log file
+Wed Apr 10 12:38:42 2019 [3184][1][FATAL] UpgradeWizard could not create the upgradeWizard.log file
+Wed Apr 10 12:41:14 2019 [3067][1][FATAL] UpgradeWizard could not create the upgradeWizard.log file
+Wed Apr 10 12:41:36 2019 [3183][1][FATAL] UpgradeWizard could not create the upgradeWizard.log file
+Wed Apr 10 12:41:38 2019 [3184][1][FATAL] UpgradeWizard could not create the upgradeWizard.log file
+Wed Apr 10 12:41:39 2019 [3184][1][FATAL] UpgradeWizard could not create the upgradeWizard.log file
+Wed Apr 10 12:56:12 2019 [3267][1][FATAL] ERROR: There was an error during your upload, please contact an administrator for help.
+Wed Apr 10 12:57:37 2019 [3382][1][FATAL] ERROR: There was an error during your upload, please contact an administrator for help.
+Wed Apr 10 13:06:41 2019 [3431][1][FATAL] ERROR: There was an error during your upload, please contact an administrator for help.
+Wed Apr 10 13:08:45 2019 [3381][1][FATAL] ERROR: There was an error during your upload, please contact an administrator for help.
+Wed Apr 10 13:27:18 2019 [3432][1][FATAL] ERROR: There was an error during your upload, please contact an administrator for help.
+Wed Apr 10 13:29:14 2019 [3431][1][FATAL] IP Address mismatch: SESSION IP: 220.239.36.10 CLIENT IP: 1.136.110.151
+Wed Apr 10 13:29:40 2019 [3382][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Apr 10 13:29:54 2019 [3431][1][FATAL] ERROR: There was an error during your upload, please contact an administrator for help.
+Wed Apr 10 13:31:09 2019 [3379][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Apr 10 13:31:21 2019 [3379][1][FATAL] Mysqli_query failed.
+Wed Apr 10 13:31:21 2019 [3379][1][FATAL]  Query Failed: DESCRIBE versions: MySQL error 1146: Table 'zln_scrm.versions' doesn't exist
+Wed Apr 10 13:31:21 2019 [3379][1][FATAL] Mysqli_query failed.
+Wed Apr 10 13:31:21 2019 [3379][1][FATAL]  Query Failed: SHOW INDEX FROM versions: MySQL error 1146: Table 'zln_scrm.versions' doesn't exist
+Wed Apr 10 13:31:21 2019 [3379][1][FATAL] Mysqli_query failed.
+Wed Apr 10 13:31:21 2019 [3379][1][FATAL]  Query Failed: select * from versions: MySQL error 1146: Table 'zln_scrm.versions' doesn't exist
+Wed Apr 10 13:32:53 2019 [3589][1][FATAL] log call at: modules/Administration/index.tpl:53 - MY_FRAME is not set
+Wed Apr 10 13:39:02 2019 [3587][1][FATAL] Mysqli_query failed.
+Wed Apr 10 13:39:02 2019 [3587][1][FATAL]  Query Failed: SELECT
+                                               bank_acc.id as name
+                                              ,bank_acc.name as label
+                                              ,CONCAT("?module=acc_CustomerBankAccount&action=DetailView&record=", bank_acc.id) as redirect_url
+                                        FROM acc_customerbankaccount bank_acc
+                                        INNER JOIN acc_customerbankaccount_accounts_c as acc_bank_jt1
+                                          on bank_acc.id = acc_bank_jt1.acc_customerbankaccount_accountsacc_customerbankaccount_idb
+                                               and acc_bank_jt1.deleted = 0
+                                        INNER  JOIN accounts as acc
+                                          on acc_bank_jt1.acc_customerbankaccount_accountsaccounts_ida = acc.id
+                                               and acc.deleted=0 and acc.id='664c6cd2-0384-cf06-4bac-5bcf1963a6a5'
+                                        WHERE bank_acc.deleted = 0
+                                        ORDER BY bank_acc.date_entered DESC LIMIT : MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 13
+Wed Apr 10 13:39:02 2019 [3587][1][FATAL] Mysqli_query failed.
+Wed Apr 10 13:39:02 2019 [3587][1][FATAL]  Query Failed: select
+                                           ab.id as name
+                                         , ab.name as label
+                                         , CONCAT("?module=acc_Balance&action=DetailView&record=", ab.id) as redirect_url
+                                    FROM
+                                         acc_balance ab
+                                    INNER JOIN acc_balance_accounts_c as acc_ab
+                                      on ab.id = acc_ab.acc_balance_accountsacc_balance_idb
+                                           and acc_ab.acc_balance_accountsaccounts_ida = '664c6cd2-0384-cf06-4bac-5bcf1963a6a5'
+                                           and acc_ab.deleted = 0
+                                      ORDER BY ab.date_entered DESC LIMIT : MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 11
+Wed Apr 10 13:39:02 2019 [3587][1][FATAL] Mysqli_query failed.
+Wed Apr 10 13:39:02 2019 [3587][1][FATAL]  Query Failed: SELECT
+                                           fx_req.id as name
+                                         , fx_req.name as label
+                                         , CONCAT("?module=tra_CustomerFXRequest&action=DetailView&record=", fx_req.id) as redirect_url
+                                    FROM
+                                         tra_customerfxrequest fx_req
+                                    INNER JOIN tra_customerfxrequest_accounts_c as acc_fx_jt1
+                                      on fx_req.id = acc_fx_jt1.tra_customerfxrequest_accountstra_customerfxrequest_idb
+                                           and acc_fx_jt1.tra_customerfxrequest_accountsaccounts_ida = '664c6cd2-0384-cf06-4bac-5bcf1963a6a5'
+                                           and acc_fx_jt1.deleted = 0
+                                           ORDER BY fx_req.date_entered DESC LIMIT : MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 11
+Wed Apr 10 13:39:02 2019 [3587][1][FATAL] Mysqli_query failed.
+Wed Apr 10 13:39:02 2019 [3587][1][FATAL]  Query Failed: select
+                                           lr.id as name
+                                         , lr.name as label
+                                         ,CONCAT("?module=tra_LockedRate&action=DetailView&record=", lr.id) as redirect_url
+                                    from
+                                         tra_lockedrate as lr
+                                    INNER JOIN tra_lockedrate_accounts_c as lr_acc
+                                      on lr.id = lr_acc.tra_lockedrate_accountstra_lockedrate_idb
+                                           and lr_acc.tra_lockedrate_accountsaccounts_ida = '664c6cd2-0384-cf06-4bac-5bcf1963a6a5'
+                                           and lr_acc.deleted = 0
+                                          ORDER BY lr.date_entered DESC LIMIT : MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 11
+Wed Apr 10 13:39:14 2019 [3588][1][FATAL] Mysqli_query failed.
+Wed Apr 10 13:39:14 2019 [3588][1][FATAL]  Query Failed: SELECT
+                                               bank_acc.id as name
+                                              ,bank_acc.name as label
+                                              ,CONCAT("?module=acc_CustomerBankAccount&action=DetailView&record=", bank_acc.id) as redirect_url
+                                        FROM acc_customerbankaccount bank_acc
+                                        INNER JOIN acc_customerbankaccount_accounts_c as acc_bank_jt1
+                                          on bank_acc.id = acc_bank_jt1.acc_customerbankaccount_accountsacc_customerbankaccount_idb
+                                               and acc_bank_jt1.deleted = 0
+                                        INNER  JOIN accounts as acc
+                                          on acc_bank_jt1.acc_customerbankaccount_accountsaccounts_ida = acc.id
+                                               and acc.deleted=0 and acc.id='2e8d329f-1448-7f4e-fc34-5ba8e072d0a4'
+                                        WHERE bank_acc.deleted = 0
+                                        ORDER BY bank_acc.date_entered DESC LIMIT : MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 13
+Wed Apr 10 13:39:14 2019 [3588][1][FATAL] Mysqli_query failed.
+Wed Apr 10 13:39:14 2019 [3588][1][FATAL]  Query Failed: select
+                                           ab.id as name
+                                         , ab.name as label
+                                         , CONCAT("?module=acc_Balance&action=DetailView&record=", ab.id) as redirect_url
+                                    FROM
+                                         acc_balance ab
+                                    INNER JOIN acc_balance_accounts_c as acc_ab
+                                      on ab.id = acc_ab.acc_balance_accountsacc_balance_idb
+                                           and acc_ab.acc_balance_accountsaccounts_ida = '2e8d329f-1448-7f4e-fc34-5ba8e072d0a4'
+                                           and acc_ab.deleted = 0
+                                      ORDER BY ab.date_entered DESC LIMIT : MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 11
+Wed Apr 10 13:39:14 2019 [3588][1][FATAL] Mysqli_query failed.
+Wed Apr 10 13:39:14 2019 [3588][1][FATAL]  Query Failed: SELECT
+                                           fx_req.id as name
+                                         , fx_req.name as label
+                                         , CONCAT("?module=tra_CustomerFXRequest&action=DetailView&record=", fx_req.id) as redirect_url
+                                    FROM
+                                         tra_customerfxrequest fx_req
+                                    INNER JOIN tra_customerfxrequest_accounts_c as acc_fx_jt1
+                                      on fx_req.id = acc_fx_jt1.tra_customerfxrequest_accountstra_customerfxrequest_idb
+                                           and acc_fx_jt1.tra_customerfxrequest_accountsaccounts_ida = '2e8d329f-1448-7f4e-fc34-5ba8e072d0a4'
+                                           and acc_fx_jt1.deleted = 0
+                                           ORDER BY fx_req.date_entered DESC LIMIT : MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 11
+Wed Apr 10 13:39:14 2019 [3588][1][FATAL] Mysqli_query failed.
+Wed Apr 10 13:39:14 2019 [3588][1][FATAL]  Query Failed: select
+                                           lr.id as name
+                                         , lr.name as label
+                                         ,CONCAT("?module=tra_LockedRate&action=DetailView&record=", lr.id) as redirect_url
+                                    from
+                                         tra_lockedrate as lr
+                                    INNER JOIN tra_lockedrate_accounts_c as lr_acc
+                                      on lr.id = lr_acc.tra_lockedrate_accountstra_lockedrate_idb
+                                           and lr_acc.tra_lockedrate_accountsaccounts_ida = '2e8d329f-1448-7f4e-fc34-5ba8e072d0a4'
+                                           and lr_acc.deleted = 0
+                                          ORDER BY lr.date_entered DESC LIMIT : MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 11

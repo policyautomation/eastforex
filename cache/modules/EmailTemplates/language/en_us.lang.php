@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-07 07:50:39
+// created: 2019-04-10 13:37:42
 $mod_strings = array (
   'LBL_SECURITYGROUPS' => 'Security Groups',
   'LBL_SECURITYGROUPS_SUBPANEL_TITLE' => 'Security Groups',
@@ -30,7 +30,7 @@ $mod_strings = array (
   'LBL_SEARCH_FORM_TITLE' => 'Email Templates Search',
   'LBL_SHOW_ALT_TEXT' => 'Show Plain Text',
   'LBL_SUBJECT' => 'Subject:',
-  'LBL_SUGAR_DOCUMENT' => 'Document',
+  'LBL_SUITE_DOCUMENT' => 'Document',
   'LBL_TEXT_BODY' => 'Text Body',
   'LBL_USERS' => 'Users',
   'LNK_EMAIL_TEMPLATE_LIST' => 'View Email Templates',

@@ -30,6 +30,8 @@
 {if $bean->aclAccess("edit") && $bean->aclAccess("delete")}<input title="{$APP.LBL_DUP_MERGE}" class="button" onclick="var _form = document.getElementById('formDetailView'); _form.return_module.value='Accounts'; _form.return_action.value='DetailView'; _form.return_id.value='{$id}'; _form.action.value='Step1'; _form.module.value='MergeRecords';SUGAR.ajaxUI.submitForm(_form);" type="button" name="Merge" value="{$APP.LBL_DUP_MERGE}" id="merge_duplicate_button">{/if} 
 <input class="button hidden" id="send_confirm_opt_in_email" title="{$APP.LBL_SEND_CONFIRM_OPT_IN_EMAIL}" onclick="var _form = document.getElementById('formDetailView');_form.return_module.value='Accounts'; _form.return_action.value='DetailView'; _form.return_id.value='{$fields.id.value}'; _form.action.value='sendConfirmOptInEmail'; _form.module.value='Accounts'; _form.module_tab.value='Accounts';_form.submit();" name="send_confirm_opt_in_email" disabled="1" type="button" value="{$APP.LBL_SEND_CONFIRM_OPT_IN_EMAIL}"/>
 <input type="button" class="button" onClick="showPopup();" value="{$APP.LBL_PRINT_AS_PDF}"/>
+<input 
+id="view_relationship_tree" title="View Relationship Tree" type="submit" class="button" name="view_relationship_tree" value="View Relationship Tree"/>
 {if $bean->aclAccess("detail")}{if !empty($fields.id.value) && $isAuditEnabled}<input id="btn_view_change_log" title="{$APP.LNK_VIEW_CHANGE_LOG}" class="button" onclick='open_popup("Audit", "600", "400", "&record={$fields.id.value}&module_name=Accounts", true, false,  {ldelim} "call_back_function":"set_return","form_name":"EditView","field_to_name_array":[] {rdelim} ); return false;' type="button" value="{$APP.LNK_VIEW_CHANGE_LOG}">{/if}{/if}
 </div>                    {/if}
 </form>
@@ -67,6 +69,8 @@
 <li>{if $bean->aclAccess("edit") && $bean->aclAccess("delete")}<input title="{$APP.LBL_DUP_MERGE}" class="button" onclick="var _form = document.getElementById('formDetailView'); _form.return_module.value='Accounts'; _form.return_action.value='DetailView'; _form.return_id.value='{$id}'; _form.action.value='Step1'; _form.module.value='MergeRecords';SUGAR.ajaxUI.submitForm(_form);" type="button" name="Merge" value="{$APP.LBL_DUP_MERGE}" id="merge_duplicate_button">{/if} </li>
 <li><input class="button hidden" id="send_confirm_opt_in_email" title="{$APP.LBL_SEND_CONFIRM_OPT_IN_EMAIL}" onclick="var _form = document.getElementById('formDetailView');_form.return_module.value='Accounts'; _form.return_action.value='DetailView'; _form.return_id.value='{$fields.id.value}'; _form.action.value='sendConfirmOptInEmail'; _form.module.value='Accounts'; _form.module_tab.value='Accounts';_form.submit();" name="send_confirm_opt_in_email" disabled="1" type="button" value="{$APP.LBL_SEND_CONFIRM_OPT_IN_EMAIL}"/></li>
 <li><input type="button" class="button" onClick="showPopup();" value="{$APP.LBL_PRINT_AS_PDF}"/></li>
+<li><input 
+id="view_relationship_tree" title="View Relationship Tree" type="submit" class="button" name="view_relationship_tree" value="View Relationship Tree"/></li>
 <li>{if $bean->aclAccess("detail")}{if !empty($fields.id.value) && $isAuditEnabled}<input id="btn_view_change_log" title="{$APP.LNK_VIEW_CHANGE_LOG}" class="button" onclick='open_popup("Audit", "600", "400", "&record={$fields.id.value}&module_name=Accounts", true, false,  {ldelim} "call_back_function":"set_return","form_name":"EditView","field_to_name_array":[] {rdelim} ); return false;' type="button" value="{$APP.LNK_VIEW_CHANGE_LOG}">{/if}{/if}</li>
 </ul>        </li>
 <li class="tab-inline-pagination">
@@ -1821,10 +1825,10 @@
 
 
 
-<div class="col-xs-12 col-sm-12 detail-view-row-item">
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
 
 
-<div class="col-xs-12 col-sm-2 label col-1-label">
+<div class="col-xs-12 col-sm-4 label col-1-label">
 
 
 {capture name="label" assign="label"}{sugar_translate label='LBL_WEBSITE' module='Accounts'}{/capture}
@@ -1832,7 +1836,7 @@
 </div>
 
 
-<div class="col-xs-12 col-sm-10 detail-view-field inlineEdit" type="url" field="website" colspan='3' >
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="url" field="website"  >
 
 {if !$fields.website.hidden}
 {counter name="panelFieldCount" print=false}
@@ -1849,6 +1853,467 @@
 <div class="inlineEditIcon col-xs-hidden">
 <span class="suitepicon suitepicon-action-edit"></span>
 </div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-2-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_NAME' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="name" field="name"  >
+
+{if !$fields.name.hidden}
+{counter name="panelFieldCount" print=false}
+
+{if strlen($fields.name.value) <= 0}
+{assign var="value" value=$fields.name.default_value }
+{else}
+{assign var="value" value=$fields.name.value }
+{/if} 
+<span class="sugar_field" id="{$fields.name.name}">{$fields.name.value}</span>
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="row detail-view-row">
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-1-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_BILLING_ADDRESS' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="varchar" field="billing_address_street"  >
+
+{if !$fields.billing_address_street.hidden}
+{counter name="panelFieldCount" print=false}
+
+<table border='0' cellpadding='0' cellspacing='0' width='100%'>
+<tr>
+<td width='99%'>
+<input type="hidden" class="sugar_field" id="billing_address_street"
+value="{$fields.billing_address_street.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="billing_address_city"
+value="{$fields.billing_address_city.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="billing_address_state"
+value="{$fields.billing_address_state.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="billing_address_country"
+value="{$fields.billing_address_country.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="billing_address_postalcode"
+value="{$fields.billing_address_postalcode.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+{$fields.billing_address_street.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}
+<br>
+{$fields.billing_address_city.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br} {$fields.billing_address_state.value|escape:'html_entity_decode'|strip_tags|url2html|nl2br}
+&nbsp;&nbsp;{$fields.billing_address_postalcode.value|escape:'html_entity_decode'|strip_tags|url2html|nl2br}
+<br>
+{$fields.billing_address_country.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}
+</td>
+<td class='dataField' width='1%'>
+{$custom_code_billing}
+</td>
+</tr>
+</table>
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-2-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_SHIPPING_ADDRESS' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="varchar" field="shipping_address_street"  >
+
+{if !$fields.shipping_address_street.hidden}
+{counter name="panelFieldCount" print=false}
+
+<table border='0' cellpadding='0' cellspacing='0' width='100%'>
+<tr>
+<td width='99%'>
+<input type="hidden" class="sugar_field" id="shipping_address_street"
+value="{$fields.shipping_address_street.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="shipping_address_city"
+value="{$fields.shipping_address_city.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="shipping_address_state"
+value="{$fields.shipping_address_state.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="shipping_address_country"
+value="{$fields.shipping_address_country.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="shipping_address_postalcode"
+value="{$fields.shipping_address_postalcode.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+{$fields.shipping_address_street.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}
+<br>
+{$fields.shipping_address_city.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br} {$fields.shipping_address_state.value|escape:'html_entity_decode'|strip_tags|url2html|nl2br}
+&nbsp;&nbsp;{$fields.shipping_address_postalcode.value|escape:'html_entity_decode'|strip_tags|url2html|nl2br}
+<br>
+{$fields.shipping_address_country.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}
+</td>
+<td class='dataField' width='1%'>
+{$custom_code_shipping}
+</td>
+</tr>
+</table>
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="row detail-view-row">
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-1-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_ASSIGNED_TO' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="relate" field="assigned_user_name"  >
+
+{if !$fields.assigned_user_name.hidden}
+{counter name="panelFieldCount" print=false}
+
+<span id="assigned_user_id" class="sugar_field" data-id-value="{$fields.assigned_user_id.value}">{$fields.assigned_user_name.value}</span>
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-2-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_TYPE' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="enum" field="account_type"  >
+
+{if !$fields.account_type.hidden}
+{counter name="panelFieldCount" print=false}
+
+
+{if is_string($fields.account_type.options)}
+<input type="hidden" class="sugar_field" id="{$fields.account_type.name}" value="{ $fields.account_type.options }">
+{ $fields.account_type.options }
+{else}
+<input type="hidden" class="sugar_field" id="{$fields.account_type.name}" value="{ $fields.account_type.value }">
+{ $fields.account_type.options[$fields.account_type.value]}
+{/if}
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="row detail-view-row">
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-1-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_INDUSTRY' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="enum" field="industry"  >
+
+{if !$fields.industry.hidden}
+{counter name="panelFieldCount" print=false}
+
+
+{if is_string($fields.industry.options)}
+<input type="hidden" class="sugar_field" id="{$fields.industry.name}" value="{ $fields.industry.options }">
+{ $fields.industry.options }
+{else}
+<input type="hidden" class="sugar_field" id="{$fields.industry.name}" value="{ $fields.industry.value }">
+{ $fields.industry.options[$fields.industry.value]}
+{/if}
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-2-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_ANNUAL_REVENUE' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="varchar" field="annual_revenue"  >
+
+{if !$fields.annual_revenue.hidden}
+{counter name="panelFieldCount" print=false}
+
+{if strlen($fields.annual_revenue.value) <= 0}
+{assign var="value" value=$fields.annual_revenue.default_value }
+{else}
+{assign var="value" value=$fields.annual_revenue.value }
+{/if} 
+<span class="sugar_field" id="{$fields.annual_revenue.name}">{$fields.annual_revenue.value}</span>
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="row detail-view-row">
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-1-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_EMPLOYEES' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="varchar" field="employees"  >
+
+{if !$fields.employees.hidden}
+{counter name="panelFieldCount" print=false}
+
+{if strlen($fields.employees.value) <= 0}
+{assign var="value" value=$fields.employees.default_value }
+{else}
+{assign var="value" value=$fields.employees.value }
+{/if} 
+<span class="sugar_field" id="{$fields.employees.name}">{$fields.employees.value}</span>
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-2-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_MEMBER_OF' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="relate" field="parent_name"  >
+
+{if !$fields.parent_name.hidden}
+{counter name="panelFieldCount" print=false}
+
+{if !empty($fields.parent_id.value)}
+{capture assign="detail_url"}index.php?module=Accounts&action=DetailView&record={$fields.parent_id.value}{/capture}
+<a href="{sugar_ajax_url url=$detail_url}">{/if}
+<span id="parent_id" class="sugar_field" data-id-value="{$fields.parent_id.value}">{$fields.parent_name.value}</span>
+{if !empty($fields.parent_id.value)}</a>{/if}
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="row detail-view-row">
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-1-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_CAMPAIGN' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="relate" field="campaign_name"  >
+
+{if !$fields.campaign_name.hidden}
+{counter name="panelFieldCount" print=false}
+
+{if !empty($fields.campaign_id.value)}
+{capture assign="detail_url"}index.php?module=Campaigns&action=DetailView&record={$fields.campaign_id.value}{/capture}
+<a href="{sugar_ajax_url url=$detail_url}">{/if}
+<span id="campaign_id" class="sugar_field" data-id-value="{$fields.campaign_id.value}">{$fields.campaign_name.value}</span>
+{if !empty($fields.campaign_id.value)}</a>{/if}
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-2-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_DATE_ENTERED' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field " type="datetime" field="date_entered"  >
+
+{if !$fields.date_entered.hidden}
+{counter name="panelFieldCount" print=false}
+<span id="date_entered" class="sugar_field">{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}</span>
+{/if}
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="row detail-view-row">
+
+
+
+<div class="col-xs-12 col-sm-12 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-2 label col-1-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_DATE_MODIFIED' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-10 detail-view-field " type="datetime" field="date_modified" colspan='3' >
+
+{if !$fields.date_modified.hidden}
+{counter name="panelFieldCount" print=false}
+<span id="date_modified" class="sugar_field">{$fields.date_modified.value} {$APP.LBL_BY} {$fields.modified_by_name.value}</span>
+{/if}
+
 </div>
 
 
@@ -2030,10 +2495,10 @@
 
 
 
-<div class="col-xs-12 col-sm-12 detail-view-row-item">
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
 
 
-<div class="col-xs-12 col-sm-2 label col-1-label">
+<div class="col-xs-12 col-sm-4 label col-1-label">
 
 
 {capture name="label" assign="label"}{sugar_translate label='LBL_WEBSITE' module='Accounts'}{/capture}
@@ -2041,7 +2506,7 @@
 </div>
 
 
-<div class="col-xs-12 col-sm-10 detail-view-field inlineEdit" type="url" field="website" colspan='3' >
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="url" field="website"  >
 
 {if !$fields.website.hidden}
 {counter name="panelFieldCount" print=false}
@@ -2063,6 +2528,467 @@
 
 </div>
 
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-2-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_NAME' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="name" field="name"  >
+
+{if !$fields.name.hidden}
+{counter name="panelFieldCount" print=false}
+
+{if strlen($fields.name.value) <= 0}
+{assign var="value" value=$fields.name.default_value }
+{else}
+{assign var="value" value=$fields.name.value }
+{/if} 
+<span class="sugar_field" id="{$fields.name.name}">{$fields.name.value}</span>
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="row detail-view-row">
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-1-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_BILLING_ADDRESS' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="varchar" field="billing_address_street"  >
+
+{if !$fields.billing_address_street.hidden}
+{counter name="panelFieldCount" print=false}
+
+<table border='0' cellpadding='0' cellspacing='0' width='100%'>
+<tr>
+<td width='99%'>
+<input type="hidden" class="sugar_field" id="billing_address_street"
+value="{$fields.billing_address_street.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="billing_address_city"
+value="{$fields.billing_address_city.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="billing_address_state"
+value="{$fields.billing_address_state.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="billing_address_country"
+value="{$fields.billing_address_country.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="billing_address_postalcode"
+value="{$fields.billing_address_postalcode.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+{$fields.billing_address_street.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}
+<br>
+{$fields.billing_address_city.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br} {$fields.billing_address_state.value|escape:'html_entity_decode'|strip_tags|url2html|nl2br}
+&nbsp;&nbsp;{$fields.billing_address_postalcode.value|escape:'html_entity_decode'|strip_tags|url2html|nl2br}
+<br>
+{$fields.billing_address_country.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}
+</td>
+<td class='dataField' width='1%'>
+{$custom_code_billing}
+</td>
+</tr>
+</table>
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-2-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_SHIPPING_ADDRESS' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="varchar" field="shipping_address_street"  >
+
+{if !$fields.shipping_address_street.hidden}
+{counter name="panelFieldCount" print=false}
+
+<table border='0' cellpadding='0' cellspacing='0' width='100%'>
+<tr>
+<td width='99%'>
+<input type="hidden" class="sugar_field" id="shipping_address_street"
+value="{$fields.shipping_address_street.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="shipping_address_city"
+value="{$fields.shipping_address_city.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="shipping_address_state"
+value="{$fields.shipping_address_state.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="shipping_address_country"
+value="{$fields.shipping_address_country.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+<input type="hidden" class="sugar_field" id="shipping_address_postalcode"
+value="{$fields.shipping_address_postalcode.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}">
+{$fields.shipping_address_street.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}
+<br>
+{$fields.shipping_address_city.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br} {$fields.shipping_address_state.value|escape:'html_entity_decode'|strip_tags|url2html|nl2br}
+&nbsp;&nbsp;{$fields.shipping_address_postalcode.value|escape:'html_entity_decode'|strip_tags|url2html|nl2br}
+<br>
+{$fields.shipping_address_country.value|escape:'html_entity_decode'|escape:'html'|url2html|nl2br}
+</td>
+<td class='dataField' width='1%'>
+{$custom_code_shipping}
+</td>
+</tr>
+</table>
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="row detail-view-row">
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-1-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_ASSIGNED_TO' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="relate" field="assigned_user_name"  >
+
+{if !$fields.assigned_user_name.hidden}
+{counter name="panelFieldCount" print=false}
+
+<span id="assigned_user_id" class="sugar_field" data-id-value="{$fields.assigned_user_id.value}">{$fields.assigned_user_name.value}</span>
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-2-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_TYPE' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="enum" field="account_type"  >
+
+{if !$fields.account_type.hidden}
+{counter name="panelFieldCount" print=false}
+
+
+{if is_string($fields.account_type.options)}
+<input type="hidden" class="sugar_field" id="{$fields.account_type.name}" value="{ $fields.account_type.options }">
+{ $fields.account_type.options }
+{else}
+<input type="hidden" class="sugar_field" id="{$fields.account_type.name}" value="{ $fields.account_type.value }">
+{ $fields.account_type.options[$fields.account_type.value]}
+{/if}
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="row detail-view-row">
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-1-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_INDUSTRY' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="enum" field="industry"  >
+
+{if !$fields.industry.hidden}
+{counter name="panelFieldCount" print=false}
+
+
+{if is_string($fields.industry.options)}
+<input type="hidden" class="sugar_field" id="{$fields.industry.name}" value="{ $fields.industry.options }">
+{ $fields.industry.options }
+{else}
+<input type="hidden" class="sugar_field" id="{$fields.industry.name}" value="{ $fields.industry.value }">
+{ $fields.industry.options[$fields.industry.value]}
+{/if}
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-2-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_ANNUAL_REVENUE' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="varchar" field="annual_revenue"  >
+
+{if !$fields.annual_revenue.hidden}
+{counter name="panelFieldCount" print=false}
+
+{if strlen($fields.annual_revenue.value) <= 0}
+{assign var="value" value=$fields.annual_revenue.default_value }
+{else}
+{assign var="value" value=$fields.annual_revenue.value }
+{/if} 
+<span class="sugar_field" id="{$fields.annual_revenue.name}">{$fields.annual_revenue.value}</span>
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="row detail-view-row">
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-1-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_EMPLOYEES' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="varchar" field="employees"  >
+
+{if !$fields.employees.hidden}
+{counter name="panelFieldCount" print=false}
+
+{if strlen($fields.employees.value) <= 0}
+{assign var="value" value=$fields.employees.default_value }
+{else}
+{assign var="value" value=$fields.employees.value }
+{/if} 
+<span class="sugar_field" id="{$fields.employees.name}">{$fields.employees.value}</span>
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-2-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_MEMBER_OF' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="relate" field="parent_name"  >
+
+{if !$fields.parent_name.hidden}
+{counter name="panelFieldCount" print=false}
+
+{if !empty($fields.parent_id.value)}
+{capture assign="detail_url"}index.php?module=Accounts&action=DetailView&record={$fields.parent_id.value}{/capture}
+<a href="{sugar_ajax_url url=$detail_url}">{/if}
+<span id="parent_id" class="sugar_field" data-id-value="{$fields.parent_id.value}">{$fields.parent_name.value}</span>
+{if !empty($fields.parent_id.value)}</a>{/if}
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="row detail-view-row">
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-1-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_CAMPAIGN' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field inlineEdit" type="relate" field="campaign_name"  >
+
+{if !$fields.campaign_name.hidden}
+{counter name="panelFieldCount" print=false}
+
+{if !empty($fields.campaign_id.value)}
+{capture assign="detail_url"}index.php?module=Campaigns&action=DetailView&record={$fields.campaign_id.value}{/capture}
+<a href="{sugar_ajax_url url=$detail_url}">{/if}
+<span id="campaign_id" class="sugar_field" data-id-value="{$fields.campaign_id.value}">{$fields.campaign_name.value}</span>
+{if !empty($fields.campaign_id.value)}</a>{/if}
+{/if}
+
+<div class="inlineEditIcon col-xs-hidden">
+<span class="suitepicon suitepicon-action-edit"></span>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="col-xs-12 col-sm-6 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-4 label col-2-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_DATE_ENTERED' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-8 detail-view-field " type="datetime" field="date_entered"  >
+
+{if !$fields.date_entered.hidden}
+{counter name="panelFieldCount" print=false}
+<span id="date_entered" class="sugar_field">{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}</span>
+{/if}
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="row detail-view-row">
+
+
+
+<div class="col-xs-12 col-sm-12 detail-view-row-item">
+
+
+<div class="col-xs-12 col-sm-2 label col-1-label">
+
+
+{capture name="label" assign="label"}{sugar_translate label='LBL_DATE_MODIFIED' module='Accounts'}{/capture}
+{$label|strip_semicolon}:
+</div>
+
+
+<div class="col-xs-12 col-sm-10 detail-view-field " type="datetime" field="date_modified" colspan='3' >
+
+{if !$fields.date_modified.hidden}
+{counter name="panelFieldCount" print=false}
+<span id="date_modified" class="sugar_field">{$fields.date_modified.value} {$APP.LBL_BY} {$fields.modified_by_name.value}</span>
+{/if}
+
+</div>
+
+
+</div>
+
 </div>
                             </div>
 </div>
@@ -2079,12 +3005,14 @@
 {literal}
 <script type="text/javascript">
 
-                    var selectTabDetailView = function(tab) {
+                    let selectTabDetailView = function(tab) {
                         $('#content div.tab-content div.tab-pane-NOBOOTSTRAPTOGGLER').hide();
                         $('#content div.tab-content div.tab-pane-NOBOOTSTRAPTOGGLER').eq(tab).show().addClass('active').addClass('in');
+                        $('#content div.detail-view div.panel-content div.panel.panel').hide();
+                        $('#content div.panel-content div.panel.tab-panel-' + tab).show();
                     };
 
-                    var selectTabOnError = function(tab) {
+                    let selectTabOnError = function(tab) {
                         selectTabDetailView(tab);
                         $('#content ul.nav.nav-tabs > li').removeClass('active');
                         $('#content ul.nav.nav-tabs > li a').css('color', '');

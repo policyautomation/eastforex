@@ -489,15 +489,15 @@ function get_subscription_lists($focus, $descriptions = false)
                 } else {
                     //this list is not exempt, and user is subscribed, so add to subscribed array, and unset from the unsubs_arr
                     //as long as this list is not in exempt array
-                    $temp = "prospect_list@".$news_list['prospect_list_id']."@campaign@".$news_list['campaign_id'];
-                    if (!array_search($temp, $unsubs_arr)) {
+                    if (!array_key_exists($news_list['name'], $unsubs_arr)) {
                         $subs_arr[$news_list['name']] = "prospect_list@".$news_list['prospect_list_id']."@campaign@".$news_list['campaign_id'];
                         $match = 'true';
                         unset($unsubs_arr[$news_list['name']]);
                     }
                 }
+            } else {
+                //do nothing, there is no match
             }
-            //do nothing, there is no match
         }
         //if this newsletter id never matched a user subscription..
         //..then add to available(unsubscribed) NewsLetters if list is not of type exempt
@@ -560,8 +560,9 @@ function get_subscription_lists_keyed($focus)
                         $match = 'true';
                     }
                 }
+            } else {
+                //do nothing, there is no match
             }
-            //do nothing, there is no match
         }
         //if this newsletter id never matched a user subscription..
         //..then add to available(unsubscribed) NewsLetters if list is not of type exempt
@@ -840,6 +841,8 @@ function process_subscriptions($subscription_string_to_parse)
             $email_health =$email_health +1;
             $msg .= "<tr><td ><font color='red'><b> ".$mod_strings['LBL_MAILBOX_CHECK2_BAD']." </b></font></td></tr>";
             $errors['mailbox2'] = $mod_strings['LBL_MAILBOX_CHECK2_BAD'];
+        } else {
+            //do nothing, address has been changed
         }
         //do nothing, address has been changed
 

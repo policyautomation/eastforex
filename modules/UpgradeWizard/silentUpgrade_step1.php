@@ -279,8 +279,9 @@ function merge_passwordsetting($sugar_config, $sugar_version)
 
     if (write_array_to_file("sugar_config", $sugar_config, "config.php")) {
         return true;
+    } else {
+        return false;
     }
-    return false;
 }
 
 function addDefaultModuleRoles($defaultRoles = array())
@@ -482,7 +483,7 @@ if ($upgradeType != constant('DCE_INSTANCE')) {
 
     require_once("{$cwd}/sugar_version.php"); // provides $sugar_version & $sugar_flavor
 
-    $GLOBALS['log']	= LoggerManager::getLogger('SugarCRM');
+    $GLOBALS['log']	= LoggerManager::getLogger();
     $patchName		= basename($argv[1]);
     $zip_from_dir	= substr($patchName, 0, strlen($patchName) - 4); // patch folder name (minus ".zip")
     $path			= $argv[2]; // custom log file, if blank will use ./upgradeWizard.log
@@ -601,14 +602,15 @@ logThis("*** SILENT UPGRADE INITIATED.", $path);
         if (!isset($manifest)) {
             fwrite(STDERR, "\nThe patch did not contain a proper manifest.php file.  Cannot continue.\n\n");
             exit(1);
-        }
-        copy("$unzip_dir/manifest.php", $sugar_config['upload_dir']."/upgrades/patch/{$zip_from_dir}-manifest.php");
+        } else {
+            copy("$unzip_dir/manifest.php", $sugar_config['upload_dir']."/upgrades/patch/{$zip_from_dir}-manifest.php");
 
-        $error = validate_manifest($manifest);
-        if (!empty($error)) {
-            $error = strip_tags(br2nl($error));
-            fwrite(STDERR, "\n{$error}\n\nFAILURE\n");
-            exit(1);
+            $error = validate_manifest($manifest);
+            if (!empty($error)) {
+                $error = strip_tags(br2nl($error));
+                fwrite(STDERR, "\n{$error}\n\nFAILURE\n");
+                exit(1);
+            }
         }
     } else {
         fwrite(STDERR, "\nThe patch did not contain a proper manifest.php file.  Cannot continue.\n\n");
@@ -931,8 +933,10 @@ logThis("*** SILENT UPGRADE INITIATED.", $path);
         ob_start();
         if (!isset($_REQUEST['silent'])) {
             $_REQUEST['silent'] = true;
-        } elseif (isset($_REQUEST['silent']) && $_REQUEST['silent'] != true) {
-            $_REQUEST['silent'] = true;
+        } else {
+            if (isset($_REQUEST['silent']) && $_REQUEST['silent'] != true) {
+                $_REQUEST['silent'] = true;
+            }
         }
 
         //logThis('Checking for leads_assigned_user relationship and if not found then create.', $path);

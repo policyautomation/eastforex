@@ -265,8 +265,10 @@ function getFiles(&$arr, $dir, $pattern = null)
         } else {
             if (empty($pattern)) {
                 $arr[] = $file;
-            } elseif (preg_match($pattern, $file)) {
-                $arr[] = $file;
+            } else {
+                if (preg_match($pattern, $file)) {
+                    $arr[] = $file;
+                }
             }
         }
     }
@@ -471,7 +473,7 @@ CIA;
 */
 function cleanFileName($name)
 {
-    return preg_replace('/[^\w-._]+/i', '', $name);
+    return preg_replace('/[^\w\-._]+/i', '', $name);
 }
 
 /**

@@ -314,6 +314,17 @@
       'studio' => 'visible',
       'dependency' => false,
     ),
+    'tra_eftransaction_acc_balance' => 
+    array (
+      'name' => 'tra_eftransaction_acc_balance',
+      'type' => 'link',
+      'relationship' => 'tra_eftransaction_acc_balance',
+      'source' => 'non-db',
+      'module' => 'tra_EFTransaction',
+      'bean_name' => 'tra_EFTransaction',
+      'side' => 'right',
+      'vname' => 'LBL_TRA_EFTRANSACTION_ACC_BALANCE_FROM_TRA_EFTRANSACTION_TITLE',
+    ),
     'acc_efbankaccount_acc_balance' => 
     array (
       'name' => 'acc_efbankaccount_acc_balance',
@@ -392,17 +403,6 @@
       'bean_name' => 'tra_CustomerTransaction',
       'side' => 'right',
       'vname' => 'LBL_TRA_CUSTOMERTRANSACTION_ACC_BALANCE_FROM_TRA_CUSTOMERTRANSACTION_TITLE',
-    ),
-    'tra_eftransaction_acc_balance' => 
-    array (
-      'name' => 'tra_eftransaction_acc_balance',
-      'type' => 'link',
-      'relationship' => 'tra_eftransaction_acc_balance',
-      'source' => 'non-db',
-      'module' => 'tra_EFTransaction',
-      'bean_name' => 'tra_EFTransaction',
-      'side' => 'right',
-      'vname' => 'LBL_TRA_EFTRANSACTION_ACC_BALANCE_FROM_TRA_EFTRANSACTION_TITLE',
     ),
   ),
   'relationships' => 

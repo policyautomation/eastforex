@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.31, created on 2019-03-07 07:51:11
+<?php /* Smarty version 2.6.31, created on 2019-04-10 13:38:17
          compiled from themes/SuiteP/include/DetailView/tab_panel_content.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'counter', 'themes/SuiteP/include/DetailView/tab_panel_content.tpl', 52, false),array('function', 'sugar_evalcolumn', 'themes/SuiteP/include/DetailView/tab_panel_content.tpl', 146, false),array('function', 'sugar_field', 'themes/SuiteP/include/DetailView/tab_panel_content.tpl', 152, false),)), $this); ?>
@@ -248,9 +248,6 @@ if ($this->_foreach['fieldIteration']['total'] > 0):
 
         </div>
         {*<!-- /DIV column -->*}
-        <?php if ($this->_tpl_vars['fieldCount'] == 0): ?>
-        <div class="clear"></div>
-        <?php endif; ?>
 
 
     <?php endforeach; endif; unset($_from); ?>

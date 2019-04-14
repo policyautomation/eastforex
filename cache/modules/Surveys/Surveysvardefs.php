@@ -407,6 +407,16 @@
       'lhs_key' => 'id',
       'relationship_type' => 'one-to-many',
     ),
+    'surveys_campaigns' => 
+    array (
+      'rhs_module' => 'Campaigns',
+      'rhs_table' => 'campaigns',
+      'rhs_key' => 'survey_id',
+      'lhs_module' => 'Surveys',
+      'lhs_table' => 'surveys',
+      'lhs_key' => 'id',
+      'relationship_type' => 'one-to-many',
+    ),
   ),
   'optimistic_locking' => true,
   'unified_search' => true,

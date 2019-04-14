@@ -50,7 +50,7 @@ if (!defined('sugarEntry') || !sugarEntry) {
 * Contributor(s): ______________________________________..
 ********************************************************************************/
 
-require_once('include/database/DBManager.php');
+require_once dirname(__DIR__) . '/../include/database/DBManager.php';
 
 /**
  * Database driver factory
@@ -119,8 +119,9 @@ class DBManagerFactory
 
         if (class_exists($my_db_manager)) {
             return new $my_db_manager();
+        } else {
+            return null;
         }
-        return null;
     }
 
     /**

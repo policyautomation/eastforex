@@ -375,6 +375,7 @@
       'vname' => 'LBL_CAMPAIGN_CONTENT',
       'type' => 'text',
       'comment' => 'The campaign description',
+      'inline_edit' => false,
     ),
     'prospectlists' => 
     array (
@@ -535,6 +536,15 @@
       'fields' => 
       array (
         0 => 'name',
+      ),
+    ),
+    2 => 
+    array (
+      'name' => 'idx_survey_id',
+      'type' => 'index',
+      'fields' => 
+      array (
+        0 => 'survey_id',
       ),
     ),
   ),

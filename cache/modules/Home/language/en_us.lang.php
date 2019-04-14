@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-07 07:50:44
+// created: 2019-04-10 13:37:42
 $mod_strings = array (
   'LBL_MODULE_NAME' => 'Home',
   'LBL_NEW_FORM_TITLE' => 'New Contact',
@@ -87,8 +87,8 @@ $mod_strings = array (
   'LBL_DASHLET_INCORRECT_URL' => 'Incorrect website location is specified',
   'LBL_DASHLET_OPT_URL' => 'Website Location',
   'LBL_DASHLET_OPT_HEIGHT' => 'Dashlet Height (in pixels)',
-  'LBL_DASHLET_SUGAR_NEWS' => 'SuiteCRM News',
-  'LBL_DASHLET_DISCOVER_SUGAR_PRO' => 'Discover SuiteCRM',
+  'LBL_DASHLET_SUITE_NEWS' => 'SuiteCRM News',
+  'LBL_DASHLET_DISCOVER_SUITE' => 'Discover SuiteCRM',
   'LBL_BASIC_SEARCH' => 'Quick Filter',
   'LBL_ADVANCED_SEARCH' => 'Advanced Filter',
   'LBL_TOUR_HOME' => 'Home Icon',

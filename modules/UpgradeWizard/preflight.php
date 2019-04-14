@@ -41,7 +41,7 @@ if (!defined('sugarEntry') || !sugarEntry) {
  * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
  */
 
-/********************************************************************************* 
+/*********************************************************************************
 
  * Description:
  * Portions created by SugarCRM are Copyright (C) SugarCRM, Inc. All Rights
@@ -207,8 +207,9 @@ eoq;
         foreach ($errors as $error) {
             if (is_array($error)) { // manual diff files
                 continue;
+            } else {
+                $out .= "{$error}<br />";
             }
-            $out .= "{$error}<br />";
         }
         $out .= "</span><br />";
     }

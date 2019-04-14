@@ -104,8 +104,10 @@ class ProjectController extends SugarController
 
         if ($_POST['milestone'] == 'Milestone') {
             $milestone_flag = '1';
-        } elseif ($_POST['milestone'] == 'Task') {
-            $milestone_flag = '0';
+        } else {
+            if ($_POST['milestone'] == 'Task') {
+                $milestone_flag = '0';
+            }
         }
 
         $dateformat = $current_user->getPreference('datef');
@@ -226,7 +228,8 @@ class ProjectController extends SugarController
     }
 
     //Returns new task start date including any lag via ajax call
-    public function action_get_end_date(){
+    public function action_get_end_date()
+    {
         global  $timeDate;
         $db = DBManagerFactory::getInstance();
 
@@ -335,7 +338,8 @@ class ProjectController extends SugarController
     }
 
     //Updates the resource chart based on specified dates and users
-    public function action_update_chart(){
+    public function action_update_chart()
+    {
         $db = DBManagerFactory::getInstance();
         include('modules/Project/chart.php');
 

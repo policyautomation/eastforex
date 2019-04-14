@@ -424,7 +424,6 @@
     ),
     'number' => 
     array (
-      'required' => true,
       'name' => 'number',
       'vname' => 'LBL_QUOTE_NUMBER',
       'type' => 'int',

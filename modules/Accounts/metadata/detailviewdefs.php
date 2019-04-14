@@ -1,282 +1,255 @@
 <?php
+/**
+ *
+ * SugarCRM Community Edition is a customer relationship management program developed by
+ * SugarCRM, Inc. Copyright (C) 2004-2013 SugarCRM Inc.
+ *
+ * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
+ * Copyright (C) 2011 - 2018 SalesAgility Ltd.
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License version 3 as published by the
+ * Free Software Foundation with the addition of the following permission added
+ * to Section 15 as permitted in Section 7(a): FOR ANY PART OF THE COVERED WORK
+ * IN WHICH THE COPYRIGHT IS OWNED BY SUGARCRM, SUGARCRM DISCLAIMS THE WARRANTY
+ * OF NON INFRINGEMENT OF THIRD PARTY RIGHTS.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along with
+ * this program; if not, see http://www.gnu.org/licenses or write to the Free
+ * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ * 02110-1301 USA.
+ *
+ * You can contact SugarCRM, Inc. headquarters at 10050 North Wolfe Road,
+ * SW2-130, Cupertino, CA 95014, USA. or at email address contact@sugarcrm.com.
+ *
+ * The interactive user interfaces in modified source and object code versions
+ * of this program must display Appropriate Legal Notices, as required under
+ * Section 5 of the GNU Affero General Public License version 3.
+ *
+ * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
+ * these Appropriate Legal Notices must retain the display of the "Powered by
+ * SugarCRM" logo and "Supercharged by SuiteCRM" logo. If the display of the logos is not
+ * reasonably feasible for technical reasons, the Appropriate Legal Notices must
+ * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
+ */
+
 $viewdefs ['Accounts'] =
-array (
+array(
   'DetailView' =>
-  array (
+  array(
     'templateMeta' =>
-    array (
+    array(
       'form' =>
-      array (
+      array(
         'buttons' =>
-        array (
-          'SEND_CONFIRM_OPT_IN_EMAIL' =>
-          array (
-            'customCode' => '<input type="submit" class="button hidden" disabled="disabled" title="{$APP.LBL_SEND_CONFIRM_OPT_IN_EMAIL}" onclick="this.form.return_module.value=\'Accounts\'; this.form.return_action.value=\'Accounts\'; this.form.return_id.value=\'{$fields.id.value}\'; this.form.action.value=\'sendConfirmOptInEmail\'; this.form.module.value=\'Accounts\'; this.form.module_tab.value=\'Accounts\';" name="send_confirm_opt_in_email" value="{$APP.LBL_SEND_CONFIRM_OPT_IN_EMAIL}"/>',
-            'sugar_html' =>
-            array (
-              'type' => 'submit',
-              'value' => '{$APP.LBL_SEND_CONFIRM_OPT_IN_EMAIL}',
-              'htmlOptions' =>
-              array (
-                'class' => 'button hidden',
-                'id' => 'send_confirm_opt_in_email',
-                'title' => '{$APP.LBL_SEND_CONFIRM_OPT_IN_EMAIL}',
-                'onclick' => 'this.form.return_module.value=\'Accounts\'; this.form.return_action.value=\'DetailView\'; this.form.return_id.value=\'{$fields.id.value}\'; this.form.action.value=\'sendConfirmOptInEmail\'; this.form.module.value=\'Accounts\'; this.form.module_tab.value=\'Accounts\';',
-                'name' => 'send_confirm_opt_in_email',
-                'disabled' => true,
-              ),
-            ),
-          ),
+        array(
+            'SEND_CONFIRM_OPT_IN_EMAIL' => EmailAddress::getSendConfirmOptInEmailActionLinkDefs('Accounts'),
           0 => 'EDIT',
           1 => 'DUPLICATE',
           2 => 'DELETE',
           3 => 'FIND_DUPLICATES',
           'AOS_GENLET' =>
-          array (
+          array(
             'customCode' => '<input type="button" class="button" onClick="showPopup();" value="{$APP.LBL_PRINT_AS_PDF}">',
           ),
         ),
       ),
       'maxColumns' => '2',
       'widths' =>
-      array (
+      array(
         0 =>
-        array (
+        array(
           'label' => '10',
           'field' => '30',
         ),
         1 =>
-        array (
+        array(
           'label' => '10',
           'field' => '30',
         ),
       ),
       'includes' =>
-      array (
+      array(
         0 =>
-        array (
+        array(
           'file' => 'modules/Accounts/Account.js',
-          'file' => 'custom/modules/Accounts/AccountCustom.js'
         ),
       ),
-      'useTabs' => false,
+      'useTabs' => true,
       'tabDefs' =>
-      array (
+      array(
         'LBL_ACCOUNT_INFORMATION' =>
-        array (
-          'newTab' => false,
+        array(
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
-        'LBL_EDITVIEW_PANEL1' =>
-        array (
-          'newTab' => false,
+        'LBL_PANEL_ADVANCED' =>
+        array(
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
-        'LBL_EDITVIEW_PANEL2' =>
-        array (
-          'newTab' => false,
+        'LBL_PANEL_ASSIGNMENT' =>
+        array(
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
       ),
-      'syncDetailEditViews' => true,
     ),
     'panels' =>
-    array (
+    array(
       'lbl_account_information' =>
-      array (
+      array(
         0 =>
-        array (
+        array(
           0 =>
-          array (
-            'name' => 'customer_number_c',
-            'label' => 'LBL_CUSTOMER_NUMBER',
+          array(
+            'name' => 'name',
+            'comment' => 'Name of the Company',
+            'label' => 'LBL_NAME',
           ),
           1 =>
-          array (
-            'name' => 'status_c',
-            'studio' => 'visible',
-            'label' => 'LBL_STATUS',
-          ),
-        ),
-        1 =>
-        array (
-          0 =>
-          array (
+          array(
             'name' => 'phone_office',
             'comment' => 'The office phone number',
             'label' => 'LBL_PHONE_OFFICE',
           ),
-          1 =>
-          array (
-            'name' => 'type_c',
-            'studio' => 'visible',
-            'label' => 'LBL_TYPE',
-          ),
         ),
-        2 =>
-        array (
+        1 =>
+        array(
           0 =>
-          array (
-            'name' => 'phone_alternate',
-            'comment' => 'An alternate phone number',
-            'label' => 'LBL_PHONE_ALT',
+          array(
+            'name' => 'website',
+            'type' => 'link',
+            'label' => 'LBL_WEBSITE',
+            'displayParams' =>
+            array(
+              'link_target' => '_blank',
+            ),
           ),
           1 =>
-          array (
-            'name' => 'level_c',
-            'studio' => 'visible',
-            'label' => 'LBL_LEVEL',
-          ),
-        ),
-        3 =>
-        array (
-          0 =>
-          array (
-            'name' => 'mobile_number_alt_c',
-            'label' => 'LBL_MOBILE_NUMBER_ALT',
-          ),
-          1 =>
-          array (
-            'name' => 'referrer_c',
-            'label' => 'LBL_REFERRER',
-          ),
-        ),
-        4 =>
-        array (
-          0 =>
-          array (
-            'name' => 'email1',
-            'studio' => 'false',
-            'label' => 'LBL_EMAIL',
-          ),
-          1 =>
-          array (
+          array(
             'name' => 'phone_fax',
             'comment' => 'The fax phone number of this company',
             'label' => 'LBL_FAX',
           ),
         ),
-        5 =>
-        array (
+        2 =>
+        array(
           0 =>
-          array (
+          array(
+            'name' => 'email1',
+            'studio' => 'false',
+            'label' => 'LBL_EMAIL',
+          ),
+        ),
+        3 =>
+        array(
+          0 =>
+          array(
+            'name' => 'billing_address_street',
+            'label' => 'LBL_BILLING_ADDRESS',
+            'type' => 'address',
+            'displayParams' =>
+            array(
+              'key' => 'billing',
+            ),
+          ),
+          1 =>
+          array(
+            'name' => 'shipping_address_street',
+            'label' => 'LBL_SHIPPING_ADDRESS',
+            'type' => 'address',
+            'displayParams' =>
+            array(
+              'key' => 'shipping',
+            ),
+          ),
+        ),
+        4 =>
+        array(
+          0 =>
+          array(
             'name' => 'description',
             'comment' => 'Full text of the note',
             'label' => 'LBL_DESCRIPTION',
           ),
         ),
-      ),
-      'lbl_editview_panel1' =>
-      array (
-        0 =>
-        array (
+        5 =>
+        array(
           0 =>
-          array (
-            'name' => 'first_name_c',
-            'label' => 'LBL_FIRST_NAME',
+          array(
+            'name' => 'assigned_user_name',
+            'label' => 'LBL_ASSIGNED_TO',
+          ),
+        ),
+      ),
+      'LBL_PANEL_ADVANCED' =>
+      array(
+        0 =>
+        array(
+          0 =>
+          array(
+            'name' => 'account_type',
+            'comment' => 'The Company is of this type',
+            'label' => 'LBL_TYPE',
           ),
           1 =>
-          array (
-            'name' => 'middle_name_c',
-            'label' => 'LBL_MIDDLE_NAME',
+          array(
+            'name' => 'industry',
+            'comment' => 'The company belongs in this industry',
+            'label' => 'LBL_INDUSTRY',
           ),
         ),
         1 =>
-        array (
+        array(
           0 =>
-          array (
-            'name' => 'last_name_c',
-            'label' => 'LBL_LAST_NAME',
+          array(
+            'name' => 'annual_revenue',
+            'comment' => 'Annual revenue for this company',
+            'label' => 'LBL_ANNUAL_REVENUE',
           ),
           1 =>
-          array (
-            'name' => 'gender_c',
-            'studio' => 'visible',
-            'label' => 'LBL_GENDER',
+          array(
+            'name' => 'employees',
+            'comment' => 'Number of employees, varchar to accomodate for both number (100) or range (50-100)',
+            'label' => 'LBL_EMPLOYEES',
           ),
         ),
         2 =>
-        array (
+        array(
           0 =>
-          array (
-            'name' => 'dob_c',
-            'label' => 'LBL_DOB',
-          ),
-          1 =>
-          array (
-            'name' => 'occupation_c',
-            'studio' => 'visible',
-            'label' => 'LBL_OCCUPATION',
+          array(
+            'name' => 'parent_name',
+            'label' => 'LBL_MEMBER_OF',
           ),
         ),
         3 =>
-        array (
-          0 =>
-          array (
-            'name' => 'wechat_id_c',
-            'label' => 'LBL_WECHAT_ID',
-          ),
-          1 =>
-          array (
-            'name' => 'occupation_other_c',
-            'label' => 'LBL_OCCUPATION_OTHER',
-          ),
-        ),
-        4 =>
-        array (
-          0 =>
-          array (
-            'name' => 'linked_company_c',
-            'studio' => 'visible',
-            'label' => 'LBL_LINKED_COMPANY',
-          ),
+        array(
+          0 => 'campaign_name',
         ),
       ),
-      'lbl_editview_panel2' =>
-      array (
+      'LBL_PANEL_ASSIGNMENT' =>
+      array(
         0 =>
-        array (
+        array(
           0 =>
-          array (
-            'name' => 'company_name_c',
-            'label' => 'LBL_COMPANY_NAME',
+          array(
+            'name' => 'date_entered',
+            'customCode' => '{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}',
           ),
           1 =>
-          array (
-            'name' => 'abn_c',
-            'label' => 'LBL_ABN',
-          ),
-        ),
-        1 =>
-        array (
-          0 =>
-          array (
-            'name' => 'regulated_authority_c',
-            'label' => 'LBL_REGULATED_AUTHORITY',
-          ),
-          1 =>
-          array (
-            'name' => 'structure_c',
-            'studio' => 'visible',
-            'label' => 'LBL_STRUCTURE',
-          ),
-        ),
-        2 =>
-        array (
-          0 =>
-          array (
-            'name' => 'website',
-            'type' => 'link',
-            'label' => 'LBL_WEBSITE',
-            'displayParams' =>
-            array (
-              'link_target' => '_blank',
-            ),
+          array(
+            'name' => 'date_modified',
+            'label' => 'LBL_DATE_MODIFIED',
+            'customCode' => '{$fields.date_modified.value} {$APP.LBL_BY} {$fields.modified_by_name.value}',
           ),
         ),
       ),
     ),
   ),
 );
-;
-?>

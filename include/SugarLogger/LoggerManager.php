@@ -43,6 +43,15 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 /**
  * Log management
+ *
+ * @method LoggerManager debug(string $message)
+ * @method LoggerManager info(string $message)
+ * @method LoggerManager warn(string $message)
+ * @method LoggerManager deprecated(string $message)
+ * @method LoggerManager error(string $message)
+ * @method LoggerManager fatal(string $message)
+ * @method LoggerManager security(string $message)
+ *
  * @api
  */
 class LoggerManager
@@ -246,5 +255,16 @@ class LoggerManager
     public static function getLogLevel()
     {
         return self::$_instance->_level;
+    }
+
+    /**
+     * Sets the level Mapping.
+     *
+     * @param string $level name of logger level to set it to
+     * @param string $value value of this level
+     */
+    public static function setLevelMapping($level, $value)
+    {
+        self::$_levelMapping[$level] = $value;
     }
 }

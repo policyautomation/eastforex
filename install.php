@@ -116,7 +116,7 @@ if (get_magic_quotes_gpc() == 1) {
 }
 
 
-$GLOBALS['log'] = LoggerManager::getLogger('SugarCRM');
+$GLOBALS['log'] = LoggerManager::getLogger();
 $setup_sugar_version = $suitecrm_version;
 $install_script = true;
 
@@ -641,13 +641,15 @@ EOQ;
 
     if ($next_step == 9999) {
         $the_file = 'SilentInstall';
-    } elseif ($next_step == 9191) {
-        $_SESSION['oc_server_url']	= $_REQUEST['oc_server_url'];
-        $_SESSION['oc_username']    = $_REQUEST['oc_username'];
-        $_SESSION['oc_password']   	= $_REQUEST['oc_password'];
-        $the_file = 'oc_convert.php';
     } else {
-        $the_file = $workflow[$next_step];
+        if ($next_step == 9191) {
+            $_SESSION['oc_server_url']	= $_REQUEST['oc_server_url'];
+            $_SESSION['oc_username']    = $_REQUEST['oc_username'];
+            $_SESSION['oc_password']   	= $_REQUEST['oc_password'];
+            $the_file = 'oc_convert.php';
+        } else {
+            $the_file = $workflow[$next_step];
+        }
     }
 
     switch ($the_file) {

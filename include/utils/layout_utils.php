@@ -134,18 +134,21 @@ function get_module_title(
     $iconPath = "";
     if (is_file(SugarThemeRegistry::current()->getImageURL('icon_'.$module.'_32.png', false))) {
         $iconPath = SugarThemeRegistry::current()->getImageURL('icon_'.$module.'_32.png');
-    } elseif (is_file(SugarThemeRegistry::current()->getImageURL('icon_'.ucfirst($module).'_32.png', false))) {
-        $iconPath = SugarThemeRegistry::current()->getImageURL('icon_'.ucfirst($module).'_32.png');
+    } else {
+        if (is_file(SugarThemeRegistry::current()->getImageURL('icon_'.ucfirst($module).'_32.png', false))) {
+            $iconPath = SugarThemeRegistry::current()->getImageURL('icon_'.ucfirst($module).'_32.png');
+        }
     }
     if (!empty($iconPath)) {
         $the_title .= '<h2>';
+        $sw = new SugarView();
         if (SugarThemeRegistry::current()->directionality == "ltr") {
             $the_title .= "<a href='index.php?module={$module}&action=index'><img src='{$iconPath}' " . "alt='".$module."' title='".$module."' align='absmiddle'></a>";
-            $the_title .= ($count >= 1) ? SugarView::getBreadCrumbSymbol() : "";
+            $the_title .= ($count >= 1) ? $sw->getBreadCrumbSymbol() : "";
             $the_title .=  $module_title.'';
         } else {
             $the_title .= $module_title;
-            $the_title .= ($count > 1) ? SugarView::getBreadCrumbSymbol() : "";
+            $the_title .= ($count > 1) ? $sw->getBreadCrumbSymbol() : "";
             $the_title .= "<a href='index.php?module={$module}&action=index'><img src='{$iconPath}' "  . "alt='".$module."' title='".$module."' align='absmiddle'></a>";
         }
         $the_title .= '</h2>';
